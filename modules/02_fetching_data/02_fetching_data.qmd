@@ -1,0 +1,65 @@
+---
+title: "Fetching Data"
+author: "Michael Borck"
+format:
+    pptx:
+      reference-doc: ../template.pptx
+    pdf:
+      toc: true
+      colorlinks: true
+    docx:
+      toc: true
+      highlight-style: github
+    html:
+      toc: true
+      toc-expand: 2
+      embed-resources: true
+---
+
+# 
+![](../../../images/curtin-copy-right.png)
+
+# Today
+* Emphasise the importance of understanding APIs and data fetching in Python
+* Highlight the skills that will be learned in this session, such as:
+	+ Fetching data using the OpenWeatherMap API
+	+ Parsing JSON data
+	+ Handling errors
+
+# Live Coding - Fetching Data
+
+* Demonstrate how to use the `requests` library to fetch data from the OpenWeatherMap API
+* Introduce the concept of HTTP requests and responses
+* Show how to handle errors and exceptions in Python
+
+# Parsing JSON Data
+
+* Introduce the concept of JSON data and how it is used to represent data
+* Demonstrate how to use the `json` library to parse JSON data in Python
+* Highlight the importance of data parsing and how it is used in the weather dashboard project
+
+# Error Handling
+
+* Introduce the concept of error handling in Python and its importance
+* Demonstrate how to use try-except blocks to handle errors in Python
+* Highlight the importance of error handling in the weather dashboard project
+
+# Breakout Room Activity
+
+* Emphasise the importance of teamwork and collaboration in the project
+* Encourage students to work together to fetch and parse data for different cities
+
+# Demo and Discussion
+
+* Demonstrate how to use the fetched data to create a basic weather dashboard
+* Encourage students to share their findings and discuss challenges
+
+# Q&A and Wrap-Up
+
+* Address any questions and provide additional tips
+* Emphasize the importance of practicing and experimenting with the concepts learned in the session
+
+# Homework*
+
+* Assign homework that reinforces the concepts learned in the session
+* Encourage students to experiment with different APIs and data fetching techniques
