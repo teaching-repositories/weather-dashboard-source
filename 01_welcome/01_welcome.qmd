@@ -17,7 +17,7 @@ format:
 ---
 
 # 
-![](../../../images/curtin-copy-right.png)
+![](../images/curtin-copy-right.png)
 
 # Today
 – Introduce the course and project goals.

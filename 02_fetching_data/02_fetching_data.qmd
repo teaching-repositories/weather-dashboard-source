@@ -17,7 +17,7 @@ format:
 ---
 
 # 
-![](../../../images/curtin-copy-right.png)
+![](../images/curtin-copy-right.png)
 
 # Today
 * Emphasise the importance of understanding APIs and data fetching in Python
