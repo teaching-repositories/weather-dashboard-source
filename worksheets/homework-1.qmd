@@ -1,4 +1,10 @@
-### Python Fundamentals Review Worksheet
+---
+title: "Python Fundamentals Review Worksheet"
+execute: 
+  enabled: false
+---
+
+
 
 #### Objective:
 This worksheet is designed to review the basics of Python programming, including creating variables, simple if-then statements, basic loops, using print, and handling input. Answer the following questions to the best of your ability.

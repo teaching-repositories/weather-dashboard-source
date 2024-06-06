@@ -1,5 +1,5 @@
 ---
-title: "Python Input Validation Cheatsheet"
+title: "Python Input Validation quick reference guide"
 subtitle: "Ensure Data Integrity with These Essential Validation Techniques"
 author: "Michael Borck"
 format:
@@ -20,7 +20,7 @@ format:
 
 ## Introduction
 
-Validating user input is a crucial step in building robust and secure software applications. In Python, validating user input can help prevent common web application security vulnerabilities such as SQL injection and cross-site scripting (XSS). This cheatsheet provides a quick reference guide to the most commonly used input validation techniques in Python.
+Validating user input is a crucial step in building robust and secure software applications. In Python, validating user input can help prevent common web application security vulnerabilities such as SQL injection and cross-site scripting (XSS). This quick reference guide provides a quick reference guide to the most commonly used input validation techniques in Python.
 
 ## Why Validate User Input?
 
@@ -30,9 +30,9 @@ Validating user input is essential for several reasons:
 * **Ensure Data Integrity**: Validating user input ensures that the data entered by users is accurate and consistent, reducing the risk of errors and inconsistencies.
 * **Improve User Experience**: Validating user input can improve the user experience by providing immediate feedback to users about invalid input, reducing the likelihood of errors and frustration.
 
-## What's in this Cheatsheet?
+## What's in this quick reference guide?
 
-This cheatsheet provides a comprehensive guide to input validation in Python, covering:
+This quick reference guide provides a comprehensive guide to input validation in Python, covering:
 
 * String validation techniques
 * Integer and float validation techniques
@@ -41,7 +41,7 @@ This cheatsheet provides a comprehensive guide to input validation in Python, co
 * Date and password validation techniques
 * Regular expressions for advanced input validation
 
-This cheatsheet provides the essential knowledge you need to validate user input effectively and securely in Python.
+This quick reference guide provides the essential knowledge you need to validate user input effectively and securely in Python.
 
 ## String Validation
 

@@ -20,9 +20,9 @@ format:
 
 ## Introduction
 
-Exception handling is an essential part of writing robust and reliable Python code. When an error occurs, Python's exception handling mechanism allows you to catch and handle the exception, providing a way to recover from the error and continue executing your code. In this cheatsheet, we'll explore the basics of exception handling in Python, including how to write try-except blocks, handle different types of exceptions, and log errors for debugging purposes.
+Exception handling is an essential part of writing robust and reliable Python code. When an error occurs, Python's exception handling mechanism allows you to catch and handle the exception, providing a way to recover from the error and continue executing your code. In this quick reference guide, we'll explore the basics of exception handling in Python, including how to write try-except blocks, handle different types of exceptions, and log errors for debugging purposes.
 
-Whether you're a beginner or an experienced Python developer, mastering exception handling is crucial for writing robust and maintainable code. With this cheatsheet, you'll learn how to:
+Whether you're a beginner or an experienced Python developer, mastering exception handling is crucial for writing robust and maintainable code. With this quick reference guide, you'll learn how to:
 
 * Write try-except blocks to catch and handle exceptions
 * Handle different types of exceptions, such as ValueError, TypeError, and IOError
@@ -30,9 +30,9 @@ Whether you're a beginner or an experienced Python developer, mastering exceptio
 * Use finally blocks to execute code regardless of whether an exception is thrown
 * Rethrow exceptions to propagate them up the call stack
 
-By the end of this cheatsheet, you'll be well-equipped to handle exceptions in your Python code and write more robust and reliable software.
+By the end of this quick reference guide, you'll be well-equipped to handle exceptions in your Python code and write more robust and reliable software.
 
-Here is a Python error handling cheatsheet:
+Here is a Python error handling quick reference guide:
 
 **Error Handling Basics**
 

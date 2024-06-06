@@ -18,15 +18,15 @@ format:
     embed-resources: true
 ---
 
-## Welcome to the OpenWeatherMap API Cheatsheet
+## Welcome to the OpenWeatherMap API quick reference guide
 
-As a developer, you're likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That's where this cheatsheet comes in.
+As a developer, you're likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That's where this quick reference guide comes in.
 
-In this comprehensive guide, we'll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you're a seasoned developer or just starting out, this cheatsheet is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.
+In this comprehensive guide, we'll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you're a seasoned developer or just starting out, this quick reference guide is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.
 
 ### What's Inside
 
-This cheatsheet covers the following topics:
+This quick reference guide covers the following topics:
 
 * API Endpoints: Learn about the different endpoints available in the OpenWeatherMap API, including current weather conditions, 5-day forecasts, and more.
 * API Parameters: Discover the various parameters you can use to customize your API requests, such as units of measurement, language, and more.
@@ -34,15 +34,15 @@ This cheatsheet covers the following topics:
 * Error Handling: Learn how to handle common errors and exceptions when working with the OpenWeatherMap API.
 * Tips and Tricks: Get insider tips and tricks for optimizing your API requests and working with the OpenWeatherMap API.
 
-## Who is this Cheatsheet For?
+## Who is this quick reference guide For?
 
-This cheatsheet is designed for anyone who wants to get the most out of the OpenWeatherMap API. Whether you're a:
+This quick reference guide is designed for anyone who wants to get the most out of the OpenWeatherMap API. Whether you're a:
 
 * Developer looking to integrate weather data into your app or website
 * Researcher seeking to analyze weather patterns and trends
 * Weather enthusiast curious about the inner workings of the OpenWeatherMap API
 
-This cheatsheet is for you.
+This quick reference guide is for you.
 
 So, let's get started and dive into the world of OpenWeatherMap API!
 
@@ -107,4 +107,4 @@ So, let's get started and dive into the world of OpenWeatherMap API!
 * Sign up for a free API key on the OpenWeatherMap website
 * Use your API key in the `appid` parameter of your API requests
 
-I hope this cheatsheet helps you get started with the OpenWeatherMap API!
+I hope this quick reference guide helps you get started with the OpenWeatherMap API!
