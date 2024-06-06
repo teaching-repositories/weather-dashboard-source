@@ -1,0 +1,49 @@
+[
+  {
+    "listing": "/slides.html",
+    "items": [
+      "/slides/01_welcome.html",
+      "/slides/02_fetching_data.html"
+    ]
+  },
+  {
+    "listing": "/quick-reference-guides.html",
+    "items": [
+      "/quick-reference-guides/openweathermap.html",
+      "/quick-reference-guides/exception-handling.html",
+      "/quick-reference-guides/git-basics.html",
+      "/quick-reference-guides/json-quick-reference.html",
+      "/quick-reference-guides/python-basics.html",
+      "/quick-reference-guides/input-validation.html",
+      "/quick-reference-guides/python-project-starter-kit.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/slides.html",
+      "/notebooks.html",
+      "/worksheets.html",
+      "/quick-reference-guides.html"
+    ]
+  },
+  {
+    "listing": "/notebooks.html",
+    "items": [
+      "/notebooks/01_fetch_data.html",
+      "/notebooks/02_data_management.html",
+      "/notebooks/03_visualiation.html",
+      "/notebooks/04_advanced_vix.html",
+      "/notebooks/05_webscraping.html",
+      "/notebooks/06_dashboard_gui.html",
+      "/notebooks/07_testing.html",
+      "/notebooks/08_final_steps.html"
+    ]
+  },
+  {
+    "listing": "/worksheets.html",
+    "items": [
+      "/worksheets/homework-1.html"
+    ]
+  }
+]

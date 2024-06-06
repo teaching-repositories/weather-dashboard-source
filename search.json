@@ -1,0 +1,1003 @@
+[
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nWelcome\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nFetching Data Using OpenWeatherMap API\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "quick-reference-guides.html",
+    "href": "quick-reference-guides.html",
+    "title": "Quick Reference Guides",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nA Guide to the OpenWeatherMap API\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nException Handling in Python: A Comprehensive Guide\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nGit and GitHub Cheat Sheet: Essential Commands and Concepts\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nJSON in Python: A Quick Reference\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics Cheat Sheet\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Input Validation quick reference guide\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Project Starter Kit\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "notebooks/07_testing.html",
+    "href": "notebooks/07_testing.html",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "",
+    "text": "Learn the importance of testing in software development.\nUnderstand how to write and run tests using pytest.\nExplore using doctest for inline testing within docstrings."
+  },
+  {
+    "objectID": "notebooks/07_testing.html#objectives",
+    "href": "notebooks/07_testing.html#objectives",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "",
+    "text": "Learn the importance of testing in software development.\nUnderstand how to write and run tests using pytest.\nExplore using doctest for inline testing within docstrings."
+  },
+  {
+    "objectID": "notebooks/07_testing.html#introduction-to-testing",
+    "href": "notebooks/07_testing.html#introduction-to-testing",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "1. Introduction to Testing",
+    "text": "1. Introduction to Testing\nTesting is crucial for ensuring the reliability and correctness of your code. In this session, we will focus on writing tests using pytest and doctest.\n\nImport Required Libraries\nimport pytest\nimport requests\nimport pandas as pd"
+  },
+  {
+    "objectID": "notebooks/07_testing.html#writing-tests-with-pytest",
+    "href": "notebooks/07_testing.html#writing-tests-with-pytest",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "2. Writing Tests with pytest",
+    "text": "2. Writing Tests with pytest\npytest is a popular testing framework for Python that makes it easy to write simple and scalable test cases.\n\nInstalling pytest\n!pip install pytest\n\n\nCreating a Test File\nWe’ll create a test file test_weather.py to write our test cases.\n\n\ntest_weather.py\n# test_weather.py\nimport pytest\nfrom scripts.fetch_data import fetch_weather_data\n\ndef test_fetch_weather_data_success():\n    api_key = 'your_api_key_here'\n    location = 'London'\n    data = fetch_weather_data(api_key, location)\n    assert data is not None\n    assert 'Location' in data\n    assert 'Temperature (C)' in data\n    assert 'Humidity (%)' in data\n    assert 'Weather' in data\n\ndef test_fetch_weather_data_failure():\n    api_key = 'your_api_key_here'\n    location = 'InvalidCity'\n    data = fetch_weather_data(api_key, location)\n    assert data is None\n\n\nRunning Tests with pytest\nTo run the tests, navigate to the directory containing the test file and run:\n!pytest test_weather.py"
+  },
+  {
+    "objectID": "notebooks/07_testing.html#using-doctest-for-inline-testing",
+    "href": "notebooks/07_testing.html#using-doctest-for-inline-testing",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "3. Using doctest for Inline Testing",
+    "text": "3. Using doctest for Inline Testing\ndoctest allows you to write tests within your docstrings, which can be run to verify that your code works as expected.\n\nAdding doctests to Functions\nWe’ll add doctests to the fetch_weather_data function in fetch_data.py.\n\n\nfetch_data.py\ndef fetch_weather_data(api_key, location):\n    \"\"\"\n    Fetch weather data from the OpenWeatherMap API.\n    \n    Args:\n    - api_key (str): The API key for authentication.\n    - location (str): The location for which to fetch weather data.\n    \n    Returns:\n    - dict: A dictionary containing weather data.\n    \n    Examples:\n    &gt;&gt;&gt; fetch_weather_data('invalid_api_key', 'London') is None\n    True\n    \"\"\"\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        weather_info = {\n            \"Location\": data[\"name\"],\n            \"Temperature (C)\": data[\"main\"][\"temp\"] - 273.15,\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather_info\n    else:\n        return None\n\n\nRunning doctests\nTo run doctests, use the following command:\n!python -m doctest -v scripts/fetch_data.py"
+  },
+  {
+    "objectID": "notebooks/07_testing.html#testing-data-processing-functions",
+    "href": "notebooks/07_testing.html#testing-data-processing-functions",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "4. Testing Data Processing Functions",
+    "text": "4. Testing Data Processing Functions\nWe should also test our data processing functions to ensure they work correctly.\n\nAdding Tests for Data Processing\nWe’ll add tests for data processing functions in a new test file test_process_data.py.\n\n\ntest_process_data.py\n# test_process_data.py\nimport pytest\nfrom scripts.process_data import convert_temp_kelvin_to_celsius\n\ndef test_convert_temp_kelvin_to_celsius():\n    assert convert_temp_kelvin_to_celsius(273.15) == 0\n    assert convert_temp_kelvin_to_celsius(0) == -273.15\n    assert convert_temp_kelvin_to_celsius(373.15) == 100\n\n\nRunning Tests\nTo run the tests, navigate to the directory containing the test files and run:\n!pytest test_process_data.py"
+  },
+  {
+    "objectID": "notebooks/07_testing.html#integrating-tests-into-the-project",
+    "href": "notebooks/07_testing.html#integrating-tests-into-the-project",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "5. Integrating Tests into the Project",
+    "text": "5. Integrating Tests into the Project\nEnsure that all your tests are organized and can be run together.\n\nRunning All Tests\nTo run all tests in the project, use:\n!pytest"
+  },
+  {
+    "objectID": "notebooks/07_testing.html#homework",
+    "href": "notebooks/07_testing.html#homework",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "Homework",
+    "text": "Homework\n\nAdd more test cases to cover edge cases and different scenarios.\nExplore using other testing frameworks and tools to enhance your testing strategy."
+  },
+  {
+    "objectID": "notebooks/07_testing.html#summary",
+    "href": "notebooks/07_testing.html#summary",
+    "title": "WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we learned the importance of testing and how to write and run tests using pytest and doctest. We added tests for our weather fetching and data processing functions to ensure their correctness and reliability.\nNext session, we will focus on finalizing the project, adding documentation, and discussing distribution methods."
+  },
+  {
+    "objectID": "notebooks/08_final_steps.html",
+    "href": "notebooks/08_final_steps.html",
+    "title": "WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods",
+    "section": "",
+    "text": "Finalize the WeatherVista project by reviewing and refining the code.\nAdd comprehensive documentation using README and docstrings.\nDiscuss various distribution methods and prepare the project for sharing."
+  },
+  {
+    "objectID": "notebooks/08_final_steps.html#objectives",
+    "href": "notebooks/08_final_steps.html#objectives",
+    "title": "WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods",
+    "section": "",
+    "text": "Finalize the WeatherVista project by reviewing and refining the code.\nAdd comprehensive documentation using README and docstrings.\nDiscuss various distribution methods and prepare the project for sharing."
+  },
+  {
+    "objectID": "notebooks/08_final_steps.html#reviewing-and-refining-the-code",
+    "href": "notebooks/08_final_steps.html#reviewing-and-refining-the-code",
+    "title": "WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods",
+    "section": "1. Reviewing and Refining the Code",
+    "text": "1. Reviewing and Refining the Code\nIn this section, we’ll review the overall project structure and refine the code to ensure it’s clean and well-organized.\n\nProject Structure Review\nweather-dashboard/\n│\n├── data/\n│   ├── raw/\n│   └── processed/\n│\n├── notebooks/\n│   ├── 01_fetch_data.ipynb\n│   ├── 02_data_management.ipynb\n│   ├── 03_visualization.ipynb\n│   ├── 04_advanced_viz.ipynb\n│   ├── 05_web_scraping.ipynb\n│   ├── 06_dashboard_gui.ipynb\n│   ├── 07_testing.ipynb\n│   └── 08_final_steps.ipynb\n│\n├── scripts/\n│   ├── fetch_data.py\n│   ├── process_data.py\n│   ├── visualize_data.py\n│   ├── create_dashboard.py\n│   └── utils.py\n│\n├── tests/\n│   ├── test_fetch_data.py\n│   ├── test_process_data.py\n│\n├── .gitignore\n├── README.md\n├── requirements.txt\n└── main.py\n\n\nCode Review and Refinement\n\nEnsure all functions are properly defined and modular.\nRemove any redundant or unused code.\nCheck for consistency in naming conventions and code formatting."
+  },
+  {
+    "objectID": "notebooks/08_final_steps.html#adding-documentation",
+    "href": "notebooks/08_final_steps.html#adding-documentation",
+    "title": "WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods",
+    "section": "2. Adding Documentation",
+    "text": "2. Adding Documentation\nComprehensive documentation is crucial for making the project understandable and maintainable.\n\nREADME.md\nA README file provides an overview of the project, setup instructions, usage examples, and other relevant information.\n# WeatherVista Project\n\n## Overview\nWeatherVista is a weather dashboard application that fetches, processes, and visualizes weather data using the OpenWeatherMap API. The application includes features such as current weather, forecasts, and historical data visualization.\n\n## Project Structure\nweather-dashboard/ │ ├── data/ │ ├── raw/ │ └── processed/ │ ├── notebooks/ │ ├── 01_fetch_data.ipynb │ ├── 02_data_management.ipynb │ ├── 03_visualization.ipynb │ ├── 04_advanced_viz.ipynb │ ├── 05_web_scraping.ipynb │ ├── 06_dashboard_gui.ipynb │ ├── 07_testing.ipynb │ └── 08_final_steps.ipynb │ ├── scripts/ │ ├── fetch_data.py │ ├── process_data.py │ ├── visualize_data.py │ ├── create_dashboard.py │ └── utils.py │ ├── tests/ │ ├── test_fetch_data.py │ ├── test_process_data.py │ ├── .gitignore ├── README.md ├── requirements.txt └── main.py\n## Setup Instructions\n1. Clone the repository:\n    ```sh\n    git clone &lt;repository_url&gt;\n    cd weather-dashboard\n    ```\n\n2. Install the required libraries:\n    ```sh\n    pip install -r requirements.txt\n    ```\n\n3. Set up your OpenWeatherMap API key:\n    - Sign up for an API key at [OpenWeatherMap](https://home.openweathermap.org/users/sign_up).\n    - Replace `'your_api_key_here'` in `scripts/fetch_data.py` with your actual API key.\n\n## Usage\n- To fetch weather data: `python scripts/fetch_data.py`\n- To process weather data: `python scripts/process_data.py`\n- To visualize weather data: `python scripts/visualize_data.py`\n- To run the Tkinter dashboard: `python scripts/create_dashboard.py`\n\n## License\nThis project is licensed under the MIT License.\n\n\nAdding Docstrings\nDocstrings provide in-code documentation that describes what a function does, its parameters, and return values.\n\n\nExample: fetch_data.py with Docstrings\ndef fetch_weather_data(api_key, location):\n    \"\"\"\n    Fetch weather data from the OpenWeatherMap API.\n    \n    Args:\n    - api_key (str): The API key for authentication.\n    - location (str): The location for which to fetch weather data.\n    \n    Returns:\n    - dict: A dictionary containing weather data, or None if the request failed.\n    \n    Examples:\n    &gt;&gt;&gt; fetch_weather_data('invalid_api_key', 'London') is None\n    True\n    \"\"\"\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        weather_info = {\n            \"Location\": data[\"name\"],\n            \"Temperature (C)\": data[\"main\"][\"temp\"] - 273.15,\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather_info\n    else:\n        return None"
+  },
+  {
+    "objectID": "notebooks/08_final_steps.html#distribution-methods",
+    "href": "notebooks/08_final_steps.html#distribution-methods",
+    "title": "WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods",
+    "section": "3. Distribution Methods",
+    "text": "3. Distribution Methods\nWe’ll discuss different methods for distributing the project to others.\n\nUsing GitHub/GitLab\n\nPush the project repository to GitHub or GitLab.\nShare the repository link with others.\nEnsure the repository includes all necessary files and documentation.\n\n\n\nExporting Notebooks\n\nExport Jupyter notebooks as HTML or PDF files for sharing.\nUse the “Download as” option in the Jupyter notebook interface.\n\n\n\nCreating a Zip File\n\nCompress the project directory into a zip file.\nShare the zip file with others.\n\n\n\nExample: Creating a Zip File\nzip -r weather-dashboard.zip weather-dashboard/"
+  },
+  {
+    "objectID": "notebooks/08_final_steps.html#homework",
+    "href": "notebooks/08_final_steps.html#homework",
+    "title": "WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods",
+    "section": "Homework",
+    "text": "Homework\n\nEnsure your project is fully documented with a README file and docstrings.\nChoose a distribution method and prepare your project for sharing."
+  },
+  {
+    "objectID": "notebooks/08_final_steps.html#summary",
+    "href": "notebooks/08_final_steps.html#summary",
+    "title": "WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we finalized the WeatherVista project by reviewing and refining the code, adding comprehensive documentation, and discussing various distribution methods. This preparation ensures that the project is well-organized, understandable, and ready to be shared with others.\nNext session, we will review the final project and brainstorm ideas for extending the project."
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html",
+    "href": "notebooks/01_fetch_data.html",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "",
+    "text": "Download Notebook"
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#objectives",
+    "href": "notebooks/01_fetch_data.html#objectives",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "Objectives",
+    "text": "Objectives\n\nLearn how to fetch weather data using the OpenWeatherMap API.\nUnderstand how to handle API responses and errors.\nSave fetched data to a CSV file."
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#introduction-to-openweathermap-api",
+    "href": "notebooks/01_fetch_data.html#introduction-to-openweathermap-api",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "1. Introduction to OpenWeatherMap API",
+    "text": "1. Introduction to OpenWeatherMap API\nThe OpenWeatherMap API provides weather data for various locations. You need to sign up and get an API key to access the data.\n\nSteps to Get API Key\n\nGo to OpenWeatherMap and sign up for an account.\nAfter signing up, navigate to the API keys section and generate a new API key.\nKeep this API key safe, as you will need it to make API requests."
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#fetching-weather-data",
+    "href": "notebooks/01_fetch_data.html#fetching-weather-data",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "2. Fetching Weather Data",
+    "text": "2. Fetching Weather Data\nWe’ll use the requests library to fetch weather data from the OpenWeatherMap API.\n\nImport Required Libraries\n\nimport requests\nimport pandas as pd\n\n\n\nFetch some Data\nLets fetch some data.. Replace 'your_api_key_here' with your actual API key and fetch data for a sample location.\n\n# Setup important variables\napi_key = 'your_api_key_here'\nlocation = 'Guangzhou'\n\n# Make request to website endpoint\nurl = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\nresponse = requests.get(url)\n\n# Print response\nresponse\n\nWhat happens if the location does not exist, try a location that does not exist. Replace 'your_api_key_here' with your actual API key and fetch data for a sample location.\n\n# Setup important variables\napi_key = 'your_api_key_here'\nlocation = 'ABCDEFGHIJK'\n\n# Make request to website endpoint\nurl = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\nresponse = requests.get(url)\n\n# Print response\nresponse\n\n\n\nDefine Function to Fetch Weather Data\nWe’ll create a function to fetch weather data for a specific location.\n\ndef fetch_weather_data(api_key, location):\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        return data\n    else:\n        print(f\"Failed to fetch data: {response.status_code}\")\n        return None\n\n\n\nFetch Data for a Sample Location\nReplace 'your_api_key_here' with your actual API key and fetch data for a sample location.\n\napi_key = 'your_api_key_here'\nlocation = 'Guangzhou'\ndata = fetch_weather_data(api_key, location)\ndata"
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#parsing-and-displaying-data",
+    "href": "notebooks/01_fetch_data.html#parsing-and-displaying-data",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "3. Parsing and Displaying Data",
+    "text": "3. Parsing and Displaying Data\nWe’ll parse the JSON response and extract relevant information.\n\ndef parse_weather_data(data):\n    if data:\n        weather = {\n            \"Location\": data[\"name\"],\n            \"Temperature (K)\": data[\"main\"][\"temp\"],\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather\n    else:\n        return None\n\nparsed_data = parse_weather_data(data)\nparsed_data"
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#saving-data-to-a-csv-file",
+    "href": "notebooks/01_fetch_data.html#saving-data-to-a-csv-file",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "4. Saving Data to a CSV File",
+    "text": "4. Saving Data to a CSV File\nWe’ll save the fetched data to a CSV file using pandas.\n\nConvert Data to DataFrame\n\ndef save_to_csv(data, filename):\n    df = pd.DataFrame([data])\n    df.to_csv(filename, index=False)\n\nsave_to_csv(parsed_data, 'data/raw/weather_data.csv')\n\n\n\nRead and Display the CSV File\n\ndf = pd.read_csv('data/raw/weather_data.csv')\ndf"
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#error-handling",
+    "href": "notebooks/01_fetch_data.html#error-handling",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "5. Error Handling",
+    "text": "5. Error Handling\nIt’s important to handle errors that may occur during API requests. We’ve already added basic error handling in the fetch_weather_data function. Let’s test it with an invalid location.\n\nTest Error Handling\n\ninvalid_location = 'InvalidCity'\ninvalid_data = fetch_weather_data(api_key, invalid_location)\ninvalid_data"
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#homework",
+    "href": "notebooks/01_fetch_data.html#homework",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "Homework",
+    "text": "Homework\n\nExperiment with fetching weather data for different cities.\nExplore the OpenWeatherMap API documentation to see what other data you can fetch."
+  },
+  {
+    "objectID": "notebooks/01_fetch_data.html#summary",
+    "href": "notebooks/01_fetch_data.html#summary",
+    "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we learned how to fetch weather data from the OpenWeatherMap API, parse the JSON response, and save the data to a CSV file. We also covered basic error handling to manage failed API requests.\nNext session, we will focus on managing data with CSV and SQL."
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html",
+    "href": "notebooks/06_dashboard_gui.html",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "",
+    "text": "Learn how to create a graphical user interface (GUI) for the WeatherVista project.\nUnderstand the basics of Tkinter for building desktop applications.\nExplore using Jupyter Widgets for interactive elements in Jupyter notebooks."
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#objectives",
+    "href": "notebooks/06_dashboard_gui.html#objectives",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "",
+    "text": "Learn how to create a graphical user interface (GUI) for the WeatherVista project.\nUnderstand the basics of Tkinter for building desktop applications.\nExplore using Jupyter Widgets for interactive elements in Jupyter notebooks."
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#introduction-to-tkinter",
+    "href": "notebooks/06_dashboard_gui.html#introduction-to-tkinter",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "1. Introduction to Tkinter",
+    "text": "1. Introduction to Tkinter\nTkinter is a standard Python library for creating desktop GUIs. It provides various widgets to build interactive applications.\n\nImport Required Libraries\nimport tkinter as tk\nfrom tkinter import ttk\nimport pandas as pd"
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#creating-a-basic-tkinter-window",
+    "href": "notebooks/06_dashboard_gui.html#creating-a-basic-tkinter-window",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "2. Creating a Basic Tkinter Window",
+    "text": "2. Creating a Basic Tkinter Window\nWe’ll start by creating a basic Tkinter window.\ndef create_window():\n    window = tk.Tk()\n    window.title(\"WeatherVista Dashboard\")\n    window.geometry(\"600x400\")\n    \n    # Add a label\n    label = ttk.Label(window, text=\"WeatherVista Dashboard\", font=(\"Arial\", 16))\n    label.pack(pady=20)\n    \n    window.mainloop()\n\ncreate_window()"
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#adding-widgets-to-the-tkinter-window",
+    "href": "notebooks/06_dashboard_gui.html#adding-widgets-to-the-tkinter-window",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "3. Adding Widgets to the Tkinter Window",
+    "text": "3. Adding Widgets to the Tkinter Window\nWe’ll add various widgets such as labels, buttons, and entry fields to the Tkinter window.\n\nAdding Entry Fields and Buttons\ndef create_window():\n    def fetch_weather():\n        location = location_entry.get()\n        # Fetch and display weather data for the entered location\n        # This is a placeholder function, replace with actual data fetching logic\n        weather_data_label.config(text=f\"Weather data for {location}\")\n\n    window = tk.Tk()\n    window.title(\"WeatherVista Dashboard\")\n    window.geometry(\"600x400\")\n    \n    # Add a label\n    label = ttk.Label(window, text=\"WeatherVista Dashboard\", font=(\"Arial\", 16))\n    label.pack(pady=20)\n    \n    # Add entry field for location\n    location_label = ttk.Label(window, text=\"Enter Location:\")\n    location_label.pack(pady=5)\n    location_entry = ttk.Entry(window)\n    location_entry.pack(pady=5)\n    \n    # Add a button to fetch weather data\n    fetch_button = ttk.Button(window, text=\"Fetch Weather\", command=fetch_weather)\n    fetch_button.pack(pady=10)\n    \n    # Add a label to display weather data\n    weather_data_label = ttk.Label(window, text=\"\", font=(\"Arial\", 12))\n    weather_data_label.pack(pady=20)\n    \n    window.mainloop()\n\ncreate_window()"
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#displaying-data-in-tkinter",
+    "href": "notebooks/06_dashboard_gui.html#displaying-data-in-tkinter",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "4. Displaying Data in Tkinter",
+    "text": "4. Displaying Data in Tkinter\nWe’ll fetch and display weather data in the Tkinter window.\n\nFetching and Displaying Weather Data\nimport requests\n\ndef fetch_weather_data(api_key, location):\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        weather_info = {\n            \"Location\": data[\"name\"],\n            \"Temperature (C)\": data[\"main\"][\"temp\"] - 273.15,\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather_info\n    else:\n        return None\n\ndef create_window():\n    def fetch_weather():\n        location = location_entry.get()\n        weather_data = fetch_weather_data(api_key, location)\n        if weather_data:\n            weather_info = f\"Location: {weather_data['Location']}\\n\"\n            weather_info += f\"Temperature: {weather_data['Temperature (C)']:.2f} °C\\n\"\n            weather_info += f\"Humidity: {weather_data['Humidity (%)']}%\\n\"\n            weather_info += f\"Weather: {weather_data['Weather']}\"\n            weather_data_label.config(text=weather_info)\n        else:\n            weather_data_label.config(text=\"Failed to fetch data\")\n\n    window = tk.Tk()\n    window.title(\"WeatherVista Dashboard\")\n    window.geometry(\"600x400\")\n    \n    api_key = 'your_api_key_here'\n    \n    # Add a label\n    label = ttk.Label(window, text=\"WeatherVista Dashboard\", font=(\"Arial\", 16))\n    label.pack(pady=20)\n    \n    # Add entry field for location\n    location_label = ttk.Label(window, text=\"Enter Location:\")\n    location_label.pack(pady=5)\n    location_entry = ttk.Entry(window)\n    location_entry.pack(pady=5)\n    \n    # Add a button to fetch weather data\n    fetch_button = ttk.Button(window, text=\"Fetch Weather\", command=fetch_weather)\n    fetch_button.pack(pady=10)\n    \n    # Add a label to display weather data\n    weather_data_label = ttk.Label(window, text=\"\", font=(\"Arial\", 12))\n    weather_data_label.pack(pady=20)\n    \n    window.mainloop()\n\ncreate_window()"
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#using-jupyter-widgets",
+    "href": "notebooks/06_dashboard_gui.html#using-jupyter-widgets",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "5. Using Jupyter Widgets",
+    "text": "5. Using Jupyter Widgets\nFor those who prefer staying within Jupyter notebooks, we can create interactive elements using Jupyter Widgets.\n\nImport Required Libraries\nimport ipywidgets as widgets\nfrom IPython.display import display\n\ndef fetch_weather_data(api_key, location):\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        weather_info = {\n            \"Location\": data[\"name\"],\n            \"Temperature (C)\": data[\"main\"][\"temp\"] - 273.15,\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather_info\n    else:\n        return None\n\n\nCreating Interactive Widgets\napi_key = 'your_api_key_here'\n\nlocation_text = widgets.Text(\n    value='',\n    placeholder='Enter location',\n    description='Location:',\n    disabled=False\n)\n\nweather_output = widgets.Output()\n\ndef on_button_click(b):\n    with weather_output:\n        weather_output.clear_output()\n        location = location_text.value\n        weather_data = fetch_weather_data(api_key, location)\n        if weather_data:\n            print(f\"Location: {weather_data['Location']}\")\n            print(f\"Temperature: {weather_data['Temperature (C)']:.2f} °C\")\n            print(f\"Humidity: {weather_data['Humidity (%)']}%\")\n            print(f\"Weather: {weather_data['Weather']}\")\n        else:\n            print(\"Failed to fetch data\")\n\nfetch_button = widgets.Button(\n    description='Fetch Weather',\n    disabled=False,\n    button_style='',\n    tooltip='Click to fetch weather data',\n    icon='cloud'\n)\n\nfetch_button.on_click(on_button_click)\n\ndisplay(location_text, fetch_button, weather_output)"
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#homework",
+    "href": "notebooks/06_dashboard_gui.html#homework",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "Homework",
+    "text": "Homework\n\nExperiment with adding more widgets and interactivity to the Tkinter or Jupyter Widgets dashboard.\nCustomize the layout and design of the GUI to improve user experience."
+  },
+  {
+    "objectID": "notebooks/06_dashboard_gui.html#summary",
+    "href": "notebooks/06_dashboard_gui.html#summary",
+    "title": "WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we learned how to create a graphical user interface (GUI) for the WeatherVista project using Tkinter and Jupyter Widgets. We created interactive elements to fetch and display weather data, providing a more engaging user experience.\nNext session, we will focus on writing and running tests with pytest and doctest."
+  },
+  {
+    "objectID": "downloads/schedule.html",
+    "href": "downloads/schedule.html",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "",
+    "text": "The WeatherVista project offers students a hands-on learning experience in Python programming, data management, and visualisation. Through interactive sessions, students will learn to fetch, process, and visualise weather data using the OpenWeatherMap API. They will also work with pandas for data manipulation, Matplotlib for plotting, Jupyter Widgets for interactive dashboards, and basic testing to ensure code reliability. This project strengthens procedural programming skills and demonstrates practical uses of Python in real-world scenarios."
+  },
+  {
+    "objectID": "downloads/schedule.html#goals-of-the-weathervista-project",
+    "href": "downloads/schedule.html#goals-of-the-weathervista-project",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "",
+    "text": "The WeatherVista project offers students a hands-on learning experience in Python programming, data management, and visualisation. Through interactive sessions, students will learn to fetch, process, and visualise weather data using the OpenWeatherMap API. They will also work with pandas for data manipulation, Matplotlib for plotting, Jupyter Widgets for interactive dashboards, and basic testing to ensure code reliability. This project strengthens procedural programming skills and demonstrates practical uses of Python in real-world scenarios."
+  },
+  {
+    "objectID": "downloads/schedule.html#partnership-between-curtin-university-and-south-china-normal-university",
+    "href": "downloads/schedule.html#partnership-between-curtin-university-and-south-china-normal-university",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "Partnership Between Curtin University and South China Normal University",
+    "text": "Partnership Between Curtin University and South China Normal University\nThe WeatherVista project is a joint initiative by Curtin University and South China Normal University, offering a rich learning environment for students in China. Instructors from Curtin University conduct live sessions tailored to the students’ needs, addressing language barriers and ensuring clear communication of concepts. This collaboration enhances education, promotes international cooperation, cultural exchange, and a shared commitment to advancing technical education."
+  },
+  {
+    "objectID": "downloads/schedule.html#simplified-approach",
+    "href": "downloads/schedule.html#simplified-approach",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "Simplified Approach",
+    "text": "Simplified Approach\nThe simplified WeatherVista project introduces essential programming and data management concepts clearly and accessibly. By focusing on simple implementations and practical examples, we make learning easier. Instead of advanced testing frameworks or comprehensive documentation, we use basic tests and docstrings, allowing students to access documentation directly in their code with Python’s help() function. Each session builds on the previous one, reinforcing key concepts through hands-on activities, live coding, and discussions. This approach ensures students effectively learn and apply their skills, laying a solid foundation for further development. Brainstorming sessions for project extensions encourage creativity and practical application of learned skills."
+  },
+  {
+    "objectID": "downloads/schedule.html#sessions-overview",
+    "href": "downloads/schedule.html#sessions-overview",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "Sessions Overview",
+    "text": "Sessions Overview\n\nIntroduction to the Project and Setting Up the Environment\nFetching Data from OpenWeatherMap API\nData Management with CSV\nBasic Data Visualisation with Matplotlib\nAdvanced Data Visualisation and Dashboard Layout\nWeb Scraping and Using APIs (Optional)\nBuilding the Dashboard with Jupyter Widgets\nBasic Testing\nFinalising the Project and Basic Distribution\nFinal Project Review and Brainstorming Extensions\n\n\nSession Breakdown\n\nSession 1: Introduction to the Project and Setting Up the Environment\n\nOverview:\n\nIntroduce the course and project goals.\nSet up the development environment.\n\nActivities:\n\nOverview of the weather dashboard project.\nInstall Python, Jupyter, and necessary libraries.\nBasic Git commands: clone, commit, push.\n\nOutputs\n\nWorking environment\n\nHomework:\n\nResearch the OpenWeatherMap API and sign up for an API key.\n\n\nTimings\n\nIntroduction to the Course (10 minutes)\n\nWelcome and course overview\nIntroduction to the WeatherVista project\n\nDemo of Completed WeatherVista Dashboard (20 minutes)\n\nShow the completed dashboard\nHighlight key features and functionalities\n\nSetting Up Development Environment (30 minutes)\n\nWalkthrough installation of Python, Jupyter, and necessary libraries\nSet up GitHub/GitLab repository\n\nIntroduction to Git (15 minutes)\n\nBasic Git commands: clone, commit, push\nDemonstrate cloning the project repository\n\nCreating Project Directory Structure (20 minutes)\n\nCreate directories for data, scripts, notebooks, and tests\nBrief explanation of the purpose of each directory\n\nBreakout Room Activity (15 minutes)\n\nStudents work in small groups to set up their project structure\nInstructors available for assistance\n\nQ&A and Wrap-Up (15 minutes)\n\nAddress any questions about setup and project structure\nHomework: Research the OpenWeatherMap API and sign up for an API key\n\n\n\n\n\nSession 2: Fetching Data from OpenWeatherMap API\n\nOverview:\n\nLearn to fetch weather data using the OpenWeatherMap API.\n\nActivities:\n\nFetch current weather data.\nParse JSON data and handle errors.\nSave fetched data to a CSV file.\n\nOutputs\n\n01_fetch_data.ipynb\nfetch_data.py\n\nHomework:\n\nExperiment with different endpoints and data parameters.\n\n\nTimings\n\nRecap and Introduction (10 minutes)\n\nBrief recap of Session 1\nIntroduction to APIs and web requests\n\nLive Coding: Fetching Data (20 minutes)\n\nDemonstrate fetching current weather data using the OpenWeatherMap API\n\nHands-On Activity: Parsing JSON Data (20 minutes)\n\nStudents parse the JSON response and extract relevant data\n\nError Handling (15 minutes)\n\nDiscuss common errors and how to handle them\n\nBreakout Room Activity (20 minutes)\n\nStudents work in groups to fetch and parse data for different cities\n\nDemo and Discussion (15 minutes)\n\nGroups present their findings and discuss challenges\n\nQ&A and Wrap-Up (10 minutes)\n\nAddress any questions and provide additional tips\nHomework: Experiment with different endpoints and data parameters\n\n\n\n\n\nSession 3: Data Management with CSV\n\nOverview:\n\nManage and store data using CSV.\n\nActivities:\n\nRead and write weather data to/from CSV files using pandas.\n\nOutput\n\n02_data_management.ipynb\nprocess_data.py\n\nHomework:\n\nPractice reading and writing CSV files with different data sets.\n\n\nTimings 1. Recap and Introduction (10 minutes) - Brief recap of Session 2 - Introduction to data management with CSV files 2. Live Coding: Reading and Writing CSV Files (20 minutes) - Demonstrate how to read and write weather data to/from CSV files using pandas 3. Hands-On Activity: Storing Data (20 minutes) - Students store fetched weather data in a CSV file 4. Breakout Room Activity (20 minutes) - Students practice reading and writing CSV files with different data sets 5. Demo and Discussion (15 minutes) - Groups present their data management solutions 6. Q&A and Wrap-Up (10 minutes) - Address any questions and provide additional tips - Homework: Practice reading and writing CSV files\n\n\n\nSession 4: Basic Data Visualisation with Matplotlib\n\nOverview:\n\nVisualise weather data using Matplotlib.\n\nActivities:\n\nPlot current weather data (temperature, humidity, etc.).\nCustomise plots with titles, labels, and legends.\n\nOutput\n\n03_visualisation.ipynb\n\nHomework:\n\nCreate additional visualisations with historical weather data.\n\n\nTimings\n\nRecap and Introduction (10 minutes)\n\nBrief recap of Session 3\nIntroduction to data visualisation with Matplotlib\n\nLive Coding: Basic Plots (20 minutes)\n\nDemonstrate creating basic plots for weather data\n\nHands-On Activity: Customising Plots (20 minutes)\n\nStudents customise plots with titles, labels, and legends\n\nBreakout Room Activity (20 minutes)\n\nStudents create additional visualisations with historical weather data\n\nDemo and Discussion (15 minutes)\n\nGroups present their visualisations\n\nQ&A and Wrap-Up (10 minutes)\n\nAddress any questions and provide additional tips\nHomework: Create additional visualisations\n\n\n\n\n\nSession 5: Advanced Data Visualisation and Dashboard Layout\n\nOverview:\n\nCreate advanced visualisations and layout the dashboard.\n\nActivities:\n\nCreate daily forecast cards with high/low temperatures.\nDesign a layout for the dashboard using subplots and grids.\nUse icons to represent weather conditions.\n\nOutput\n\n04_advanced_vix.ipynb\nvisualise_data.py\n\nHomework:\n\nRefine and enhance visualisations for better presentation.\n\n\nTimings\n\nRecap and Introduction (10 minutes)\n\nBrief recap of Session 4\nIntroduction to advanced data visualisation and dashboard layout\n\nLive Coding: Subplots and Grids (20 minutes)\n\nDemonstrate creating subplots and grids\n\nHands-On Activity: Daily Forecast Cards (20 minutes)\n\nStudents create daily forecast cards with high/low temperatures\n\nBreakout Room Activity (20 minutes)\n\nStudents design a layout for the dashboard using subplots and grids\n\nDemo and Discussion (15 minutes)\n\nGroups present their dashboard layouts\n\nQ&A and Wrap-Up (10 minutes)\n\nAddress any questions and provide additional tips\nHomework: Refine and enhance visualisations\n\n\n\n\n\nSession 6: Web Scraping and Using APIs (Optional)\n\nOverview:\n\nLearn web scraping basics and explore additional APIs.\n\nActivities:\n\nIntroduction to web scraping with BeautifulSoup.\nScrape weather-related data from a website.\nDiscuss ethics and legal aspects of web scraping.\n\nOutput\n\n05_webscraping.ipynb\n\nHomework:\n\nFind and document additional data sources or APIs.\n\n\nTimings\n\nRecap and Introduction (10 minutes)\n\nBrief recap of Session 5\nIntroduction to web scraping and additional APIs\n\nLive Coding: Web Scraping Basics (20 minutes)\n\nDemonstrate web scraping with BeautifulSoup\n\nHands-On Activity: Scraping Weather Data (20 minutes)\n\nStudents scrape weather-related data from a website\n\nBreakout Room Activity (20 minutes)\n\nStudents document additional data sources or APIs\n\nDemo and Discussion (15 minutes)\n\nGroups present their scraping and API findings\n\nQ&A and Wrap-Up (10 minutes)\n\nAddress any questions and provide additional tips\nHomework: Explore additional data sources\n\n\n\n\n\nSession 7: Building the Dashboard with Jupyter Widgets\n\nOverview:\n\nCreate an interactive dashboard using Jupyter Widgets.\n\nActivities:\n\nUse ipywidgets to create interactive elements such as dropdowns and sliders.\nLink widgets to data visualisation code for dynamic updates.\n\nHomework:\n\nAdd interactivity to the dashboard (e.g., user input for city or sip code).\n\n\nTimings\n\nRecap and Introduction (10 minutes)\n\nBrief recap of Session 6\nIntroduction to creating interactive dashboards with Jupyter Widgets\n\nLive Coding: Jupyter Widgets (20 minutes)\n\nDemonstrate using ipywidgets to create interactive elements\n\nHands-On Activity: Interactive Elements (20 minutes)\n\nStudents create interactive elements such as dropdowns and sliders\n\nBreakout Room Activity (20 minutes)\n\nStudents link widgets to data visualisation code for dynamic updates\n\nDemo and Discussion (15 minutes)\n\nGroups present their interactive dashboards\n\nQ&A and Wrap-Up (10 minutes)\n\nAddress any questions and provide additional tips\nHomework: Add interactivity to the dashboard\n\n\n\n\n\nSession 8: Basic Testing\n\nOverview:\n\nLearn the importance of testing and how to write basic tests.\n\nActivities:\n\nWrite unit tests for data fetching and processing functions using pytest.\nRun tests and interpret the results.\n\nOutput\n\n07_testing.ipynb\n\nHomework:\n\nWrite additional tests to improve code coverage.\n\n\nTimings\n\nRecap and Introduction (10 minutes)\n\nBrief recap of Session 7\nIntroduction to testing and its importance\n\nLive Coding: Writing Tests (20 minutes)\n\nDemonstrate writing basic tests using pytest\n\nHands-On Activity: Unit Tests (20 minutes)\n\nStudents write unit tests for data fetching and processing functions\n\nBreakout Room Activity (20 minutes)\n\nStudents run tests and interpret results\n\nDemo and Discussion (15 minutes)\n\nGroups present their testing results\n\nQ&A and Wrap-Up (10 minutes)\n\nAddress any questions and provide additional tips\nHomework: Write additional tests\n\n\n\n\n\nSession 9: Finalising the Project and Basic Distribution\n\nOverview:\n\nFinalise the project and discuss basic distribution methods.\n\nActivities:\n\nReview and refine the code.\nDocument the project using README and comments.\nDiscuss distribution methods: GitHub repository, exporting notebooks as HTML/PDF.\n\nOutput\n\n08_final_steps.ipynb\n\nHomework:\n\nPrepare the project for presentation in the next session.\n\n\nTimings\n\nRecap and Introduction (10 minutes)\n\nBrief recap of Session 8\nIntroduction to finalising and distributing the project\n\nLive Coding: Final Touches (20 minutes)\n\nReview and refine the code\n\nHands-On Activity: Documentation (20 minutes)\n\nStudents document the project using README and comments\n\nBreakout Room Activity (20 minutes)\n\nDiscuss basic distribution methods: GitHub repository, exporting notebooks as HTML/PDF\n\nDemo and Discussion (15 minutes)\n\nGroups present their final projects and documentation\n\nQ&A and Wrap-Up (10 minutes)\n\nAddress any questions and provide additional tips\nHomework: Prepare the project for presentation\n\n\n\n\n\nSession 10: Final Project Review and Brainstorming Extensions\n\nOverview:\n\nReview the project and brainstorm extension ideas.\n\nActivities:\n\nGroup review and feedback on projects.\nBrainstorm and share ideas for extending the project.\nDiscuss potential new projects and applications of the skills learned.\n\nOutput\n\nCompleted project\n\nHomework:\n\nFinalise the project and submit it to the GitHub repository.\n\n\nTimings\n\nIntroduction and Instructions (10 minutes)\n\nOverview of the session’s objectives\n\nGroup Review (30 minutes)\n\nDivide students into smaller groups to review each other’s projects\n\nInstructor-Led Review (20 minutes)\n\nRandomly select a few projects to review in the main session\n\nBrainstorming Extensions (30 minutes)\n\nGroups brainstorm ways to extend the WeatherVista project\n\nSharing Ideas (20 minutes)\n\nGroups share their best ideas with the class\n\nDiscussion of New Project Ideas (20 minutes)\n\nDiscuss potential new projects and applications of the skills learned\n\nQ&A and Course Wrap-Up (10 minutes)\n\nAddress any remaining questions\nSummarise key takeaways from the course\nCollect feedback for future improvements\n\n\n\n\n\n\nProject Structure\nHere’s a simplified version of the project structure:\nweather-dashboard/\n│\n├── data/\n│   ├── raw/\n│   └── processed/\n│\n├── notebooks/\n│   ├── 01_fetch_data.ipynb\n│   ├── 02_data_management.ipynb\n│   ├── 03_visualisation.ipynb\n│   ├── 04_advanced_vis.ipynb\n│   ├── 05_web_scraping.ipynb\n│   ├── 06_dashboard_gui.ipynb\n│   ├── 07_testing.ipynb\n│   └── 08_final_steps.ipynb\n│\n├── scripts/\n│   ├── fetch_data.py\n│   ├── process_data.py\n│   ├── visualise_data.py\n│   ├── create_dashboard.py\n│   └── utils.py\n│\n├── .gitignore\n├── README.md\n├── requirements.txt\n└── main.py"
+  },
+  {
+    "objectID": "project-names.html",
+    "href": "project-names.html",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "",
+    "text": "Project\nHere are translations and checks for each suggested project name to ensure they are appropriate and not offensive in Chinese:\n\nTranslation and Cultural Check\n\nWeatherVista (天气景观 - Tiānqì jǐngguān)\n\nTranslation: “Weather Landscape” or “Weather View”\nCultural Check: This is a neutral and descriptive term in Chinese.\n\nWeatherInsight (天气洞察 - Tiānqì dòngchá)\n\nTranslation: “Weather Insight”\nCultural Check: This is a straightforward and appropriate term in Chinese.\n\nClimaView (气候视图 - Qìhòu shìtú)\n\nTranslation: “Climate View”\nCultural Check: This is an accurate and non-offensive term in Chinese.\n\nWeatherPro (天气专家 - Tiānqì zhuānjiā)\n\nTranslation: “Weather Expert”\nCultural Check: This is a positive and professional term in Chinese.\n\nSkyScope (天际范围 - Tiānjì fànwéi)\n\nTranslation: “Sky Scope” or “Sky Range”\nCultural Check: This is a neutral term in Chinese, though “范围” (scope) might be less commonly associated with weather.\n\n\n\n\nRecommendations\nBased on the translations and cultural checks, here are the most suitable names:\n\nWeatherVista (天气景观 - Tiānqì jǐngguān)\nWeatherInsight (天气洞察 - Tiānqì dòngchá)\nClimaView (气候视图 - Qìhòu shìtú)\nWeatherPro (天气专家 - Tiānqì zhuānjiā)\n\nThese names translate well into Chinese and are not offensive. They also effectively convey the purpose of the project."
+  },
+  {
+    "objectID": "slides/01_welcome.html",
+    "href": "slides/01_welcome.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Today\n– Introduce the course and project goals. – Set up the development environment. • Activities: – Overview of the weather dashboard project. – Install Python, Jupyter, and necessary libraries. – Basic Git commands: clone, commit, push.\n\n\nIntroduction to the Course\n\nWelcome and course overview\nIntroduction to the WeatherVista project\n\n\n\nDemo of Completed WeatherVista Dashboard (20 minutes) • Show the completed dashboard\n\nHighlight key features and functionalities\n\n\n\nSetting Up Development Environment (30 minutes)\n\nWalkthrough installation of Python, Jupyter, and necessary libraries\nSet up GitHub/GitLab repository\n\n\n\nIntroduction to Git\n\nBasic Git commands: clone, commit, push\nDemonstrate cloning the project repository\n\n\n\nCreating Project Directory Structure (20 minutes)\n\nCreate directories for data, scripts, notebooks, and tests\nBrief explanation of the purpose of each directory\n\n\n\nBreakout Room Activity\n\nStudents work in small groups to set up their project structure\nInstructors available for assistance\n\n\n\nQ&A and Wrap-Up\n\nAddress any questions about setup and project structure\nHomework: Research the OpenWeatherMap API and sign up for an API key"
+  },
+  {
+    "objectID": "worksheets/homework-1.html",
+    "href": "worksheets/homework-1.html",
+    "title": "Python Fundamentals Review Worksheet",
+    "section": "",
+    "text": "Objective:\nThis worksheet is designed to review the basics of Python programming, including creating variables, simple if-then statements, basic loops, using print, and handling input. Answer the following questions to the best of your ability.\n\nCreating Variables\n\nWrite a Python statement to create a variable named name and assign it the value \"Alice\".\n\n::: {#7a2df1a7 .cell} {.python .cell-code}  # Your code here :::\nCreating Variables\n\nCreate two variables: age with the value 30 and height with the value 5.9.\n\n::: {#293b36da .cell} {.python .cell-code}  # Your code here :::\nSimple If-Then Statement\n\nWrite an if-then statement that prints “You are an adult.” if the variable age is greater than or equal to 18.\n\n::: {#314adcf5 .cell} ``` {.python .cell-code} age = 20 # You can change this value for testing\n# Your code here ``` :::\nSimple If-Then Statement\n\nWrite an if-then statement that checks if a number stored in the variable number is positive. If it is, print “The number is positive.”\n\n::: {#7361f5c2 .cell} ``` {.python .cell-code} number = 5 # You can change this value for testing\n# Your code here ``` :::\nBasic Loops\n\nWrite a for loop that prints the numbers from 1 to 5.\n\n::: {#71eafa9b .cell} {.python .cell-code}  # Your code here :::\nBasic Loops\n\nWrite a while loop that prints the numbers from 1 to 5.\n\n::: {#db5a1df3 .cell} ``` {.python .cell-code} i = 1\n# Your code here ``` :::\nCombining Variables and If-Then Statements\n\nCreate a variable temperature with the value 75. Write an if-then statement that prints “It’s warm outside.” if temperature is greater than or equal to 70.\n\n::: {#6f69cce9 .cell} ``` {.python .cell-code} temperature = 75\n# Your code here ``` :::\nUsing Loops with If-Then Statements\n\nWrite a for loop that iterates over the list numbers = [1, 2, 3, 4, 5] and prints each number only if it is even.\n\n::: {#211a1ab1 .cell} ``` {.python .cell-code} numbers = [1, 2, 3, 4, 5]\n# Your code here ``` :::\nModifying Variables in Loops\n\nWrite a while loop that starts with a variable count set to 0 and increments count by 1 each iteration. The loop should stop when count reaches 10, and the value of count should be printed at the end.\n\n::: {#63bc09f3 .cell} ``` {.python .cell-code} count = 0\n# Your code here ``` :::\nNested Loops\n\nWrite a nested loop that prints a 3x3 grid of asterisks (*).\n\n\n# Your code here\n\nUsing print Function\n\nWrite a Python program that prints “Hello, World!” to the console.\n\n\n# Your code here\n\nUsing input Function\n\nWrite a Python program that prompts the user for their name and then prints a greeting message with their name. For example, if the user inputs “Alice”, the program should print “Hello, Alice!”.\n\n\n# Your code here\n\n\n\n\nAdditional Notes:\n\nMake sure to test your code by running it in a Python environment.\nFeel free to modify variable values to test different scenarios.\nPractice writing clean and readable code by using proper indentation and comments.\n\n\n\nConclusion:\nThis worksheet provides a fundamental review of Python programming basics. Ensure you understand each concept thoroughly before moving on to more advanced topics."
+  },
+  {
+    "objectID": "quick-reference-guides/python-basics.html",
+    "href": "quick-reference-guides/python-basics.html",
+    "title": "Python Basics Cheat Sheet",
+    "section": "",
+    "text": "This cheat sheet is designed to help you get started with the basics of Python programming. Python is a high-level, interpreted programming language that is easy to learn and fun to use. With Python, you can create a wide range of programs, from simple scripts to complex applications.\n\n\nThis cheat sheet covers the basic syntax and features of Python, including:\n\nVariables and data types\nControl structures (if/else, for loops, while loops)\nFunctions\nImport statements\n\n\n\n\n\nUse this cheat sheet as a reference guide to help you learn the basics of Python.\nTry out the examples and exercises to practice your skills.\nUse this cheat sheet to review and reinforce your understanding of Python basics.\n\n\n\n\nOnce you’ve mastered the basics of Python, you can move on to more advanced topics, such as:\n\nFetching Data from APIs (Session 2): Learn how to fetch data from APIs using Python and the requests library.\nParsing JSON Data (Session 3): Learn how to parse JSON data using Python and the json library.\nBuilding the Weather Dashboard (Session 4): Use your new Python skills to build a basic weather dashboard.\n\nRemember, practice makes perfect! The more you practice, the better you’ll become at writing Python code.\nHappy coding!"
+  },
+  {
+    "objectID": "quick-reference-guides/python-basics.html#welcome-to-the-python-basics-cheat-sheet",
+    "href": "quick-reference-guides/python-basics.html#welcome-to-the-python-basics-cheat-sheet",
+    "title": "Python Basics Cheat Sheet",
+    "section": "",
+    "text": "This cheat sheet is designed to help you get started with the basics of Python programming. Python is a high-level, interpreted programming language that is easy to learn and fun to use. With Python, you can create a wide range of programs, from simple scripts to complex applications.\n\n\nThis cheat sheet covers the basic syntax and features of Python, including:\n\nVariables and data types\nControl structures (if/else, for loops, while loops)\nFunctions\nImport statements\n\n\n\n\n\nUse this cheat sheet as a reference guide to help you learn the basics of Python.\nTry out the examples and exercises to practice your skills.\nUse this cheat sheet to review and reinforce your understanding of Python basics.\n\n\n\n\nOnce you’ve mastered the basics of Python, you can move on to more advanced topics, such as:\n\nFetching Data from APIs (Session 2): Learn how to fetch data from APIs using Python and the requests library.\nParsing JSON Data (Session 3): Learn how to parse JSON data using Python and the json library.\nBuilding the Weather Dashboard (Session 4): Use your new Python skills to build a basic weather dashboard.\n\nRemember, practice makes perfect! The more you practice, the better you’ll become at writing Python code.\nHappy coding!"
+  },
+  {
+    "objectID": "quick-reference-guides/python-basics.html#variables",
+    "href": "quick-reference-guides/python-basics.html#variables",
+    "title": "Python Basics Cheat Sheet",
+    "section": "Variables",
+    "text": "Variables\n\nAssign a value to a variable using the assignment operator (=)\nUse the print() function to print the value of a variable\nUse the type() function to check the data type of a variable\n\nExample:\nx = 5  # assign the value 5 to the variable x\nprint(x)  # print the value of x\nprint(type(x))  # print the data type of x"
+  },
+  {
+    "objectID": "quick-reference-guides/python-basics.html#data-types",
+    "href": "quick-reference-guides/python-basics.html#data-types",
+    "title": "Python Basics Cheat Sheet",
+    "section": "Data Types",
+    "text": "Data Types\n\nIntegers (int): whole numbers, e.g. 1, 2, 3, etc.\nFloats (float): decimal numbers, e.g. 3.14, -0.5, etc.\nStrings (str): sequences of characters, e.g. “hello”, ‘hello’, etc.\nBoolean (bool): true or false values\nLists (list): ordered collections of values, e.g. [1, 2, 3], [“a”, “b”, “c”], etc.\nTuples (tuple): ordered, immutable collections of values, e.g. (1, 2, 3), (“a”, “b”, “c”), etc."
+  },
+  {
+    "objectID": "quick-reference-guides/python-basics.html#control-structures",
+    "href": "quick-reference-guides/python-basics.html#control-structures",
+    "title": "Python Basics Cheat Sheet",
+    "section": "Control Structures",
+    "text": "Control Structures\n\nConditional statements:\n\nif statement: execute a block of code if a condition is true\nelif statement: execute a block of code if a condition is true and the previous conditions are false\nelse statement: execute a block of code if none of the previous conditions are true\n\nLoops:\n\nfor loop: iterate over a sequence of values\nwhile loop: execute a block of code while a condition is true\n\n\nExample:\nx = 5\nif x &gt; 10:\n    print(\"x is greater than 10\")\nelif x == 5:\n    print(\"x is equal to 5\")\nelse:\n    print(\"x is less than 5\")"
+  },
+  {
+    "objectID": "quick-reference-guides/python-basics.html#functions",
+    "href": "quick-reference-guides/python-basics.html#functions",
+    "title": "Python Basics Cheat Sheet",
+    "section": "Functions",
+    "text": "Functions\n\nDefine a function using the def keyword\nUse the return statement to return a value from a function\nCall a function by its name, passing in arguments as needed\n\nExample:\ndef greet(name):\n    print(\"Hello, \" + name + \"!\")\ngreet(\"John\")  # call the function with the argument \"John\""
+  },
+  {
+    "objectID": "quick-reference-guides/python-basics.html#import-statements",
+    "href": "quick-reference-guides/python-basics.html#import-statements",
+    "title": "Python Basics Cheat Sheet",
+    "section": "Import Statements",
+    "text": "Import Statements\n\nUse the import statement to import a module or function from another file\nUse the from keyword to import specific functions or variables from a module\n\nExample:\nimport math\nprint(math.pi)  # print the value of pi\nfrom math import sin\nprint(sin(3.14))  # print the sine of 3.14\nThis is just a basic cheat sheet, and there is much more to learn about Python. But this should give you a good starting point for your Python jopurney!"
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html",
+    "href": "quick-reference-guides/python-project-starter-kit.html",
+    "title": "Python Project Starter Kit",
+    "section": "",
+    "text": "As a Python beginner, starting a new project can be overwhelming. With so many possibilities and options, it’s easy to get lost in the sea of code and best practices. That’s why we’ve created this Python Project Starter Kit - to help you get started with your Python project the right way.\nThis cheat sheet is designed to provide you with a comprehensive guide to creating a Python project, from setting up your project structure to writing clean and efficient code. Whether you’re a beginner or an experienced programmer, this kit will help you create a solid foundation for your project and ensure that you’re following best practices.\n\n\n\nGet started quickly: With this cheat sheet, you’ll be able to set up your project and start coding in no time.\nFollow best practices: By following the guidelines outlined in this cheat sheet, you’ll ensure that your project is well-structured and easy to maintain.\nImprove your coding skills: By following best practices, you’ll improve your coding skills and write more efficient and readable code.\nCollaborate with others: With a well-structured project, you’ll be able to collaborate with others more easily and effectively.\n\n\n\n\n\nProject structure: Learn how to set up your project directory and organize your files and folders.\nCode organization: Discover how to write clean and efficient code, and how to structure your code for readability and maintainability.\nBest practices: Get tips and tricks for writing Python code, from variable naming to commenting your code.\nTesting and debugging: Learn how to test and debug your code, and how to use tools like pdb and unittest.\n\nBy following this cheat sheet, you’ll be well on your way to creating a successful Python project. Happy coding!"
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html#welcome-to-the-python-project-starter-kit",
+    "href": "quick-reference-guides/python-project-starter-kit.html#welcome-to-the-python-project-starter-kit",
+    "title": "Python Project Starter Kit",
+    "section": "",
+    "text": "As a Python beginner, starting a new project can be overwhelming. With so many possibilities and options, it’s easy to get lost in the sea of code and best practices. That’s why we’ve created this Python Project Starter Kit - to help you get started with your Python project the right way.\nThis cheat sheet is designed to provide you with a comprehensive guide to creating a Python project, from setting up your project structure to writing clean and efficient code. Whether you’re a beginner or an experienced programmer, this kit will help you create a solid foundation for your project and ensure that you’re following best practices.\n\n\n\nGet started quickly: With this cheat sheet, you’ll be able to set up your project and start coding in no time.\nFollow best practices: By following the guidelines outlined in this cheat sheet, you’ll ensure that your project is well-structured and easy to maintain.\nImprove your coding skills: By following best practices, you’ll improve your coding skills and write more efficient and readable code.\nCollaborate with others: With a well-structured project, you’ll be able to collaborate with others more easily and effectively.\n\n\n\n\n\nProject structure: Learn how to set up your project directory and organize your files and folders.\nCode organization: Discover how to write clean and efficient code, and how to structure your code for readability and maintainability.\nBest practices: Get tips and tricks for writing Python code, from variable naming to commenting your code.\nTesting and debugging: Learn how to test and debug your code, and how to use tools like pdb and unittest.\n\nBy following this cheat sheet, you’ll be well on your way to creating a successful Python project. Happy coding!"
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html#project-structure",
+    "href": "quick-reference-guides/python-project-starter-kit.html#project-structure",
+    "title": "Python Project Starter Kit",
+    "section": "Project Structure",
+    "text": "Project Structure\n\nCreate a new directory for your project and navigate into it.\nCreate a src or scripts directory for your Python scripts.\nCreate a notebooks directory for your Jupyter Notebooks.\nCreate a requirements.txt file to manage dependencies.\nCreate a README.md file to describe your project."
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html#notebook-best-practices",
+    "href": "quick-reference-guides/python-project-starter-kit.html#notebook-best-practices",
+    "title": "Python Project Starter Kit",
+    "section": "Notebook Best Practices",
+    "text": "Notebook Best Practices\n\nUse meaningful notebook names.\nOrganize notebooks into sections (e.g., introduction, methods, results).\nUse clear and concise headings.\nUse Markdown for formatting.\nKeep notebooks concise and focused on a single idea."
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html#script-best-practices",
+    "href": "quick-reference-guides/python-project-starter-kit.html#script-best-practices",
+    "title": "Python Project Starter Kit",
+    "section": "Script Best Practices",
+    "text": "Script Best Practices\n\nUse meaningful script names.\nKeep scripts short and focused (e.g., &lt; 50 lines).\nUse clear and concise variable names.\nUse comments to explain code.\nTest scripts regularly using print statements or a testing framework."
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html#code-style",
+    "href": "quick-reference-guides/python-project-starter-kit.html#code-style",
+    "title": "Python Project Starter Kit",
+    "section": "Code Style",
+    "text": "Code Style\n\nUse a consistent coding style (e.g., PEP 8).\nUse meaningful variable names.\nUse type hints for function arguments and return types.\nUse consistent indentation (4 spaces).\nAvoid magic numbers; use named constants instead."
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html#testing",
+    "href": "quick-reference-guides/python-project-starter-kit.html#testing",
+    "title": "Python Project Starter Kit",
+    "section": "Testing",
+    "text": "Testing\n\nTest scripts regularly using print statements or a testing framework.\nUse a testing framework (e.g., unittest) for more complex scripts.\nTest for edge cases and error handling."
+  },
+  {
+    "objectID": "quick-reference-guides/python-project-starter-kit.html#best-practices",
+    "href": "quick-reference-guides/python-project-starter-kit.html#best-practices",
+    "title": "Python Project Starter Kit",
+    "section": "Best Practices",
+    "text": "Best Practices\n\nUse version control (e.g., Git) to track changes.\nUse a code editor with syntax highlighting.\nUse a linter (e.g., flake8) to catch errors.\nKeep your code organized and maintainable.\nCollaborate with others and ask for help when needed."
+  },
+  {
+    "objectID": "quick-reference-guides/exception-handling.html",
+    "href": "quick-reference-guides/exception-handling.html",
+    "title": "Exception Handling in Python: A Comprehensive Guide",
+    "section": "",
+    "text": "Exception handling is an essential part of writing robust and reliable Python code. When an error occurs, Python’s exception handling mechanism allows you to catch and handle the exception, providing a way to recover from the error and continue executing your code. In this quick reference guide, we’ll explore the basics of exception handling in Python, including how to write try-except blocks, handle different types of exceptions, and log errors for debugging purposes.\nWhether you’re a beginner or an experienced Python developer, mastering exception handling is crucial for writing robust and maintainable code. With this quick reference guide, you’ll learn how to:\n\nWrite try-except blocks to catch and handle exceptions\nHandle different types of exceptions, such as ValueError, TypeError, and IOError\nLog errors for debugging purposes\nUse finally blocks to execute code regardless of whether an exception is thrown\nRethrow exceptions to propagate them up the call stack\n\nBy the end of this quick reference guide, you’ll be well-equipped to handle exceptions in your Python code and write more robust and reliable software.\nHere is a Python error handling quick reference guide:\nError Handling Basics\n\ntry: Used to enclose a block of code where errors might occur.\nexcept: Used to catch and handle errors.\nfinally: Used to execute code regardless of whether an exception was thrown or not.\n\nTry-Except Blocks\n\ntry-except block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\n\ntry-except-else block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\nelse:\n    # code to execute if no error occurs\n\ntry-except-finally block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\nfinally:\n    # code to execute regardless of whether an error occurred\nError Types\n\nException: The base class for all exceptions in Python.\nValueError: Raised when a function receives an invalid argument.\nTypeError: Raised when a function receives an argument of the wrong type.\nIOError: Raised when there is a problem with input/output operations.\nRuntimeError: Raised when a runtime error occurs.\n\nRaising Errors\n\nraise: Used to raise an exception.\n\nraise ExceptionType(\"error message\")\n\nraise with an argument:\n\nraise ExceptionType(\"error message\", arg1, arg2)\n\nraise with a value:\n\nraise ValueError(\"Invalid input\")\n\nraise with a message and a value:\n\nraise ValueError(\"Invalid input\", 42)\nError Handling Best Practices\n\nCatch specific exceptions instead of catching the general Exception class.\nLog errors instead of ignoring them.\nProvide a meaningful error message.\nHandle errors in a central location (e.g., in a try-except block) instead of spreading them throughout the code.\n\nCommon Error Handling Scenarios\n\nHandling a specific exception:\n\ntry:\n    # code that might raise an exception\nexcept ValueError:\n    # handle the ValueError\n\nHandling multiple exceptions:\n\ntry:\n    # code that might raise multiple exceptions\nexcept (ValueError, TypeError):\n    # handle the exceptions\n\nHandling an exception and re-raising it:\n\ntry:\n    # code that might raise an exception\nexcept ExceptionType:\n    # handle the exception\n    raise\n\nHandling an exception and logging it:\n\ntry:\n    # code that might raise an exception\nexcept ExceptionType:\n    # handle the exception\n    logging.error(\"Error occurred\")\nI hope this helps! Let me know if you have any questions or need further clarification."
+  },
+  {
+    "objectID": "quick-reference-guides/exception-handling.html#introduction",
+    "href": "quick-reference-guides/exception-handling.html#introduction",
+    "title": "Exception Handling in Python: A Comprehensive Guide",
+    "section": "",
+    "text": "Exception handling is an essential part of writing robust and reliable Python code. When an error occurs, Python’s exception handling mechanism allows you to catch and handle the exception, providing a way to recover from the error and continue executing your code. In this quick reference guide, we’ll explore the basics of exception handling in Python, including how to write try-except blocks, handle different types of exceptions, and log errors for debugging purposes.\nWhether you’re a beginner or an experienced Python developer, mastering exception handling is crucial for writing robust and maintainable code. With this quick reference guide, you’ll learn how to:\n\nWrite try-except blocks to catch and handle exceptions\nHandle different types of exceptions, such as ValueError, TypeError, and IOError\nLog errors for debugging purposes\nUse finally blocks to execute code regardless of whether an exception is thrown\nRethrow exceptions to propagate them up the call stack\n\nBy the end of this quick reference guide, you’ll be well-equipped to handle exceptions in your Python code and write more robust and reliable software.\nHere is a Python error handling quick reference guide:\nError Handling Basics\n\ntry: Used to enclose a block of code where errors might occur.\nexcept: Used to catch and handle errors.\nfinally: Used to execute code regardless of whether an exception was thrown or not.\n\nTry-Except Blocks\n\ntry-except block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\n\ntry-except-else block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\nelse:\n    # code to execute if no error occurs\n\ntry-except-finally block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\nfinally:\n    # code to execute regardless of whether an error occurred\nError Types\n\nException: The base class for all exceptions in Python.\nValueError: Raised when a function receives an invalid argument.\nTypeError: Raised when a function receives an argument of the wrong type.\nIOError: Raised when there is a problem with input/output operations.\nRuntimeError: Raised when a runtime error occurs.\n\nRaising Errors\n\nraise: Used to raise an exception.\n\nraise ExceptionType(\"error message\")\n\nraise with an argument:\n\nraise ExceptionType(\"error message\", arg1, arg2)\n\nraise with a value:\n\nraise ValueError(\"Invalid input\")\n\nraise with a message and a value:\n\nraise ValueError(\"Invalid input\", 42)\nError Handling Best Practices\n\nCatch specific exceptions instead of catching the general Exception class.\nLog errors instead of ignoring them.\nProvide a meaningful error message.\nHandle errors in a central location (e.g., in a try-except block) instead of spreading them throughout the code.\n\nCommon Error Handling Scenarios\n\nHandling a specific exception:\n\ntry:\n    # code that might raise an exception\nexcept ValueError:\n    # handle the ValueError\n\nHandling multiple exceptions:\n\ntry:\n    # code that might raise multiple exceptions\nexcept (ValueError, TypeError):\n    # handle the exceptions\n\nHandling an exception and re-raising it:\n\ntry:\n    # code that might raise an exception\nexcept ExceptionType:\n    # handle the exception\n    raise\n\nHandling an exception and logging it:\n\ntry:\n    # code that might raise an exception\nexcept ExceptionType:\n    # handle the exception\n    logging.error(\"Error occurred\")\nI hope this helps! Let me know if you have any questions or need further clarification."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html",
+    "href": "quick-reference-guides/input-validation.html",
+    "title": "Python Input Validation quick reference guide",
+    "section": "",
+    "text": "Validating user input is a crucial step in building robust and secure software applications. In Python, validating user input can help prevent common web application security vulnerabilities such as SQL injection and cross-site scripting (XSS). This quick reference guide provides a quick reference guide to the most commonly used input validation techniques in Python."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#introduction",
+    "href": "quick-reference-guides/input-validation.html#introduction",
+    "title": "Python Input Validation quick reference guide",
+    "section": "",
+    "text": "Validating user input is a crucial step in building robust and secure software applications. In Python, validating user input can help prevent common web application security vulnerabilities such as SQL injection and cross-site scripting (XSS). This quick reference guide provides a quick reference guide to the most commonly used input validation techniques in Python."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#why-validate-user-input",
+    "href": "quick-reference-guides/input-validation.html#why-validate-user-input",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Why Validate User Input?",
+    "text": "Why Validate User Input?\nValidating user input is essential for several reasons:\n\nPrevent Security Vulnerabilities: Validating user input can help prevent common web application security vulnerabilities such as SQL injection and cross-site scripting (XSS).\nEnsure Data Integrity: Validating user input ensures that the data entered by users is accurate and consistent, reducing the risk of errors and inconsistencies.\nImprove User Experience: Validating user input can improve the user experience by providing immediate feedback to users about invalid input, reducing the likelihood of errors and frustration."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#whats-in-this-quick-reference-guide",
+    "href": "quick-reference-guides/input-validation.html#whats-in-this-quick-reference-guide",
+    "title": "Python Input Validation quick reference guide",
+    "section": "What’s in this quick reference guide?",
+    "text": "What’s in this quick reference guide?\nThis quick reference guide provides a comprehensive guide to input validation in Python, covering:\n\nString validation techniques\nInteger and float validation techniques\nBoolean validation techniques\nEmail and phone number validation techniques\nDate and password validation techniques\nRegular expressions for advanced input validation\n\nThis quick reference guide provides the essential knowledge you need to validate user input effectively and securely in Python."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#string-validation",
+    "href": "quick-reference-guides/input-validation.html#string-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "String Validation",
+    "text": "String Validation\n\nstr.isalpha(): Returns True if the string contains only letters.\nstr.isalnum(): Returns True if the string contains only letters and numbers.\nstr.isdigit(): Returns True if the string contains only digits.\nstr.islower(): Returns True if the string contains only lowercase letters.\nstr.isupper(): Returns True if the string contains only uppercase letters.\nstr.strip(): Removes leading and trailing whitespace from the string.\nstr.replace(): Replaces a specified phrase with another string."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#integer-validation",
+    "href": "quick-reference-guides/input-validation.html#integer-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Integer Validation",
+    "text": "Integer Validation\n\nint.isdigit(): Returns True if the string contains only digits.\nint.isnumeric(): Returns True if the string contains only digits and is a valid integer.\nint(int_value): Converts a string to an integer."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#float-validation",
+    "href": "quick-reference-guides/input-validation.html#float-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Float Validation",
+    "text": "Float Validation\n\nfloat.isdigit(): Returns True if the string contains only digits.\nfloat.isnumeric(): Returns True if the string contains only digits and is a valid float.\nfloat(float_value): Converts a string to a float."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#boolean-validation",
+    "href": "quick-reference-guides/input-validation.html#boolean-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Boolean Validation",
+    "text": "Boolean Validation\n\nbool(bool_value): Converts a string to a boolean value."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#email-validation",
+    "href": "quick-reference-guides/input-validation.html#email-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Email Validation",
+    "text": "Email Validation\n\nre.match(r\"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\", email): Regular expression to validate an email address."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#phone-number-validation",
+    "href": "quick-reference-guides/input-validation.html#phone-number-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Phone Number Validation",
+    "text": "Phone Number Validation\n\nre.match(r\"^\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$\", phone_number): Regular expression to validate a phone number."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#date-validation",
+    "href": "quick-reference-guides/input-validation.html#date-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Date Validation",
+    "text": "Date Validation\n\ndatetime.datetime.strptime(date_string, \"%Y-%m-%d\"): Converts a string to a datetime object."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#password-validation",
+    "href": "quick-reference-guides/input-validation.html#password-validation",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Password Validation",
+    "text": "Password Validation\n\nre.match(r\"^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!#%*?&]{8,20}$\", password): Regular expression to validate a password.\n\nRegular expressions can be confusing for beginners. Here’s an alternative using the pyinputplus library, which provides a simpler way to validate user input:"
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#install-pyinputplus",
+    "href": "quick-reference-guides/input-validation.html#install-pyinputplus",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Install pyinputplus",
+    "text": "Install pyinputplus\nYou can install pyinputplus using pip:\npip install pyinputplus"
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#validate-user-input-using-pyinputplus",
+    "href": "quick-reference-guides/input-validation.html#validate-user-input-using-pyinputplus",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Validate User Input using pyinputplus",
+    "text": "Validate User Input using pyinputplus\nHere’s an example of how to use pyinputplus to validate user input:\nimport pyinputplus as p\n\n# Get user input\nusername = p.inputStr(\"Enter your username: \")\n\n# Validate username\nif not username.isalnum():\n    print(\"Invalid username. Please enter a valid username.\")\nelse:\n    print(\"Valid username!\")\nIn this example, pyinputplus provides a simple way to get user input using the inputStr() function. The isalnum() method is used to validate the username, which checks if the input contains only alphanumeric characters."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#alternative-to-regular-expressions",
+    "href": "quick-reference-guides/input-validation.html#alternative-to-regular-expressions",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Alternative to Regular Expressions",
+    "text": "Alternative to Regular Expressions\nHere’s an example of how to use pyinputplus to validate an email address:\nimport pyinputplus as p\n\n# Get user input\nemail = p.inputStr(\"Enter your email address: \")\n\n# Validate email\nif \"@\" in email and \".\" in email:\n    print(\"Valid email!\")\nelse:\n    print(\"Invalid email. Please enter a valid email address.\")\nIn this example, pyinputplus provides a simple way to validate an email address by checking if the input contains an @ symbol and a dot (.)."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#advantages-of-pyinputplus",
+    "href": "quick-reference-guides/input-validation.html#advantages-of-pyinputplus",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Advantages of pyinputplus",
+    "text": "Advantages of pyinputplus\n\nSimplifies input validation: pyinputplus provides a simple way to validate user input, making it easier for beginners to validate user input.\nReduces the need for regular expressions: pyinputplus provides a simpler way to validate input, reducing the need for complex regular expressions.\nProvides a more intuitive API: pyinputplus provides a more intuitive API, making it easier for beginners to use.\n\nKeep in mind that pyinputplus is a simple library, and it’s not suitable for complex input validation. For more complex validation, you may still need to use regular expressions."
+  },
+  {
+    "objectID": "quick-reference-guides/input-validation.html#common-validation-functions",
+    "href": "quick-reference-guides/input-validation.html#common-validation-functions",
+    "title": "Python Input Validation quick reference guide",
+    "section": "Common Validation Functions",
+    "text": "Common Validation Functions\n\nstr.strip(): Removes leading and trailing whitespace from a string.\nstr.replace(): Replaces a specified phrase with another string.\n\nYou can use these methods to validate user input and ensure that it meets certain criteria. For example, you can use str.isalpha() to check if a string contains only letters, or int.isdigit() to check if a string contains only digits.\nRemember to always validate user input to prevent common web application security vulnerabilities like SQL injection and cross-site scripting (XSS)."
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html",
+    "href": "quick-reference-guides/openweathermap.html",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "",
+    "text": "As a developer, you’re likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That’s where this quick reference guide comes in.\nIn this comprehensive guide, we’ll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you’re a seasoned developer or just starting out, this quick reference guide is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.\n\n\nThis quick reference guide covers the following topics:\n\nAPI Endpoints: Learn about the different endpoints available in the OpenWeatherMap API, including current weather conditions, 5-day forecasts, and more.\nAPI Parameters: Discover the various parameters you can use to customize your API requests, such as units of measurement, language, and more.\nAPI Responses: Get a breakdown of the different response formats and data structures you can expect from the OpenWeatherMap API.\nError Handling: Learn how to handle common errors and exceptions when working with the OpenWeatherMap API.\nTips and Tricks: Get insider tips and tricks for optimizing your API requests and working with the OpenWeatherMap API."
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#welcome-to-the-openweathermap-api-quick-reference-guide",
+    "href": "quick-reference-guides/openweathermap.html#welcome-to-the-openweathermap-api-quick-reference-guide",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "",
+    "text": "As a developer, you’re likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That’s where this quick reference guide comes in.\nIn this comprehensive guide, we’ll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you’re a seasoned developer or just starting out, this quick reference guide is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.\n\n\nThis quick reference guide covers the following topics:\n\nAPI Endpoints: Learn about the different endpoints available in the OpenWeatherMap API, including current weather conditions, 5-day forecasts, and more.\nAPI Parameters: Discover the various parameters you can use to customize your API requests, such as units of measurement, language, and more.\nAPI Responses: Get a breakdown of the different response formats and data structures you can expect from the OpenWeatherMap API.\nError Handling: Learn how to handle common errors and exceptions when working with the OpenWeatherMap API.\nTips and Tricks: Get insider tips and tricks for optimizing your API requests and working with the OpenWeatherMap API."
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#who-is-this-quick-reference-guide-for",
+    "href": "quick-reference-guides/openweathermap.html#who-is-this-quick-reference-guide-for",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "Who is this quick reference guide For?",
+    "text": "Who is this quick reference guide For?\nThis quick reference guide is designed for anyone who wants to get the most out of the OpenWeatherMap API. Whether you’re a:\n\nDeveloper looking to integrate weather data into your app or website\nResearcher seeking to analyze weather patterns and trends\nWeather enthusiast curious about the inner workings of the OpenWeatherMap API\n\nThis quick reference guide is for you.\nSo, let’s get started and dive into the world of OpenWeatherMap API!"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-endpoints",
+    "href": "quick-reference-guides/openweathermap.html#api-endpoints",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Endpoints",
+    "text": "API Endpoints\n\napi.openweathermap.org/data/2.5/weather: Current weather conditions\napi.openweathermap.org/data/2.5/forecast: 5-day forecast\napi.openweathermap.org/data/2.5/onecall: Current weather conditions and 5-day forecast"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-parameters",
+    "href": "quick-reference-guides/openweathermap.html#api-parameters",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Parameters",
+    "text": "API Parameters\n\nq: City name or zip code (required)\nunits: Units of measurement (imperial or metric)\nlang: Language for weather descriptions (en, fr, es, etc.)\nappid: Your OpenWeatherMap API key (required)"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-requests",
+    "href": "quick-reference-guides/openweathermap.html#api-requests",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Requests",
+    "text": "API Requests\n\nGET /weather: Retrieve current weather conditions\n\nExample: https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY\n\nGET /forecast: Retrieve 5-day forecast\n\nExample: https://api.openweathermap.org/data/2.5/forecast?q=London&appid=YOUR_API_KEY\n\nGET /onecall: Retrieve current weather conditions and 5-day forecast\n\nExample: https://api.openweathermap.org/data/2.5/onecall?q=London&appid=YOUR_API_KEY"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-response",
+    "href": "quick-reference-guides/openweathermap.html#api-response",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Response",
+    "text": "API Response\n\nweather: Current weather conditions\n\nmain: Weather condition (e.g. “Clouds”)\ndescription: Weather description (e.g. “overcast clouds”)\nicon: Weather icon (e.g. “04d”)\n\nforecast: 5-day forecast\n\nlist: Array of forecast data\n\ndt: Timestamp (Unix epoch)\nmain: Weather condition (e.g. “Clouds”)\ndescription: Weather description (e.g. “overcast clouds”)\nicon: Weather icon (e.g. “04d”)\n\n\ncurrent: Current weather conditions\n\ntemp: Temperature (in Kelvin)\nhumidity: Humidity (percentage)\nwind_speed: Wind speed (m/s)\nwind_deg: Wind direction (degrees)"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#error-handling",
+    "href": "quick-reference-guides/openweathermap.html#error-handling",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "Error Handling",
+    "text": "Error Handling\n\nHTTP 404: City not found\nHTTP 401: Invalid API key\nHTTP 500: Internal server error"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#tips-and-tricks",
+    "href": "quick-reference-guides/openweathermap.html#tips-and-tricks",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "Tips and Tricks",
+    "text": "Tips and Tricks\n\nUse the appid parameter to authenticate your API requests\nUse the units parameter to specify the units of measurement (imperial or metric)\nUse the lang parameter to specify the language for weather descriptions\nUse the q parameter to specify the city name or zip code\nUse the forecast endpoint to retrieve a 5-day forecast\nUse the onecall endpoint to retrieve current weather conditions and 5-day forecast"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-key",
+    "href": "quick-reference-guides/openweathermap.html#api-key",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Key",
+    "text": "API Key\n\nSign up for a free API key on the OpenWeatherMap website\nUse your API key in the appid parameter of your API requests\n\nI hope this quick reference guide helps you get started with the OpenWeatherMap API!"
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html",
+    "href": "quick-reference-guides/git-basics.html",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "",
+    "text": "As a Python programmer, you’re likely familiar with the importance of version control in managing your code. Git and GitHub are two powerful tools that can help you track changes, collaborate with others, and share your work with the world. But getting started with Git and GitHub can be overwhelming, especially for beginners.\nThat’s why we’ve created this cheat sheet: to provide a concise and easy-to-follow guide to the basics of Git and GitHub. Whether you’re new to version control or just need a refresher, this cheat sheet is designed to help you quickly get up to speed with the essential commands and concepts you need to know.\nIn this cheat sheet, you’ll find a comprehensive overview of the key Git and GitHub commands, as well as some helpful tips and best practices for using these tools effectively. Whether you’re working on a personal project or collaborating with a team, this cheat sheet is designed to help you streamline your workflow and get the most out of Git and GitHub.\nSo let’s get started!"
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#welcome-to-the-git-and-github-cheat-sheet",
+    "href": "quick-reference-guides/git-basics.html#welcome-to-the-git-and-github-cheat-sheet",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "",
+    "text": "As a Python programmer, you’re likely familiar with the importance of version control in managing your code. Git and GitHub are two powerful tools that can help you track changes, collaborate with others, and share your work with the world. But getting started with Git and GitHub can be overwhelming, especially for beginners.\nThat’s why we’ve created this cheat sheet: to provide a concise and easy-to-follow guide to the basics of Git and GitHub. Whether you’re new to version control or just need a refresher, this cheat sheet is designed to help you quickly get up to speed with the essential commands and concepts you need to know.\nIn this cheat sheet, you’ll find a comprehensive overview of the key Git and GitHub commands, as well as some helpful tips and best practices for using these tools effectively. Whether you’re working on a personal project or collaborating with a team, this cheat sheet is designed to help you streamline your workflow and get the most out of Git and GitHub.\nSo let’s get started!"
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#what-is-git",
+    "href": "quick-reference-guides/git-basics.html#what-is-git",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "What is Git?",
+    "text": "What is Git?\nGit is a free and open-source tool that helps you manage and track changes to your code. It’s like a digital notebook where you can save and organize your work."
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#what-is-github",
+    "href": "quick-reference-guides/git-basics.html#what-is-github",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\nGitHub is a website where you can store and share your Git projects. It’s like a big library where you can store and share your code with others."
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#key-git-commands",
+    "href": "quick-reference-guides/git-basics.html#key-git-commands",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "Key Git Commands:",
+    "text": "Key Git Commands:\n\ngit init: Initializes a new Git repository in your project directory.\ngit add : Adds a new file to the Git repository.\ngit commit -m “commit message”: Saves changes to the repository with a brief description.\ngit log: Shows a history of all commits made to the repository.\ngit status: Checks the status of the repository, showing which files have changed.\ngit push: Sends changes from your local repository to the GitHub repository.\ngit pull: Fetches changes from the GitHub repository and merges them with your local changes."
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#key-github-concepts",
+    "href": "quick-reference-guides/git-basics.html#key-github-concepts",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "Key GitHub Concepts:",
+    "text": "Key GitHub Concepts:\n\nRepository (Repo): A collection of files and folders stored on GitHub.\nBranch: A separate version of your repository, allowing you to work on different features or fixes.\nCommit: A snapshot of your changes, saved to the repository.\nPull Request: A request to merge changes from one branch to another."
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#basic-git-workflow",
+    "href": "quick-reference-guides/git-basics.html#basic-git-workflow",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "Basic Git Workflow:",
+    "text": "Basic Git Workflow:\n\nCreate a new repository: Initialize a new Git repository in your project directory using git init.\nMake changes: Edit files and add new ones to your project.\nCommit changes: Save changes to the repository using git commit -m \"commit message\".\nPush changes: Send changes to the GitHub repository using git push.\nPull changes: Fetch changes from the GitHub repository and merge them with your local changes using git pull."
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#tips-and-tricks",
+    "href": "quick-reference-guides/git-basics.html#tips-and-tricks",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "Tips and Tricks:",
+    "text": "Tips and Tricks:\n\nAlways commit changes regularly to avoid losing work.\nUse descriptive commit messages to help track changes.\nUse git status to check the status of your repository.\nUse git log to view the history of commits.\nUse git pull and git push to synchronize your local and remote repositories."
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#common-mistakes",
+    "href": "quick-reference-guides/git-basics.html#common-mistakes",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "Common Mistakes:",
+    "text": "Common Mistakes:\n\nForgetting to commit changes before pushing to GitHub.\nNot using descriptive commit messages.\nNot pulling changes from the remote repository regularly."
+  },
+  {
+    "objectID": "quick-reference-guides/git-basics.html#additional-resources",
+    "href": "quick-reference-guides/git-basics.html#additional-resources",
+    "title": "Git and GitHub Cheat Sheet: Essential Commands and Concepts",
+    "section": "Additional Resources:",
+    "text": "Additional Resources:\n\nGitHub’s official Git tutorial: https://guides.github.com/activities/hello-world/\nGit documentation: https://git-scm.com/docs\n\nRemember, practice makes perfect! Start experimenting with Git and GitHub to become more comfortable with the basics."
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html",
+    "href": "quick-reference-guides/json-quick-reference.html",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "",
+    "text": "Working with JSON (JavaScript Object Notation) data in Python is a crucial skill for any developer. JSON is a lightweight, human-readable data format that is widely used for data exchange between web servers, web applications, and mobile apps. In Python, the json module provides a simple and efficient way to work with JSON data. Whether you’re building a web scraper, a data analysis tool, or a web application, understanding how to work with JSON in Python is essential.\nThis quick reference guide provides a quick reference guide to the most commonly used functions and methods for working with JSON data in Python. From converting Python objects to JSON and parsing JSON data, to handling errors and best practices, this quick reference guide covers it all. Whether you’re a beginner or an experienced developer, this quick reference guide will help you master the basics of working with JSON in Python."
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html#introduction",
+    "href": "quick-reference-guides/json-quick-reference.html#introduction",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "",
+    "text": "Working with JSON (JavaScript Object Notation) data in Python is a crucial skill for any developer. JSON is a lightweight, human-readable data format that is widely used for data exchange between web servers, web applications, and mobile apps. In Python, the json module provides a simple and efficient way to work with JSON data. Whether you’re building a web scraper, a data analysis tool, or a web application, understanding how to work with JSON in Python is essential.\nThis quick reference guide provides a quick reference guide to the most commonly used functions and methods for working with JSON data in Python. From converting Python objects to JSON and parsing JSON data, to handling errors and best practices, this quick reference guide covers it all. Whether you’re a beginner or an experienced developer, this quick reference guide will help you master the basics of working with JSON in Python."
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html#json-basics",
+    "href": "quick-reference-guides/json-quick-reference.html#json-basics",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "JSON Basics",
+    "text": "JSON Basics\n\nJSON stands for JavaScript Object Notation\nIt’s a lightweight data interchange format\nIt’s easy to read and write, and is widely supported"
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html#creating-json-data",
+    "href": "quick-reference-guides/json-quick-reference.html#creating-json-data",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "Creating JSON Data",
+    "text": "Creating JSON Data\n\nUse the json module: import json\nConvert a Python object to JSON: json.dumps(obj)\nExample: json.dumps({'name': 'John', 'age': 30})"
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html#parsing-json-data",
+    "href": "quick-reference-guides/json-quick-reference.html#parsing-json-data",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "Parsing JSON Data",
+    "text": "Parsing JSON Data\n\nUse the json module: import json\nConvert JSON to a Python object: json.loads(json_string)\nExample: json.loads('{\"name\": \"John\", \"age\": 30}')"
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html#working-with-json-data",
+    "href": "quick-reference-guides/json-quick-reference.html#working-with-json-data",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "Working with JSON Data",
+    "text": "Working with JSON Data\n\nConvert a Python dictionary to JSON: json.dumps({'name': 'John', 'age': 30})\nConvert JSON to a Python dictionary: json.loads('{\"name\": \"John\", \"age\": 30}')\nUse the json.load() function to load JSON from a file: with open('data.json') as f: json.load(f)\nUse the json.dump() function to dump a Python object to a file: with open('data.json', 'w') as f: json.dump({'name': 'John', 'age': 30}, f)"
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html#error-handling",
+    "href": "quick-reference-guides/json-quick-reference.html#error-handling",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "Error Handling",
+    "text": "Error Handling\n\nUse the json.JSONDecodeError exception to catch errors when parsing JSON: try: json.loads(json_string) except json.JSONDecodeError: print(\"Invalid JSON\")\nUse the json.JSONEncodeError exception to catch errors when encoding JSON: try: json.dumps(obj) except json.JSONEncodeError: print(\"Invalid object\")"
+  },
+  {
+    "objectID": "quick-reference-guides/json-quick-reference.html#best-practices",
+    "href": "quick-reference-guides/json-quick-reference.html#best-practices",
+    "title": "JSON in Python: A Quick Reference",
+    "section": "Best Practices",
+    "text": "Best Practices\n\nUse the json module to work with JSON data\nUse the dumps() function to convert a Python object to JSON\nUse the loads() function to convert JSON to a Python object\nUse the load() and dump() functions to work with JSON files\nUse try-except blocks to handle errors when working with JSON data"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "",
+    "text": "Slides\n\n\nExplore the world of Python programming with our engaging slides, designed to help you learn and retain information.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebooks\n\n\nDive deeper into Python programming with our interactive notebooks, featuring code snippets, examples, and exercises to help you master the material.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorksheets\n\n\nGet hands-on practice with our worksheets, designed to help you apply your Python skills to real-world scenarios.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuick Reference Guides\n\n\nStay on track with our quick reference guides, featuring concise summaries of key Python concepts and syntax.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/02_fetching_data.html",
+    "href": "slides/02_fetching_data.html",
+    "title": "Fetching Data Using OpenWeatherMap API",
+    "section": "",
+    "text": "Today\n\nEmphasize the importance of understanding APIs and data fetching in Python.\nHighlight the skills that will be learned in this session:\n\nFetching data using the OpenWeatherMap API.\nParsing JSON data.\nHandling errors.\n\n\n\n\nReview Homework\n\nReview the provided notebook on basics of Python\n\n\n\nIntroduction to OpenWeatherMap API\n\nThe OpenWeatherMap API provides weather data for various locations. You need to sign up and get an API key to access the data.\nSteps to Get API Key:\n\nGo to OpenWeatherMap and sign up for an account.\nAfter signing up, navigate to the API keys section and generate a new API key.\nKeep this API key safe, as you will need it to make API requests.\n\n\n\n\nFetching Data\n\nDemonstrate how to use the requests library to fetch data from the OpenWeatherMap API.\nIntroduce the concept of HTTP requests and responses.\nShow how to handle errors and exceptions in Python.\n\nimport requests\n\ndef fetch_weather_data(api_key, location):\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        return data\n    else:\n        print(f\"Failed to fetch data: {response.status_code}\")\n        return None\napi_key = 'your_api_key_here'\nlocation = 'London'\ndata = fetch_weather_data(api_key, location)\ndata\n\n\nParsing JSON Data\n\nIntroduce the concept of JSON data and how it is used to represent data.\nDemonstrate how to use the json library to parse JSON data in Python.\nHighlight the importance of data parsing and how it is used in the weather dashboard project.\n\ndef parse_weather_data(data):\n    if data:\n        weather = {\n            \"Location\": data[\"name\"],\n            \"Temperature (K)\": data[\"main\"][\"temp\"],\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather\n    else:\n        return None\n\nparsed_data = parse_weather_data(data)\nparsed_data\n\n\nSaving Data to a CSV File\n\nWe’ll save the fetched data to a CSV file using pandas.\n\nimport pandas as pd\n\ndef save_to_csv(data, filename):\n    df = pd.DataFrame([data])\n    df.to_csv(filename, index=False)\n\nsave_to_csv(parsed_data, 'data/raw/weather_data.csv')\ndf = pd.read_csv('data/raw/weather_data.csv')\ndf\n\n\nError Handling\n\nIntroduce the concept of error handling in Python and its importance.\nDemonstrate how to use try-except blocks to handle errors in Python.\nHighlight the importance of error handling in the weather dashboard project.\n\ninvalid_location = 'InvalidCity'\ninvalid_data = fetch_weather_data(api_key, invalid_location)\ninvalid_data\n\n\nBreakout Room Activity\n\nEmphasize the importance of teamwork and collaboration in the project.\nEncourage students to work together to fetch and parse data for different cities.\nEncourage students to share their findings and discuss challenges.\n\n\n\nQ&A and Wrap-Up\n\nIn this session, we learned how to fetch weather data from the OpenWeatherMap API, parse the JSON response, and save the data to a CSV file. We also covered basic error handling to manage failed API requests.\nAny questions”\nThe importance of practicing and experimenting with the concepts learned in the session.\nNext session, we will focus on managing data with CSV and SQL.\n\n\n\nHomework\n\nExperiment with fetching weather data for different cities.\nExplore the OpenWeatherMap API documentation to see what other data you can fetch."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "notebooks.html",
+    "href": "notebooks.html",
+    "title": "Notebooks",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nWeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeatherVista Project - Session 2: Data Management with CSV and SQL\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeatherVista Project - Session 5: Web Scraping and Using Additional APIs\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, and Distribution Methods\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html",
+    "href": "notebooks/05_webscraping.html",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "",
+    "text": "Learn the basics of web scraping using BeautifulSoup.\nUnderstand ethical considerations and legal aspects of web scraping.\nExplore and use additional APIs to gather more weather-related data."
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html#objectives",
+    "href": "notebooks/05_webscraping.html#objectives",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "",
+    "text": "Learn the basics of web scraping using BeautifulSoup.\nUnderstand ethical considerations and legal aspects of web scraping.\nExplore and use additional APIs to gather more weather-related data."
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html#introduction-to-web-scraping",
+    "href": "notebooks/05_webscraping.html#introduction-to-web-scraping",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "1. Introduction to Web Scraping",
+    "text": "1. Introduction to Web Scraping\nWeb scraping involves extracting data from websites. It is important to adhere to ethical guidelines and terms of service of websites.\n\nImport Required Libraries\nimport requests\nfrom bs4 import BeautifulSoup\nimport pandas as pd"
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html#basic-web-scraping-with-beautifulsoup",
+    "href": "notebooks/05_webscraping.html#basic-web-scraping-with-beautifulsoup",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "2. Basic Web Scraping with BeautifulSoup",
+    "text": "2. Basic Web Scraping with BeautifulSoup\nWe’ll scrape weather-related data from a sample website.\n\nFetching the HTML Content\nurl = 'https://www.example.com/weather'\nresponse = requests.get(url)\nhtml_content = response.content\n\n\nParsing the HTML Content\nsoup = BeautifulSoup(html_content, 'html.parser')\nprint(soup.prettify())  # Print the formatted HTML content\n\n\nExtracting Specific Data\nAssuming the website has a table with weather data, we’ll extract the table content.\ntable = soup.find('table', {'class': 'weather_table'})\nrows = table.find_all('tr')\n\nweather_data = []\nfor row in rows[1:]:  # Skip the header row\n    cols = row.find_all('td')\n    data = {\n        'Date': cols[0].text,\n        'Temperature': cols[1].text,\n        'Humidity': cols[2].text,\n        'Condition': cols[3].text\n    }\n    weather_data.append(data)\n\nweather_df = pd.DataFrame(weather_data)\nweather_df"
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html#using-additional-apis",
+    "href": "notebooks/05_webscraping.html#using-additional-apis",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "3. Using Additional APIs",
+    "text": "3. Using Additional APIs\nWe’ll explore additional APIs to fetch more weather-related data, such as air quality or UV index.\n\nAir Quality API Example\nWe’ll use the AirNow API to fetch air quality data.\n\n\nImport Required Libraries\nimport requests\nimport pandas as pd\n\n\nFetching Air Quality Data\napi_key = 'your_airnow_api_key'\nurl = f\"http://www.airnowapi.org/aq/observation/zipCode/current?format=application/json&zipCode=90210&distance=25&API_KEY={api_key}\"\n\nresponse = requests.get(url)\nif response.status_code == 200:\n    air_quality_data = response.json()\n    air_quality_data\nelse:\n    print(f\"Failed to fetch data: {response.status_code}\")\n\n\nParsing Air Quality Data\nWe’ll parse the JSON response and create a DataFrame.\nair_quality_df = pd.DataFrame(air_quality_data)\nair_quality_df"
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html#combining-web-scraping-and-api-data",
+    "href": "notebooks/05_webscraping.html#combining-web-scraping-and-api-data",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "4. Combining Web Scraping and API Data",
+    "text": "4. Combining Web Scraping and API Data\nWe’ll combine the scraped weather data and the data fetched from additional APIs.\n\nMerging DataFrames\ncombined_df = pd.merge(weather_df, air_quality_df, left_on='Date', right_on='Date', how='inner')\ncombined_df"
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html#homework",
+    "href": "notebooks/05_webscraping.html#homework",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "Homework",
+    "text": "Homework\n\nExplore other weather-related websites and practice web scraping to gather data.\nExperiment with additional APIs to fetch various types of weather data."
+  },
+  {
+    "objectID": "notebooks/05_webscraping.html#summary",
+    "href": "notebooks/05_webscraping.html#summary",
+    "title": "WeatherVista Project - Session 5: Web Scraping and Using Additional APIs",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we learned the basics of web scraping using BeautifulSoup and explored additional APIs to fetch more weather-related data. We also combined the data from web scraping and APIs to create a comprehensive dataset.\nNext session, we will focus on creating a GUI for the WeatherVista project using Tkinter or Jupyter Widgets."
+  },
+  {
+    "objectID": "notebooks/02_data_management.html",
+    "href": "notebooks/02_data_management.html",
+    "title": "WeatherVista Project - Session 2: Data Management with CSV and SQL",
+    "section": "",
+    "text": "Learn how to manage weather data using CSV files.\nUnderstand how to use SQL to store and retrieve weather data.\nPractice reading, writing, and processing data with pandas and SQLite."
+  },
+  {
+    "objectID": "notebooks/02_data_management.html#objectives",
+    "href": "notebooks/02_data_management.html#objectives",
+    "title": "WeatherVista Project - Session 2: Data Management with CSV and SQL",
+    "section": "",
+    "text": "Learn how to manage weather data using CSV files.\nUnderstand how to use SQL to store and retrieve weather data.\nPractice reading, writing, and processing data with pandas and SQLite."
+  },
+  {
+    "objectID": "notebooks/02_data_management.html#managing-data-with-csv-files",
+    "href": "notebooks/02_data_management.html#managing-data-with-csv-files",
+    "title": "WeatherVista Project - Session 2: Data Management with CSV and SQL",
+    "section": "1. Managing Data with CSV Files",
+    "text": "1. Managing Data with CSV Files\nCSV (Comma-Separated Values) is a simple and widely used format for storing tabular data.\n\nImport Required Libraries\nimport pandas as pd\n\n\nReading Data from a CSV File\nWe’ll read the weather data we saved in the previous session.\ndf = pd.read_csv('data/raw/weather_data.csv')\ndf\n\n\nProcessing Data\nLet’s process the data by converting the temperature from Kelvin to Celsius.\ndef convert_temp_kelvin_to_celsius(temp_k):\n    return temp_k - 273.15\n\ndf['Temperature (C)'] = df['Temperature (K)'].apply(convert_temp_kelvin_to_celsius)\ndf.drop(columns=['Temperature (K)'], inplace=True)\ndf\n\n\nWriting Data to a CSV File\nWe’ll save the processed data to a new CSV file.\ndf.to_csv('data/processed/processed_weather_data.csv', index=False)"
+  },
+  {
+    "objectID": "notebooks/02_data_management.html#managing-data-with-sql",
+    "href": "notebooks/02_data_management.html#managing-data-with-sql",
+    "title": "WeatherVista Project - Session 2: Data Management with CSV and SQL",
+    "section": "2. Managing Data with SQL",
+    "text": "2. Managing Data with SQL\nSQL (Structured Query Language) is a powerful tool for managing and querying data stored in relational databases.\n\nImport Required Libraries\nimport sqlite3\n\n\nCreating a SQLite Database and Table\nWe’ll create a SQLite database and a table to store the weather data.\nconn = sqlite3.connect('data/weather_data.db')\ncursor = conn.cursor()\n\ncursor.execute('''\n    CREATE TABLE IF NOT EXISTS weather (\n        location TEXT,\n        temperature_c REAL,\n        humidity INTEGER,\n        weather_description TEXT\n    )\n''')\nconn.commit()\n\n\nInserting Data into the Table\nWe’ll insert the processed weather data into the SQLite table.\nfor index, row in df.iterrows():\n    cursor.execute('''\n        INSERT INTO weather (location, temperature_c, humidity, weather_description)\n        VALUES (?, ?, ?, ?)\n    ''', (row['Location'], row['Temperature (C)'], row['Humidity (%)'], row['Weather']))\nconn.commit()\n\n\nQuerying Data from the Table\nWe’ll query the data we just inserted into the SQLite table.\ncursor.execute('SELECT * FROM weather')\nrows = cursor.fetchall()\nfor row in rows:\n    print(row)\n\n\nConverting SQL Query Results to DataFrame\nWe’ll convert the query results to a pandas DataFrame for easier manipulation and visualization.\ndf_sql = pd.DataFrame(rows, columns=['Location', 'Temperature (C)', 'Humidity (%)', 'Weather'])\ndf_sql"
+  },
+  {
+    "objectID": "notebooks/02_data_management.html#combining-csv-and-sql-data-management",
+    "href": "notebooks/02_data_management.html#combining-csv-and-sql-data-management",
+    "title": "WeatherVista Project - Session 2: Data Management with CSV and SQL",
+    "section": "3. Combining CSV and SQL Data Management",
+    "text": "3. Combining CSV and SQL Data Management\nWe’ll demonstrate how to combine CSV and SQL data management techniques.\n\nReading Data from CSV and Inserting into SQL\nWe’ll read additional weather data from a CSV file and insert it into the SQLite table.\nadditional_data = pd.read_csv('data/raw/additional_weather_data.csv')\nfor index, row in additional_data.iterrows():\n    cursor.execute('''\n        INSERT INTO weather (location, temperature_c, humidity, weather_description)\n        VALUES (?, ?, ?, ?)\n    ''', (row['Location'], row['Temperature (C)'], row['Humidity (%)'], row['Weather']))\nconn.commit()\n\n\nQuerying Combined Data\nWe’ll query the combined data from the SQLite table.\ncursor.execute('SELECT * FROM weather')\ncombined_rows = cursor.fetchall()\ndf_combined = pd.DataFrame(combined_rows, columns=['Location', 'Temperature (C)', 'Humidity (%)', 'Weather'])\ndf_combined"
+  },
+  {
+    "objectID": "notebooks/02_data_management.html#homework",
+    "href": "notebooks/02_data_management.html#homework",
+    "title": "WeatherVista Project - Session 2: Data Management with CSV and SQL",
+    "section": "Homework",
+    "text": "Homework\n\nPractice reading and writing data to CSV files with different weather datasets.\nExplore additional SQL queries to retrieve specific subsets of the weather data."
+  },
+  {
+    "objectID": "notebooks/02_data_management.html#summary",
+    "href": "notebooks/02_data_management.html#summary",
+    "title": "WeatherVista Project - Session 2: Data Management with CSV and SQL",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we learned how to manage weather data using CSV files and SQL. We practiced reading, writing, and processing data with pandas and SQLite, and we combined both techniques to manage our weather data effectively.\nNext session, we will focus on basic data visualization with Matplotlib."
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html",
+    "href": "notebooks/04_advanced_vix.html",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "",
+    "text": "Learn how to create advanced visualizations using subplots and grids.\nUnderstand how to combine multiple plots into a single figure.\nCustomize the layout and presentation of complex visualizations."
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#objectives",
+    "href": "notebooks/04_advanced_vix.html#objectives",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "",
+    "text": "Learn how to create advanced visualizations using subplots and grids.\nUnderstand how to combine multiple plots into a single figure.\nCustomize the layout and presentation of complex visualizations."
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#introduction-to-advanced-visualization",
+    "href": "notebooks/04_advanced_vix.html#introduction-to-advanced-visualization",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "1. Introduction to Advanced Visualization",
+    "text": "1. Introduction to Advanced Visualization\nAdvanced visualizations can provide more insights by combining multiple plots into a single figure, allowing for easier comparison and analysis.\n\nImport Required Libraries\nimport pandas as pd\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#reading-data",
+    "href": "notebooks/04_advanced_vix.html#reading-data",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "2. Reading Data",
+    "text": "2. Reading Data\nWe’ll start by reading the processed weather data from the CSV file.\ndf = pd.read_csv('data/processed/processed_weather_data.csv')\ndf"
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#creating-subplots",
+    "href": "notebooks/04_advanced_vix.html#creating-subplots",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "3. Creating Subplots",
+    "text": "3. Creating Subplots\nSubplots allow us to create multiple plots within a single figure.\n\nCreating a 2x2 Grid of Plots\nWe’ll create a 2x2 grid of plots to visualize different aspects of the weather data.\nfig, axs = plt.subplots(2, 2, figsize=(14, 10))\n\n# Line plot for Temperature\naxs[0, 0].plot(df['Location'], df['Temperature (C)'], marker='o')\naxs[0, 0].set_title('Temperature by Location')\naxs[0, 0].set_xlabel('Location')\naxs[0, 0].set_ylabel('Temperature (°C)')\naxs[0, 0].tick_params(axis='x', rotation=45)\n\n# Bar plot for Humidity\naxs[0, 1].bar(df['Location'], df['Humidity (%)'], color='skyblue')\naxs[0, 1].set_title('Humidity by Location')\naxs[0, 1].set_xlabel('Location')\naxs[0, 1].set_ylabel('Humidity (%)')\naxs[0, 1].tick_params(axis='x', rotation=45)\n\n# Pie chart for Weather Description\nweather_counts = df['Weather'].value_counts()\naxs[1, 0].pie(weather_counts, labels=weather_counts.index, autopct='%1.1f%%', startangle=140)\naxs[1, 0].set_title('Weather Description Distribution')\naxs[1, 0].axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.\n\n# Scatter plot for Temperature vs. Humidity\naxs[1, 1].scatter(df['Temperature (C)'], df['Humidity (%)'], color='r')\naxs[1, 1].set_title('Temperature vs. Humidity')\naxs[1, 1].set_xlabel('Temperature (°C)')\naxs[1, 1].set_ylabel('Humidity (%)')\n\n# Adjust layout\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#customizing-subplots",
+    "href": "notebooks/04_advanced_vix.html#customizing-subplots",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "4. Customizing Subplots",
+    "text": "4. Customizing Subplots\nCustomizing subplots can improve the readability and presentation of the visualizations.\n\nAdding Annotations and Customizing Styles\nWe’ll add annotations to highlight specific data points and customize the styles of the subplots.\nfig, axs = plt.subplots(2, 2, figsize=(14, 10))\n\n# Line plot for Temperature\naxs[0, 0].plot(df['Location'], df['Temperature (C)'], marker='o', linestyle='--', color='b')\naxs[0, 0].set_title('Temperature by Location', fontsize=12, fontweight='bold')\naxs[0, 0].set_xlabel('Location')\naxs[0, 0].set_ylabel('Temperature (°C)')\naxs[0, 0].tick_params(axis='x', rotation=45)\nmax_temp = df['Temperature (C)'].max()\nmax_temp_location = df.loc[df['Temperature (C)'] == max_temp, 'Location'].iloc[0]\naxs[0, 0].annotate(f'Max Temp: {max_temp:.2f}°C', xy=(max_temp_location, max_temp), \n                   xytext=(max_temp_location, max_temp+2), \n                   arrowprops=dict(facecolor='black', shrink=0.05))\n\n# Bar plot for Humidity\naxs[0, 1].bar(df['Location'], df['Humidity (%)'], color='skyblue')\naxs[0, 1].set_title('Humidity by Location', fontsize=12, fontweight='bold')\naxs[0, 1].set_xlabel('Location')\naxs[0, 1].set_ylabel('Humidity (%)')\naxs[0, 1].tick_params(axis='x', rotation=45)\n\n# Pie chart for Weather Description\nweather_counts = df['Weather'].value_counts()\naxs[1, 0].pie(weather_counts, labels=weather_counts.index, autopct='%1.1f%%', startangle=140)\naxs[1, 0].set_title('Weather Description Distribution', fontsize=12, fontweight='bold')\naxs[1, 0].axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.\n\n# Scatter plot for Temperature vs. Humidity\naxs[1, 1].scatter(df['Temperature (C)'], df['Humidity (%)'], color='r')\naxs[1, 1].set_title('Temperature vs. Humidity', fontsize=12, fontweight='bold')\naxs[1, 1].set_xlabel('Temperature (°C)')\naxs[1, 1].set_ylabel('Humidity (%)')\n\n# Adjust layout\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#combining-different-types-of-plots",
+    "href": "notebooks/04_advanced_vix.html#combining-different-types-of-plots",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "5. Combining Different Types of Plots",
+    "text": "5. Combining Different Types of Plots\nCombining different types of plots can provide a more comprehensive view of the data.\n\nExample: Combining Line Plot and Bar Plot\nWe’ll combine a line plot and a bar plot in a single figure.\nfig, ax1 = plt.subplots(figsize=(12, 6))\n\n# Line plot for Temperature\nax1.plot(df['Location'], df['Temperature (C)'], color='b', marker='o', label='Temperature (°C)')\nax1.set_xlabel('Location')\nax1.set_ylabel('Temperature (°C)', color='b')\nax1.tick_params(axis='x', rotation=45)\nax1.tick_params(axis='y', labelcolor='b')\n\n# Bar plot for Humidity\nax2 = ax1.twinx()\nax2.bar(df['Location'], df['Humidity (%)'], alpha=0.6, color='g', label='Humidity (%)')\nax2.set_ylabel('Humidity (%)', color='g')\nax2.tick_params(axis='y', labelcolor='g')\n\n# Adding legends\nfig.legend(loc='upper right', bbox_to_anchor=(0.9, 0.9))\n\n# Adding title\nplt.title('Temperature and Humidity by Location')\n\n# Adjust layout\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#homework",
+    "href": "notebooks/04_advanced_vix.html#homework",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "Homework",
+    "text": "Homework\n\nCreate additional subplots to visualize other aspects of the weather data (e.g., wind speed, pressure).\nExperiment with different types of combined plots to enhance the visualizations."
+  },
+  {
+    "objectID": "notebooks/04_advanced_vix.html#summary",
+    "href": "notebooks/04_advanced_vix.html#summary",
+    "title": "WeatherVista Project - Session 4: Advanced Data Visualization with Subplots and Grids",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we learned how to create advanced data visualizations using subplots and grids. We combined multiple plots into a single figure and customized the layout and presentation to improve readability and presentation.\nNext session, we will focus on web scraping and using additional APIs to gather more weather-related data."
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html",
+    "href": "notebooks/03_visualiation.html",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "",
+    "text": "Learn how to visualize weather data using Matplotlib.\nUnderstand how to create basic plots to represent weather data.\nCustomize plots to enhance readability and presentation."
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html#objectives",
+    "href": "notebooks/03_visualiation.html#objectives",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "",
+    "text": "Learn how to visualize weather data using Matplotlib.\nUnderstand how to create basic plots to represent weather data.\nCustomize plots to enhance readability and presentation."
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html#introduction-to-matplotlib",
+    "href": "notebooks/03_visualiation.html#introduction-to-matplotlib",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "1. Introduction to Matplotlib",
+    "text": "1. Introduction to Matplotlib\nMatplotlib is a widely used Python library for creating static, animated, and interactive visualizations.\n\nImport Required Libraries\nimport pandas as pd\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html#reading-data",
+    "href": "notebooks/03_visualiation.html#reading-data",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "2. Reading Data",
+    "text": "2. Reading Data\nWe’ll start by reading the processed weather data from the CSV file created in the previous session.\ndf = pd.read_csv('data/processed/processed_weather_data.csv')\ndf"
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html#creating-basic-plots",
+    "href": "notebooks/03_visualiation.html#creating-basic-plots",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "3. Creating Basic Plots",
+    "text": "3. Creating Basic Plots\nWe’ll create basic plots to visualize different aspects of the weather data.\n\nLine Plot for Temperature\nWe’ll create a line plot to visualize the temperature data.\nplt.figure(figsize=(10, 6))\nplt.plot(df['Location'], df['Temperature (C)'], marker='o')\nplt.title('Temperature by Location')\nplt.xlabel('Location')\nplt.ylabel('Temperature (°C)')\nplt.xticks(rotation=45)\nplt.grid(True)\nplt.show()\n\n\nBar Plot for Humidity\nWe’ll create a bar plot to visualize the humidity data.\nplt.figure(figsize=(10, 6))\nplt.bar(df['Location'], df['Humidity (%)'], color='skyblue')\nplt.title('Humidity by Location')\nplt.xlabel('Location')\nplt.ylabel('Humidity (%)')\nplt.xticks(rotation=45)\nplt.show()\n\n\nPie Chart for Weather Description\nWe’ll create a pie chart to visualize the distribution of weather descriptions.\nweather_counts = df['Weather'].value_counts()\nplt.figure(figsize=(8, 8))\nplt.pie(weather_counts, labels=weather_counts.index, autopct='%1.1f%%', startangle=140)\nplt.title('Weather Description Distribution')\nplt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.\nplt.show()"
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html#customizing-plots",
+    "href": "notebooks/03_visualiation.html#customizing-plots",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "4. Customizing Plots",
+    "text": "4. Customizing Plots\nCustomizing plots can make them more informative and visually appealing.\n\nAdding Annotations\nWe’ll add annotations to highlight specific data points.\nplt.figure(figsize=(10, 6))\nplt.plot(df['Location'], df['Temperature (C)'], marker='o')\nplt.title('Temperature by Location')\nplt.xlabel('Location')\nplt.ylabel('Temperature (°C)')\nplt.xticks(rotation=45)\nplt.grid(True)\n\n# Annotate the highest temperature\nmax_temp = df['Temperature (C)'].max()\nmax_temp_location = df.loc[df['Temperature (C)'] == max_temp, 'Location'].iloc[0]\nplt.annotate(f'Max Temp: {max_temp:.2f}°C', xy=(max_temp_location, max_temp), \n             xytext=(max_temp_location, max_temp+2), \n             arrowprops=dict(facecolor='black', shrink=0.05))\n\nplt.show()\n\n\nCustomizing Colors and Styles\nWe’ll customize the colors and styles of the plots.\nplt.figure(figsize=(10, 6))\nplt.plot(df['Location'], df['Temperature (C)'], marker='o', linestyle='--', color='b')\nplt.title('Temperature by Location', fontsize=14, fontweight='bold')\nplt.xlabel('Location', fontsize=12)\nplt.ylabel('Temperature (°C)', fontsize=12)\nplt.xticks(rotation=45)\nplt.grid(True, linestyle='--', linewidth=0.5)\n\nplt.show()"
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html#homework",
+    "href": "notebooks/03_visualiation.html#homework",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "Homework",
+    "text": "Homework\n\nCreate additional plots to visualize other aspects of the weather data (e.g., wind speed, pressure).\nExperiment with different types of plots and customizations to enhance the visualizations."
+  },
+  {
+    "objectID": "notebooks/03_visualiation.html#summary",
+    "href": "notebooks/03_visualiation.html#summary",
+    "title": "WeatherVista Project - Session 3: Basic Data Visualization with Matplotlib and Pandas",
+    "section": "Summary",
+    "text": "Summary\nIn this session, we learned how to visualize weather data using Matplotlib. We created basic plots such as line plots, bar plots, and pie charts, and we customized these plots to improve readability and presentation.\nNext session, we will focus on advanced data visualization techniques using subplots and grids."
+  },
+  {
+    "objectID": "worksheets.html",
+    "href": "worksheets.html",
+    "title": "Worksheets",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nPython Fundamentals Review Worksheet\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  }
+]
