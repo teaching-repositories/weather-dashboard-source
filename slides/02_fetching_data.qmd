@@ -43,6 +43,7 @@ format:
 - Introduce the concept of HTTP requests and responses.
 - Show how to handle errors and exceptions in Python.
 
+# Example - Create Function
 ```python
 import requests
 
@@ -57,18 +58,28 @@ def fetch_weather_data(api_key, location):
         return None
 ```
 
+# Example - Use function
 ```python
 api_key = 'your_api_key_here'
 location = 'London'
 data = fetch_weather_data(api_key, location)
 data
 ```
+# What is JSON
+- JavaScript Object Notation,
+- JSON is a text-based format
+- JSON is easy to read and write
+- JSON is widely used for data exchange
+
 
 # Parsing JSON Data
-- Introduce the concept of JSON data and how it is used to represent data.
-- Demonstrate how to use the `json` library to parse JSON data in Python.
+- JSON used to represent data.
+- `import json` to serialise list, dict etc to JSON
+- response.json() convert JSON to Python dict.
 - Highlight the importance of data parsing and how it is used in the weather dashboard project.
 
+
+# Example - parse_weather_data
 ```python
 def parse_weather_data(data):
     if data:
@@ -87,13 +98,16 @@ parsed_data
 ```
 
 # Saving Data to a CSV File
+- CSV another format for sharing data
 - We'll save the fetched data to a CSV file using pandas.
+- pandas open-source library for data manipulation and analysis
 
+# Example
 ```python
 import pandas as pd
 
 def save_to_csv(data, filename):
-    df = pd.DataFrame([data])
+    df = pd.DataFrame([data]). # convert dict to df
     df.to_csv(filename, index=False)
 
 save_to_csv(parsed_data, 'data/raw/weather_data.csv')
@@ -110,6 +124,7 @@ df
 - Demonstrate how to use try-except blocks to handle errors in Python.
 - Highlight the importance of error handling in the weather dashboard project.
 
+# Error Handling - Example
 ```python
 invalid_location = 'InvalidCity'
 invalid_data = fetch_weather_data(api_key, invalid_location)
@@ -117,14 +132,14 @@ invalid_data
 ```
 
 # Breakout Room Activity
-- Emphasize the importance of teamwork and collaboration in the project.
+- Emphasise the importance of teamwork and collaboration in the project.
 - Encourage students to work together to fetch and parse data for different cities.
 - Encourage students to share their findings and discuss challenges.
 
 # Q&A and Wrap-Up
 - In this session, we learned how to fetch weather data from the OpenWeatherMap API, parse the JSON response, and save the data to a CSV file. We also covered basic error handling to manage failed API requests.
 - Any questions"
-- The importance of practicing and experimenting with the concepts learned in the session.
+- The importance of practising and experimenting with the concepts learned in the session.
 - Next session, we will focus on managing data with CSV and SQL.
 
 # Homework

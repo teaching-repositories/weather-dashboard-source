@@ -4,8 +4,6 @@ execute:
   enabled: false
 ---
 
-[Download Notebook](01_fetch_data_student.ipynb)
-
 ## Objectives
 - Learn how to fetch weather data using the OpenWeatherMap API.
 - Understand how to handle API responses and errors.
