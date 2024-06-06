@@ -195,7 +195,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><a href="01_fetch_data_student.ipynb">Download Notebook</a></p>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <ul>
@@ -221,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’ll use the <code>requests</code> library to fetch weather data from the OpenWeatherMap API.</p>
 <section id="import-required-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-libraries">Import Required Libraries</h3>
-<div id="94e30b29" class="cell">
+<div id="1ed322d9" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -229,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fetch-some-data" class="level3">
 <h3 class="anchored" data-anchor-id="fetch-some-data">Fetch some Data</h3>
 <p>Lets fetch some data.. Replace <code>'your_api_key_here'</code> with your actual API key and fetch data for a sample location.</p>
-<div id="93a92686" class="cell">
+<div id="2d925736" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup important variables</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> <span class="st">'your_api_key_here'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>location <span class="op">=</span> <span class="st">'Guangzhou'</span></span>
@@ -242,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>response</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What happens if the location does not exist, try a location that does not exist. Replace <code>'your_api_key_here'</code> with your actual API key and fetch data for a sample location.</p>
-<div id="5e518010" class="cell">
+<div id="0db735ba" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup important variables</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> <span class="st">'your_api_key_here'</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>location <span class="op">=</span> <span class="st">'ABCDEFGHIJK'</span></span>
@@ -258,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="define-function-to-fetch-weather-data" class="level3">
 <h3 class="anchored" data-anchor-id="define-function-to-fetch-weather-data">Define Function to Fetch Weather Data</h3>
 <p>We’ll create a function to fetch weather data for a specific location.</p>
-<div id="b7f66914" class="cell">
+<div id="2f61e1c6" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(api_key, location):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="ss">f"http://api.openweathermap.org/data/2.5/weather?q=</span><span class="sc">{</span>location<span class="sc">}</span><span class="ss">&amp;appid=</span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(url)</span>
@@ -273,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fetch-data-for-a-sample-location" class="level3">
 <h3 class="anchored" data-anchor-id="fetch-data-for-a-sample-location">Fetch Data for a Sample Location</h3>
 <p>Replace <code>'your_api_key_here'</code> with your actual API key and fetch data for a sample location.</p>
-<div id="e08c7b9a" class="cell">
+<div id="d16d270e" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> <span class="st">'your_api_key_here'</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>location <span class="op">=</span> <span class="st">'Guangzhou'</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fetch_weather_data(api_key, location)</span>
@@ -284,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="parsing-and-displaying-data" class="level2">
 <h2 class="anchored" data-anchor-id="parsing-and-displaying-data">3. Parsing and Displaying Data</h2>
 <p>We’ll parse the JSON response and extract relevant information.</p>
-<div id="7e9f963a" class="cell">
+<div id="ee62510d" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_weather_data(data):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> data:</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        weather <span class="op">=</span> {</span>
@@ -306,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’ll save the fetched data to a CSV file using pandas.</p>
 <section id="convert-data-to-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="convert-data-to-dataframe">Convert Data to DataFrame</h3>
-<div id="e12b9e3b" class="cell">
+<div id="4268991a" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> save_to_csv(data, filename):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame([data])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    df.to_csv(filename, index<span class="op">=</span><span class="va">False</span>)</span>
@@ -316,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="read-and-display-the-csv-file" class="level3">
 <h3 class="anchored" data-anchor-id="read-and-display-the-csv-file">Read and Display the CSV File</h3>
-<div id="3f9c1244" class="cell">
+<div id="785189ee" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/weather_data.csv'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -327,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>It’s important to handle errors that may occur during API requests. We’ve already added basic error handling in the <code>fetch_weather_data</code> function. Let’s test it with an invalid location.</p>
 <section id="test-error-handling" class="level3">
 <h3 class="anchored" data-anchor-id="test-error-handling">Test Error Handling</h3>
-<div id="5c6d0bc2" class="cell">
+<div id="afeef3e2" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>invalid_location <span class="op">=</span> <span class="st">'InvalidCity'</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>invalid_data <span class="op">=</span> fetch_weather_data(api_key, invalid_location)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>invalid_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/01_fetch_data.html</loc>
-    <lastmod>2024-06-06T01:00:32.881Z</lastmod>
+    <lastmod>2024-06-06T03:47:26.410Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/06_dashboard_gui.html</loc>
@@ -37,8 +37,12 @@
     <lastmod>2024-06-06T01:00:32.885Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/worksheets/homework-1.html</loc>
-    <lastmod>2024-06-06T01:00:32.885Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/index.html</loc>
+    <lastmod>2024-06-06T01:00:32.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/worksheets/homework-2.html</loc>
+    <lastmod>2024-06-06T05:43:04.754Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/python-basics.html</loc>
@@ -53,12 +57,20 @@
     <lastmod>2024-06-06T01:00:32.885Z</lastmod>
   </url>
   <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/openweathermap.html</loc>
+    <lastmod>2024-06-06T01:00:32.885Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/weather-dashboard-project-overview.html</loc>
+    <lastmod>2024-06-06T05:12:17.609Z</lastmod>
+  </url>
+  <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/input-validation.html</loc>
     <lastmod>2024-06-06T01:00:32.885Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/openweathermap.html</loc>
-    <lastmod>2024-06-06T01:00:32.885Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/weather-dashboard-setup-guide.html</loc>
+    <lastmod>2024-06-06T05:33:47.821Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/git-basics.html</loc>
@@ -69,12 +81,16 @@
     <lastmod>2024-06-06T01:00:32.885Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/index.html</loc>
-    <lastmod>2024-06-06T01:00:32.881Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/worksheets/homework-1.html</loc>
+    <lastmod>2024-06-06T03:47:38.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/slides/03_managing_data.html</loc>
+    <lastmod>2024-06-06T05:47:00.583Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/slides/02_fetching_data.html</loc>
-    <lastmod>2024-06-06T01:00:32.885Z</lastmod>
+    <lastmod>2024-06-06T04:05:41.605Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/about.html</loc>

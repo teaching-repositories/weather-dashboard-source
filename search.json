@@ -4,14 +4,14 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nWelcome\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nFetching Data Using OpenWeatherMap API\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nFetching Data Using OpenWeatherMap API\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nFetching Data Using OpenWeatherMap API\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "quick-reference-guides.html",
     "href": "quick-reference-guides.html",
     "title": "Quick Reference Guides",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nA Guide to the OpenWeatherMap API\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nException Handling in Python: A Comprehensive Guide\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nGit and GitHub Cheat Sheet: Essential Commands and Concepts\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nJSON in Python: A Quick Reference\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics Cheat Sheet\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Input Validation quick reference guide\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Project Starter Kit\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nA Guide to the OpenWeatherMap API\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nException Handling in Python: A Comprehensive Guide\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nGit and GitHub Cheat Sheet: Essential Commands and Concepts\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nJSON in Python: A Quick Reference\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Basics Cheat Sheet\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Input Validation quick reference guide\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython Project Starter Kit\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeather Dashboard Project Setup Guide\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "notebooks/07_testing.html",
@@ -130,14 +130,14 @@
     "href": "notebooks/01_fetch_data.html",
     "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
     "section": "",
-    "text": "Download Notebook"
+    "text": "Learn how to fetch weather data using the OpenWeatherMap API.\nUnderstand how to handle API responses and errors.\nSave fetched data to a CSV file."
   },
   {
     "objectID": "notebooks/01_fetch_data.html#objectives",
     "href": "notebooks/01_fetch_data.html#objectives",
     "title": "WeatherVista Project - Session 1: Fetching Data from the OpenWeatherMap API",
-    "section": "Objectives",
-    "text": "Objectives\n\nLearn how to fetch weather data using the OpenWeatherMap API.\nUnderstand how to handle API responses and errors.\nSave fetched data to a CSV file."
+    "section": "",
+    "text": "Learn how to fetch weather data using the OpenWeatherMap API.\nUnderstand how to handle API responses and errors.\nSave fetched data to a CSV file."
   },
   {
     "objectID": "notebooks/01_fetch_data.html#introduction-to-openweathermap-api",
@@ -301,11 +301,60 @@
     "text": "Today\n– Introduce the course and project goals. – Set up the development environment. • Activities: – Overview of the weather dashboard project. – Install Python, Jupyter, and necessary libraries. – Basic Git commands: clone, commit, push.\n\n\nIntroduction to the Course\n\nWelcome and course overview\nIntroduction to the WeatherVista project\n\n\n\nDemo of Completed WeatherVista Dashboard (20 minutes) • Show the completed dashboard\n\nHighlight key features and functionalities\n\n\n\nSetting Up Development Environment (30 minutes)\n\nWalkthrough installation of Python, Jupyter, and necessary libraries\nSet up GitHub/GitLab repository\n\n\n\nIntroduction to Git\n\nBasic Git commands: clone, commit, push\nDemonstrate cloning the project repository\n\n\n\nCreating Project Directory Structure (20 minutes)\n\nCreate directories for data, scripts, notebooks, and tests\nBrief explanation of the purpose of each directory\n\n\n\nBreakout Room Activity\n\nStudents work in small groups to set up their project structure\nInstructors available for assistance\n\n\n\nQ&A and Wrap-Up\n\nAddress any questions about setup and project structure\nHomework: Research the OpenWeatherMap API and sign up for an API key"
   },
   {
-    "objectID": "worksheets/homework-1.html",
-    "href": "worksheets/homework-1.html",
-    "title": "Python Fundamentals Review Worksheet",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
     "section": "",
-    "text": "Objective:\nThis worksheet is designed to review the basics of Python programming, including creating variables, simple if-then statements, basic loops, using print, and handling input. Answer the following questions to the best of your ability.\n\nCreating Variables\n\nWrite a Python statement to create a variable named name and assign it the value \"Alice\".\n\n::: {#7a2df1a7 .cell} {.python .cell-code}  # Your code here :::\nCreating Variables\n\nCreate two variables: age with the value 30 and height with the value 5.9.\n\n::: {#293b36da .cell} {.python .cell-code}  # Your code here :::\nSimple If-Then Statement\n\nWrite an if-then statement that prints “You are an adult.” if the variable age is greater than or equal to 18.\n\n::: {#314adcf5 .cell} ``` {.python .cell-code} age = 20 # You can change this value for testing\n# Your code here ``` :::\nSimple If-Then Statement\n\nWrite an if-then statement that checks if a number stored in the variable number is positive. If it is, print “The number is positive.”\n\n::: {#7361f5c2 .cell} ``` {.python .cell-code} number = 5 # You can change this value for testing\n# Your code here ``` :::\nBasic Loops\n\nWrite a for loop that prints the numbers from 1 to 5.\n\n::: {#71eafa9b .cell} {.python .cell-code}  # Your code here :::\nBasic Loops\n\nWrite a while loop that prints the numbers from 1 to 5.\n\n::: {#db5a1df3 .cell} ``` {.python .cell-code} i = 1\n# Your code here ``` :::\nCombining Variables and If-Then Statements\n\nCreate a variable temperature with the value 75. Write an if-then statement that prints “It’s warm outside.” if temperature is greater than or equal to 70.\n\n::: {#6f69cce9 .cell} ``` {.python .cell-code} temperature = 75\n# Your code here ``` :::\nUsing Loops with If-Then Statements\n\nWrite a for loop that iterates over the list numbers = [1, 2, 3, 4, 5] and prints each number only if it is even.\n\n::: {#211a1ab1 .cell} ``` {.python .cell-code} numbers = [1, 2, 3, 4, 5]\n# Your code here ``` :::\nModifying Variables in Loops\n\nWrite a while loop that starts with a variable count set to 0 and increments count by 1 each iteration. The loop should stop when count reaches 10, and the value of count should be printed at the end.\n\n::: {#63bc09f3 .cell} ``` {.python .cell-code} count = 0\n# Your code here ``` :::\nNested Loops\n\nWrite a nested loop that prints a 3x3 grid of asterisks (*).\n\n\n# Your code here\n\nUsing print Function\n\nWrite a Python program that prints “Hello, World!” to the console.\n\n\n# Your code here\n\nUsing input Function\n\nWrite a Python program that prompts the user for their name and then prints a greeting message with their name. For example, if the user inputs “Alice”, the program should print “Hello, Alice!”.\n\n\n# Your code here\n\n\n\n\nAdditional Notes:\n\nMake sure to test your code by running it in a Python environment.\nFeel free to modify variable values to test different scenarios.\nPractice writing clean and readable code by using proper indentation and comments.\n\n\n\nConclusion:\nThis worksheet provides a fundamental review of Python programming basics. Ensure you understand each concept thoroughly before moving on to more advanced topics."
+    "text": "Slides\n\n\nExplore the world of Python programming with our engaging slides, designed to help you learn and retain information.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebooks\n\n\nDive deeper into Python programming with our interactive notebooks, featuring code snippets, examples, and exercises to help you master the material.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorksheets\n\n\nGet hands-on practice with our worksheets, designed to help you apply your Python skills to real-world scenarios.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuick Reference Guides\n\n\nStay on track with our quick reference guides, featuring concise summaries of key Python concepts and syntax.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "worksheets/homework-2.html",
+    "href": "worksheets/homework-2.html",
+    "title": "Understanding the Weather Dashboard Project: WeatherVista",
+    "section": "",
+    "text": "Welcome to the Weather Dashboard Project: WeatherVista! In this project, you will design and develop a web-based application that provides users with current weather conditions and temperature trends for a selected location. The Weather Dashboard will utilize the OpenWeatherMap API to fetch real-time weather data and display it in a user-friendly format.\nThe purpose of this worksheet is to help you understand the project objectives, target audience, technical requirements, and deliverables. By completing this worksheet, you will gain a deeper understanding of the project’s requirements and be able to break down the project into manageable tasks.\nWorksheet: Weather Dashboard Project: WeatherVista\nObjective: To understand the project objectives, target audience, technical requirements, and deliverables of the Weather Dashboard project.\nInstructions: Complete the following sections to demonstrate your understanding of the project.\nNote: This worksheet is designed to help you prepare for the project and ensure that you have a clear understanding of the requirements and objectives."
+  },
+  {
+    "objectID": "worksheets/homework-2.html#introduction",
+    "href": "worksheets/homework-2.html#introduction",
+    "title": "Understanding the Weather Dashboard Project: WeatherVista",
+    "section": "",
+    "text": "Welcome to the Weather Dashboard Project: WeatherVista! In this project, you will design and develop a web-based application that provides users with current weather conditions and temperature trends for a selected location. The Weather Dashboard will utilize the OpenWeatherMap API to fetch real-time weather data and display it in a user-friendly format.\nThe purpose of this worksheet is to help you understand the project objectives, target audience, technical requirements, and deliverables. By completing this worksheet, you will gain a deeper understanding of the project’s requirements and be able to break down the project into manageable tasks.\nWorksheet: Weather Dashboard Project: WeatherVista\nObjective: To understand the project objectives, target audience, technical requirements, and deliverables of the Weather Dashboard project.\nInstructions: Complete the following sections to demonstrate your understanding of the project.\nNote: This worksheet is designed to help you prepare for the project and ensure that you have a clear understanding of the requirements and objectives."
+  },
+  {
+    "objectID": "worksheets/homework-2.html#part-3-target-audience",
+    "href": "worksheets/homework-2.html#part-3-target-audience",
+    "title": "Understanding the Weather Dashboard Project: WeatherVista",
+    "section": "Part 3: Target Audience",
+    "text": "Part 3: Target Audience\n\nWho is the target audience for the Weather Dashboard application?\nHow will the Weather Dashboard benefit each of the target audience groups?"
+  },
+  {
+    "objectID": "worksheets/homework-2.html#part-4-technical-requirements",
+    "href": "worksheets/homework-2.html#part-4-technical-requirements",
+    "title": "Understanding the Weather Dashboard Project: WeatherVista",
+    "section": "Part 4: Technical Requirements",
+    "text": "Part 4: Technical Requirements\n\nWhat programming language will be used to build the Weather Dashboard?\nWhat GUI framework will be used to build the Weather Dashboard?\nWhat API will be used to fetch weather data for the Weather Dashboard?"
+  },
+  {
+    "objectID": "worksheets/homework-2.html#part-5-deliverables",
+    "href": "worksheets/homework-2.html#part-5-deliverables",
+    "title": "Understanding the Weather Dashboard Project: WeatherVista",
+    "section": "Part 5: Deliverables",
+    "text": "Part 5: Deliverables\n\nWhat are the deliverables for the Weather Dashboard project?\nWhat is the purpose of the written report and presentation?"
+  },
+  {
+    "objectID": "worksheets/homework-2.html#part-6-breaking-down-the-project",
+    "href": "worksheets/homework-2.html#part-6-breaking-down-the-project",
+    "title": "Understanding the Weather Dashboard Project: WeatherVista",
+    "section": "Part 6: Breaking Down the Project",
+    "text": "Part 6: Breaking Down the Project\n\nWhat are the steps to break down the Weather Dashboard project into manageable tasks?\nWhat are the key functionalities that need to be included in the Weather Dashboard?"
+  },
+  {
+    "objectID": "worksheets/homework-2.html#additional-questions",
+    "href": "worksheets/homework-2.html#additional-questions",
+    "title": "Understanding the Weather Dashboard Project: WeatherVista",
+    "section": "Additional Questions",
+    "text": "Additional Questions\n\nWhat are some potential challenges that may arise during the development of the Weather Dashboard?\nHow can you ensure that the Weather Dashboard meets the needs of the target audience?"
   },
   {
     "objectID": "quick-reference-guides/python-basics.html",
@@ -427,6 +476,83 @@
     "text": "Exception handling is an essential part of writing robust and reliable Python code. When an error occurs, Python’s exception handling mechanism allows you to catch and handle the exception, providing a way to recover from the error and continue executing your code. In this quick reference guide, we’ll explore the basics of exception handling in Python, including how to write try-except blocks, handle different types of exceptions, and log errors for debugging purposes.\nWhether you’re a beginner or an experienced Python developer, mastering exception handling is crucial for writing robust and maintainable code. With this quick reference guide, you’ll learn how to:\n\nWrite try-except blocks to catch and handle exceptions\nHandle different types of exceptions, such as ValueError, TypeError, and IOError\nLog errors for debugging purposes\nUse finally blocks to execute code regardless of whether an exception is thrown\nRethrow exceptions to propagate them up the call stack\n\nBy the end of this quick reference guide, you’ll be well-equipped to handle exceptions in your Python code and write more robust and reliable software.\nHere is a Python error handling quick reference guide:\nError Handling Basics\n\ntry: Used to enclose a block of code where errors might occur.\nexcept: Used to catch and handle errors.\nfinally: Used to execute code regardless of whether an exception was thrown or not.\n\nTry-Except Blocks\n\ntry-except block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\n\ntry-except-else block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\nelse:\n    # code to execute if no error occurs\n\ntry-except-finally block:\n\ntry:\n    # code that might raise an error\nexcept ExceptionType:\n    # code to handle the error\nfinally:\n    # code to execute regardless of whether an error occurred\nError Types\n\nException: The base class for all exceptions in Python.\nValueError: Raised when a function receives an invalid argument.\nTypeError: Raised when a function receives an argument of the wrong type.\nIOError: Raised when there is a problem with input/output operations.\nRuntimeError: Raised when a runtime error occurs.\n\nRaising Errors\n\nraise: Used to raise an exception.\n\nraise ExceptionType(\"error message\")\n\nraise with an argument:\n\nraise ExceptionType(\"error message\", arg1, arg2)\n\nraise with a value:\n\nraise ValueError(\"Invalid input\")\n\nraise with a message and a value:\n\nraise ValueError(\"Invalid input\", 42)\nError Handling Best Practices\n\nCatch specific exceptions instead of catching the general Exception class.\nLog errors instead of ignoring them.\nProvide a meaningful error message.\nHandle errors in a central location (e.g., in a try-except block) instead of spreading them throughout the code.\n\nCommon Error Handling Scenarios\n\nHandling a specific exception:\n\ntry:\n    # code that might raise an exception\nexcept ValueError:\n    # handle the ValueError\n\nHandling multiple exceptions:\n\ntry:\n    # code that might raise multiple exceptions\nexcept (ValueError, TypeError):\n    # handle the exceptions\n\nHandling an exception and re-raising it:\n\ntry:\n    # code that might raise an exception\nexcept ExceptionType:\n    # handle the exception\n    raise\n\nHandling an exception and logging it:\n\ntry:\n    # code that might raise an exception\nexcept ExceptionType:\n    # handle the exception\n    logging.error(\"Error occurred\")\nI hope this helps! Let me know if you have any questions or need further clarification."
   },
   {
+    "objectID": "quick-reference-guides/openweathermap.html",
+    "href": "quick-reference-guides/openweathermap.html",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "",
+    "text": "As a developer, you’re likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That’s where this quick reference guide comes in.\nIn this comprehensive guide, we’ll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you’re a seasoned developer or just starting out, this quick reference guide is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.\n\n\nThis quick reference guide covers the following topics:\n\nAPI Endpoints: Learn about the different endpoints available in the OpenWeatherMap API, including current weather conditions, 5-day forecasts, and more.\nAPI Parameters: Discover the various parameters you can use to customize your API requests, such as units of measurement, language, and more.\nAPI Responses: Get a breakdown of the different response formats and data structures you can expect from the OpenWeatherMap API.\nError Handling: Learn how to handle common errors and exceptions when working with the OpenWeatherMap API.\nTips and Tricks: Get insider tips and tricks for optimizing your API requests and working with the OpenWeatherMap API."
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#welcome-to-the-openweathermap-api-quick-reference-guide",
+    "href": "quick-reference-guides/openweathermap.html#welcome-to-the-openweathermap-api-quick-reference-guide",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "",
+    "text": "As a developer, you’re likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That’s where this quick reference guide comes in.\nIn this comprehensive guide, we’ll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you’re a seasoned developer or just starting out, this quick reference guide is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.\n\n\nThis quick reference guide covers the following topics:\n\nAPI Endpoints: Learn about the different endpoints available in the OpenWeatherMap API, including current weather conditions, 5-day forecasts, and more.\nAPI Parameters: Discover the various parameters you can use to customize your API requests, such as units of measurement, language, and more.\nAPI Responses: Get a breakdown of the different response formats and data structures you can expect from the OpenWeatherMap API.\nError Handling: Learn how to handle common errors and exceptions when working with the OpenWeatherMap API.\nTips and Tricks: Get insider tips and tricks for optimizing your API requests and working with the OpenWeatherMap API."
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#who-is-this-quick-reference-guide-for",
+    "href": "quick-reference-guides/openweathermap.html#who-is-this-quick-reference-guide-for",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "Who is this quick reference guide For?",
+    "text": "Who is this quick reference guide For?\nThis quick reference guide is designed for anyone who wants to get the most out of the OpenWeatherMap API. Whether you’re a:\n\nDeveloper looking to integrate weather data into your app or website\nResearcher seeking to analyze weather patterns and trends\nWeather enthusiast curious about the inner workings of the OpenWeatherMap API\n\nThis quick reference guide is for you.\nSo, let’s get started and dive into the world of OpenWeatherMap API!"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-endpoints",
+    "href": "quick-reference-guides/openweathermap.html#api-endpoints",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Endpoints",
+    "text": "API Endpoints\n\napi.openweathermap.org/data/2.5/weather: Current weather conditions\napi.openweathermap.org/data/2.5/forecast: 5-day forecast\napi.openweathermap.org/data/2.5/onecall: Current weather conditions and 5-day forecast"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-parameters",
+    "href": "quick-reference-guides/openweathermap.html#api-parameters",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Parameters",
+    "text": "API Parameters\n\nq: City name or zip code (required)\nunits: Units of measurement (imperial or metric)\nlang: Language for weather descriptions (en, fr, es, etc.)\nappid: Your OpenWeatherMap API key (required)"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-requests",
+    "href": "quick-reference-guides/openweathermap.html#api-requests",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Requests",
+    "text": "API Requests\n\nGET /weather: Retrieve current weather conditions\n\nExample: https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY\n\nGET /forecast: Retrieve 5-day forecast\n\nExample: https://api.openweathermap.org/data/2.5/forecast?q=London&appid=YOUR_API_KEY\n\nGET /onecall: Retrieve current weather conditions and 5-day forecast\n\nExample: https://api.openweathermap.org/data/2.5/onecall?q=London&appid=YOUR_API_KEY"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-response",
+    "href": "quick-reference-guides/openweathermap.html#api-response",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Response",
+    "text": "API Response\n\nweather: Current weather conditions\n\nmain: Weather condition (e.g. “Clouds”)\ndescription: Weather description (e.g. “overcast clouds”)\nicon: Weather icon (e.g. “04d”)\n\nforecast: 5-day forecast\n\nlist: Array of forecast data\n\ndt: Timestamp (Unix epoch)\nmain: Weather condition (e.g. “Clouds”)\ndescription: Weather description (e.g. “overcast clouds”)\nicon: Weather icon (e.g. “04d”)\n\n\ncurrent: Current weather conditions\n\ntemp: Temperature (in Kelvin)\nhumidity: Humidity (percentage)\nwind_speed: Wind speed (m/s)\nwind_deg: Wind direction (degrees)"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#error-handling",
+    "href": "quick-reference-guides/openweathermap.html#error-handling",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "Error Handling",
+    "text": "Error Handling\n\nHTTP 404: City not found\nHTTP 401: Invalid API key\nHTTP 500: Internal server error"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#tips-and-tricks",
+    "href": "quick-reference-guides/openweathermap.html#tips-and-tricks",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "Tips and Tricks",
+    "text": "Tips and Tricks\n\nUse the appid parameter to authenticate your API requests\nUse the units parameter to specify the units of measurement (imperial or metric)\nUse the lang parameter to specify the language for weather descriptions\nUse the q parameter to specify the city name or zip code\nUse the forecast endpoint to retrieve a 5-day forecast\nUse the onecall endpoint to retrieve current weather conditions and 5-day forecast"
+  },
+  {
+    "objectID": "quick-reference-guides/openweathermap.html#api-key",
+    "href": "quick-reference-guides/openweathermap.html#api-key",
+    "title": "A Guide to the OpenWeatherMap API",
+    "section": "API Key",
+    "text": "API Key\n\nSign up for a free API key on the OpenWeatherMap website\nUse your API key in the appid parameter of your API requests\n\nI hope this quick reference guide helps you get started with the OpenWeatherMap API!"
+  },
+  {
+    "objectID": "quick-reference-guides/weather-dashboard-project-overview.html",
+    "href": "quick-reference-guides/weather-dashboard-project-overview.html",
+    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "section": "",
+    "text": "Project Overview\nThe Weather Dashboard project is designed to create a web application that displays current weather conditions and temperature trends for a chosen location. This application will use the OpenWeatherMap API to fetch real-time weather data, ensuring users have access to up-to-date information presented in an easy-to-understand format. This project aims to create a web-based application that provides users with current weather conditions and temperature trends for a selected location, utilising the OpenWeatherMap API to fetch weather data and display it in a user-friendly format.\n\n\nProject Objectives\nThe main goals of the Weather Dashboard project are to design and develop a dashboard that:\n\nDisplays Current Weather Conditions: Shows the temperature, humidity, wind speed, and cloud cover for the selected location.\nProvides Temperature Trends: Displays temperature trends for the current day and the next five days.\nOffers a 3 and 5-Day Forecast: Includes date, time, and a brief weather description for the upcoming five days.\nLocation Selection: Allows users to choose a location from a list of cities or enter a custom location.\nUnit Switching: Provides options to switch between Celsius and Fahrenheit units.\nError Handling: Manages API errors by displaying a relevant message if the API request fails.\n\n\n\nTarget Audience\nThe Weather Dashboard is intended for anyone who wants to stay informed about the weather in their area, including:\n\nCommuters: Individuals planning their daily routes based on weather conditions.\nOutdoor Enthusiasts: People organising outdoor activities depending on the weather forecast.\nTravelers: Individuals needing to know what weather to expect at their destination.\nHomeowners: Residents wanting to stay aware of local weather conditions.\n\n\n\nTechnical Requirements\nTo build the Weather Dashboard, the project will use the following technical requirements:\n\nProgramming Language: Python\nGUI Framework: Tkinter (Tk)\nAPI Integration: OpenWeatherMap API\n\n\n\nDeliverables\nThe project will produce:\n\nFully Functional Weather Dashboard: A web application that meets both functional and non-functional requirements.\nWritten Report: Documentation detailing the design and implementation decisions made during the project.\nPresentation: A summary presentation highlighting the project and its outcomes.\n\n\n\nBreaking Down the Project into Steps\n\nUnderstand the Objectives: Clearly define what the weather dashboard needs to accomplish.\nIdentify Key Functionalities: List out the main features the application should have (e.g., displaying weather conditions, providing forecasts, location selection, unit switching, error handling).\nDetermine the Technical Requirements: Choose the appropriate programming language, GUI framework, and API.\nDefine the Target Audience: Understand who will be using the application and tailor the functionalities to meet their needs.\nPlan Deliverables: Outline what needs to be delivered by the end of the project (functional dashboard, report, presentation).\nSet a Timeline: Establish a timeline with milestones to ensure steady progress.\n\nBy following these steps, you can break down the Weather Dashboard project into manageable tasks, ensuring you cover all necessary functionalities and deliver a complete and functional application."
+  },
+  {
     "objectID": "quick-reference-guides/input-validation.html",
     "href": "quick-reference-guides/input-validation.html",
     "title": "Python Input Validation quick reference guide",
@@ -546,74 +672,32 @@
     "text": "Common Validation Functions\n\nstr.strip(): Removes leading and trailing whitespace from a string.\nstr.replace(): Replaces a specified phrase with another string.\n\nYou can use these methods to validate user input and ensure that it meets certain criteria. For example, you can use str.isalpha() to check if a string contains only letters, or int.isdigit() to check if a string contains only digits.\nRemember to always validate user input to prevent common web application security vulnerabilities like SQL injection and cross-site scripting (XSS)."
   },
   {
-    "objectID": "quick-reference-guides/openweathermap.html",
-    "href": "quick-reference-guides/openweathermap.html",
-    "title": "A Guide to the OpenWeatherMap API",
+    "objectID": "quick-reference-guides/weather-dashboard-setup-guide.html",
+    "href": "quick-reference-guides/weather-dashboard-setup-guide.html",
+    "title": "Weather Dashboard Project Setup Guide",
     "section": "",
-    "text": "As a developer, you’re likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That’s where this quick reference guide comes in.\nIn this comprehensive guide, we’ll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you’re a seasoned developer or just starting out, this quick reference guide is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.\n\n\nThis quick reference guide covers the following topics:\n\nAPI Endpoints: Learn about the different endpoints available in the OpenWeatherMap API, including current weather conditions, 5-day forecasts, and more.\nAPI Parameters: Discover the various parameters you can use to customize your API requests, such as units of measurement, language, and more.\nAPI Responses: Get a breakdown of the different response formats and data structures you can expect from the OpenWeatherMap API.\nError Handling: Learn how to handle common errors and exceptions when working with the OpenWeatherMap API.\nTips and Tricks: Get insider tips and tricks for optimizing your API requests and working with the OpenWeatherMap API."
+    "text": "Welcome to the Weather Dashboard project! This guide will walk you through the initial setup of your project folder, creating a new Python environment, and setting up your GitHub repository. By following these steps, you’ll establish a strong foundation for developing your Weather Dashboard app, ensuring your project is well-organised and version-controlled."
   },
   {
-    "objectID": "quick-reference-guides/openweathermap.html#welcome-to-the-openweathermap-api-quick-reference-guide",
-    "href": "quick-reference-guides/openweathermap.html#welcome-to-the-openweathermap-api-quick-reference-guide",
-    "title": "A Guide to the OpenWeatherMap API",
+    "objectID": "quick-reference-guides/weather-dashboard-setup-guide.html#introduction",
+    "href": "quick-reference-guides/weather-dashboard-setup-guide.html#introduction",
+    "title": "Weather Dashboard Project Setup Guide",
     "section": "",
-    "text": "As a developer, you’re likely no stranger to the world of APIs. But when it comes to the OpenWeatherMap API, it can be overwhelming to navigate the vast array of endpoints, parameters, and responses. That’s where this quick reference guide comes in.\nIn this comprehensive guide, we’ll take you on a journey through the OpenWeatherMap API, covering everything from the basics of authentication to the intricacies of weather forecasting. Whether you’re a seasoned developer or just starting out, this quick reference guide is designed to help you master the OpenWeatherMap API and unlock the secrets of the weather.\n\n\nThis quick reference guide covers the following topics:\n\nAPI Endpoints: Learn about the different endpoints available in the OpenWeatherMap API, including current weather conditions, 5-day forecasts, and more.\nAPI Parameters: Discover the various parameters you can use to customize your API requests, such as units of measurement, language, and more.\nAPI Responses: Get a breakdown of the different response formats and data structures you can expect from the OpenWeatherMap API.\nError Handling: Learn how to handle common errors and exceptions when working with the OpenWeatherMap API.\nTips and Tricks: Get insider tips and tricks for optimizing your API requests and working with the OpenWeatherMap API."
+    "text": "Welcome to the Weather Dashboard project! This guide will walk you through the initial setup of your project folder, creating a new Python environment, and setting up your GitHub repository. By following these steps, you’ll establish a strong foundation for developing your Weather Dashboard app, ensuring your project is well-organised and version-controlled."
   },
   {
-    "objectID": "quick-reference-guides/openweathermap.html#who-is-this-quick-reference-guide-for",
-    "href": "quick-reference-guides/openweathermap.html#who-is-this-quick-reference-guide-for",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "Who is this quick reference guide For?",
-    "text": "Who is this quick reference guide For?\nThis quick reference guide is designed for anyone who wants to get the most out of the OpenWeatherMap API. Whether you’re a:\n\nDeveloper looking to integrate weather data into your app or website\nResearcher seeking to analyze weather patterns and trends\nWeather enthusiast curious about the inner workings of the OpenWeatherMap API\n\nThis quick reference guide is for you.\nSo, let’s get started and dive into the world of OpenWeatherMap API!"
+    "objectID": "quick-reference-guides/weather-dashboard-setup-guide.html#project-overview",
+    "href": "quick-reference-guides/weather-dashboard-setup-guide.html#project-overview",
+    "title": "Weather Dashboard Project Setup Guide",
+    "section": "Project Overview",
+    "text": "Project Overview\nIn this project, you’ll be creating a Weather Dashboard application that retrieves and displays weather data using the requests package and the openweathermap api. You’ll learn how to structure your project, manage dependencies, and use Git and GitHub for version control. This setup guide is designed to help you get started quickly and efficiently.\n\nObjectives\n\nCreate and structure your project folder: Organise your project files into a logical structure with subfolders for notebooks, scripts, documentation, and tests.\nSet up a Python environment: Ensure you have an isolated environment for your project with the necessary dependencies installed.\nInitialise a GitHub repository: Learn how to create a remote repository, clone it locally, and synchronise your work with GitHub.\n\nBy the end of this guide, you will have a fully functional project setup that is ready for development. Let’s get started!"
   },
   {
-    "objectID": "quick-reference-guides/openweathermap.html#api-endpoints",
-    "href": "quick-reference-guides/openweathermap.html#api-endpoints",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "API Endpoints",
-    "text": "API Endpoints\n\napi.openweathermap.org/data/2.5/weather: Current weather conditions\napi.openweathermap.org/data/2.5/forecast: 5-day forecast\napi.openweathermap.org/data/2.5/onecall: Current weather conditions and 5-day forecast"
-  },
-  {
-    "objectID": "quick-reference-guides/openweathermap.html#api-parameters",
-    "href": "quick-reference-guides/openweathermap.html#api-parameters",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "API Parameters",
-    "text": "API Parameters\n\nq: City name or zip code (required)\nunits: Units of measurement (imperial or metric)\nlang: Language for weather descriptions (en, fr, es, etc.)\nappid: Your OpenWeatherMap API key (required)"
-  },
-  {
-    "objectID": "quick-reference-guides/openweathermap.html#api-requests",
-    "href": "quick-reference-guides/openweathermap.html#api-requests",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "API Requests",
-    "text": "API Requests\n\nGET /weather: Retrieve current weather conditions\n\nExample: https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY\n\nGET /forecast: Retrieve 5-day forecast\n\nExample: https://api.openweathermap.org/data/2.5/forecast?q=London&appid=YOUR_API_KEY\n\nGET /onecall: Retrieve current weather conditions and 5-day forecast\n\nExample: https://api.openweathermap.org/data/2.5/onecall?q=London&appid=YOUR_API_KEY"
-  },
-  {
-    "objectID": "quick-reference-guides/openweathermap.html#api-response",
-    "href": "quick-reference-guides/openweathermap.html#api-response",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "API Response",
-    "text": "API Response\n\nweather: Current weather conditions\n\nmain: Weather condition (e.g. “Clouds”)\ndescription: Weather description (e.g. “overcast clouds”)\nicon: Weather icon (e.g. “04d”)\n\nforecast: 5-day forecast\n\nlist: Array of forecast data\n\ndt: Timestamp (Unix epoch)\nmain: Weather condition (e.g. “Clouds”)\ndescription: Weather description (e.g. “overcast clouds”)\nicon: Weather icon (e.g. “04d”)\n\n\ncurrent: Current weather conditions\n\ntemp: Temperature (in Kelvin)\nhumidity: Humidity (percentage)\nwind_speed: Wind speed (m/s)\nwind_deg: Wind direction (degrees)"
-  },
-  {
-    "objectID": "quick-reference-guides/openweathermap.html#error-handling",
-    "href": "quick-reference-guides/openweathermap.html#error-handling",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "Error Handling",
-    "text": "Error Handling\n\nHTTP 404: City not found\nHTTP 401: Invalid API key\nHTTP 500: Internal server error"
-  },
-  {
-    "objectID": "quick-reference-guides/openweathermap.html#tips-and-tricks",
-    "href": "quick-reference-guides/openweathermap.html#tips-and-tricks",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "Tips and Tricks",
-    "text": "Tips and Tricks\n\nUse the appid parameter to authenticate your API requests\nUse the units parameter to specify the units of measurement (imperial or metric)\nUse the lang parameter to specify the language for weather descriptions\nUse the q parameter to specify the city name or zip code\nUse the forecast endpoint to retrieve a 5-day forecast\nUse the onecall endpoint to retrieve current weather conditions and 5-day forecast"
-  },
-  {
-    "objectID": "quick-reference-guides/openweathermap.html#api-key",
-    "href": "quick-reference-guides/openweathermap.html#api-key",
-    "title": "A Guide to the OpenWeatherMap API",
-    "section": "API Key",
-    "text": "API Key\n\nSign up for a free API key on the OpenWeatherMap website\nUse your API key in the appid parameter of your API requests\n\nI hope this quick reference guide helps you get started with the OpenWeatherMap API!"
+    "objectID": "quick-reference-guides/weather-dashboard-setup-guide.html#step-by-step-instructions",
+    "href": "quick-reference-guides/weather-dashboard-setup-guide.html#step-by-step-instructions",
+    "title": "Weather Dashboard Project Setup Guide",
+    "section": "Step-by-Step Instructions",
+    "text": "Step-by-Step Instructions\nFollow these detailed steps to set up your Weather Dashboard project:\nStep 1: Create a GitHub repository\n\nGo to the GitHub website and create a new repository.\nName the repository something like “weather-dashboard”.\nInitialise the repository with a README file and a LICENSE file.\n\nStep 2: Clone the GitHub repository\n\nOpen a terminal or command prompt and navigate to the directory where you want to clone your repository.\nClone the GitHub repository to your local machine by running the following command:\ngit clone https://github.com/your-username/weather-dashboard.git\nNavigate to the cloned repository by running the following command:\ncd weather-dashboard\n\nStep 3: Create the project folder structure\n\nInside the cloned repository, create the following subfolders:\nmkdir notebooks scripts docs tests\n\nStep 4: Create a new Python environment\n\nCreate a new Python environment by running the following command:\nconda create --name weather-dashboard-env python=3.12\nActivate the new environment by running the following command:\nconda activate weather-dashboard-env\n\nStep 5: Create a requirements.txt file\n\nInside the project folder, create a new file called requirements.txt.\nOpen the file and add the following line:\nrequests==2.25.1\n(or the latest version you need)\nSave the file.\n\nStep 6: Install packages\n\nActivate the new environment if not already activated by running the following command:\nconda activate weather-dashboard-env\nInstall the packages listed in the requirements.txt file by running the following command:\npip install -r requirements.txt\n\nStep 7: Set up the workflow\n\nAdd all the files in the project folder to the Git repository by running the following command:\ngit add .\nCommit the changes by running the following command:\ngit commit -m \"Initial commit\"\nPush the changes to the GitHub repository by running the following command:\ngit push -u origin master\nFrom now on, you can work locally, make changes, and commit them to the GitHub repository by running the following commands:\ngit add .\ngit commit -m \"commit message\"\n\nStep 8: Create a README and LICENSE file\n\nInside the project folder, create a new file called README.md and add a brief description of your project.\nInside the project folder, create a new file called LICENSE and add the license terms for your project.\n\nBy following these steps, students should have a basic setup for their Weather Dashboard app project, including a new Python environment, a requirements.txt file, and a GitHub repository."
   },
   {
     "objectID": "quick-reference-guides/git-basics.html",
@@ -742,18 +826,25 @@
     "text": "Best Practices\n\nUse the json module to work with JSON data\nUse the dumps() function to convert a Python object to JSON\nUse the loads() function to convert JSON to a Python object\nUse the load() and dump() functions to work with JSON files\nUse try-except blocks to handle errors when working with JSON data"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)",
+    "objectID": "worksheets/homework-1.html",
+    "href": "worksheets/homework-1.html",
+    "title": "Python Fundamentals Review Worksheet",
     "section": "",
-    "text": "Slides\n\n\nExplore the world of Python programming with our engaging slides, designed to help you learn and retain information.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNotebooks\n\n\nDive deeper into Python programming with our interactive notebooks, featuring code snippets, examples, and exercises to help you master the material.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorksheets\n\n\nGet hands-on practice with our worksheets, designed to help you apply your Python skills to real-world scenarios.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuick Reference Guides\n\n\nStay on track with our quick reference guides, featuring concise summaries of key Python concepts and syntax.\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Objective:\nThis worksheet is designed to review the basics of Python programming, including creating variables, simple if-then statements, basic loops, using print, and handling input. Answer the following questions to the best of your ability.\n\nCreating Variables\n\nWrite a Python statement to create a variable named name and assign it the value \"Alice\".\n\n::: {#7eaeb0f1 .cell} {.python .cell-code}  # Your code here :::\nCreating Variables\n\nCreate two variables: age with the value 30 and height with the value 5.9.\n\n::: {#fe137c78 .cell} {.python .cell-code}  # Your code here :::\nSimple If-Then Statement\n\nWrite an if-then statement that prints “You are an adult.” if the variable age is greater than or equal to 18.\n\n::: {#aa06b023 .cell} ``` {.python .cell-code} age = 20 # You can change this value for testing\n# Your code here ``` :::\nSimple If-Then Statement\n\nWrite an if-then statement that checks if a number stored in the variable number is positive. If it is, print “The number is positive.”\n\n::: {#94af5ace .cell} ``` {.python .cell-code} number = 5 # You can change this value for testing\n# Your code here ``` :::\nBasic Loops\n\nWrite a for loop that prints the numbers from 1 to 5.\n\n::: {#59db321c .cell} {.python .cell-code}  # Your code here :::\nBasic Loops\n\nWrite a while loop that prints the numbers from 1 to 5.\n\n::: {#92ae40d7 .cell} ``` {.python .cell-code} i = 1\n# Your code here ``` :::\nCombining Variables and If-Then Statements\n\nCreate a variable temperature with the value 75. Write an if-then statement that prints “It’s warm outside.” if temperature is greater than or equal to 70.\n\n::: {#b1f45309 .cell} ``` {.python .cell-code} temperature = 75\n# Your code here ``` :::\nUsing Loops with If-Then Statements\n\nWrite a for loop that iterates over the list numbers = [1, 2, 3, 4, 5] and prints each number only if it is even.\n\n::: {#a6a8f9a9 .cell} ``` {.python .cell-code} numbers = [1, 2, 3, 4, 5]\n# Your code here ``` :::\nModifying Variables in Loops\n\nWrite a while loop that starts with a variable count set to 0 and increments count by 1 each iteration. The loop should stop when count reaches 10, and the value of count should be printed at the end.\n\n::: {#756478e8 .cell} ``` {.python .cell-code} count = 0\n# Your code here ``` :::\nNested Loops\n\nWrite a nested loop that prints a 3x3 grid of asterisks (*).\n\n\n# Your code here\n\nUsing print Function\n\nWrite a Python program that prints “Hello, World!” to the console.\n\n\n# Your code here\n\nUsing input Function\n\nWrite a Python program that prompts the user for their name and then prints a greeting message with their name. For example, if the user inputs “Alice”, the program should print “Hello, Alice!”.\n\n\n# Your code here\n\n\n\n\nAdditional Notes:\n\nMake sure to test your code by running it in a Python environment.\nFeel free to modify variable values to test different scenarios.\nPractice writing clean and readable code by using proper indentation and comments.\n\n\n\nConclusion:\nThis worksheet provides a fundamental review of Python programming basics. Ensure you understand each concept thoroughly before moving on to more advanced topics."
+  },
+  {
+    "objectID": "slides/03_managing_data.html",
+    "href": "slides/03_managing_data.html",
+    "title": "Fetching Data Using OpenWeatherMap API",
+    "section": "",
+    "text": "Today\n\nLearn how to manage weather data using CSV files\nUnderstand how to use SQL to store and retrieve weather data\nPractice reading, writing, and processing data with pandas and SQLite\n\n\n\nOpenWeatherMap API (Homework)\n\nNavigate OpenWeatherMap API endpoints.\nCustomise requests with parameters.\nUnderstand API response formats.\nHandle common API errors.\n\n\n\nProject Overview\n\nWeb app displays weather trends.\nUses OpenWeatherMap API data.\nShows current and forecast weather.\nLocation selection and unit switch.\nHandles API errors gracefully.\n\n\n\nSetup Project\n\nCreate GitHub repository.\nClone repository locally.\nStructure project folders.\nCreate Python environment.\nInstall dependencies via requirements.txt.\n\n\n\nBreakout Room Activity\n\nSetup Project Folder and Environment\n\n\n\nManaging Data with CSV Files\n\nReading data from a CSV file\nProcessing data by converting temperature from Kelvin to Celsius\nWriting data to a new CSV file\n\n\n\nRead data\nimport pandas as pd\n\ndf = pd.read_csv('data/raw/weather_data.csv')\ndf\n\n\nProcessing data\ndef convert_temp_kelvin_to_celsius(temp_k):\n    return temp_k - 273.15\n\ndf['Temperature (C)'] = df['Temperature (K)'].apply(convert_temp_kelvin_to_celsius)\ndf.drop(columns=['Temperature (K)'], inplace=True)\ndf\n\n\nSaving data\ndf.to_csv('data/processed/processed_weather_data.csv', index=False)\n\n\nManaging Data with SQL\n\nCreating a SQLite database and table\nInserting data into the table\nQuerying data from the table\n\n\n\nCreate database\nimport sqlite3\n\nconn = sqlite3.connect('data/weather_data.db')\ncursor = conn.cursor()\n\ncursor.execute('''\n    CREATE TABLE IF NOT EXISTS weather (\n        location TEXT,\n        temperature_c REAL,\n        humidity INTEGER,\n        weather_description TEXT\n    )\n''')\nconn.commit()\n\n\ninserting into table\nfor index, row in df.iterrows():\n    cursor.execute('''\n        INSERT INTO weather (location, temperature_c, humidity, weather_description)\n        VALUES (?, ?, ?, ?)\n    ''', (row['Location'], row['Temperature (C)'], row['Humidity (%)'], row['Weather']))\nconn.commit()\n\n\nQuerying form table\ncursor.execute('SELECT * FROM weather')\nrows = cursor.fetchall()\nfor row in rows:\n    print(row)\n\ndf_sql = pd.DataFrame(rows, columns=['Location', 'Temperature (C)', 'Humidity (%)', 'Weather'])\ndf_sql\n\n\nCombining CSV and SQL Data Management\n\nReading additional weather data from a CSV file\nInserting data into the SQLite table\nQuerying combined data from the SQLite table\n\n\n\nCode snippet:\nadditional_data = pd.read_csv('data/raw/additional_weather_data.csv')\nfor index, row in additional_data.iterrows():\n    cursor.execute('''\n        INSERT INTO weather (location, temperature_c, humidity, weather_description)\n        VALUES (?, ?, ?, ?)\n    ''', (row['Location'], row['Temperature (C)'], row['Humidity (%)'], row['Weather']))\nconn.commit()\n\n\nVerify\ncursor.execute('SELECT * FROM weather')\ncombined_rows = cursor.fetchall()\ndf_combined = pd.DataFrame(combined_rows, columns=['Location', 'Temperature (C)', 'Humidity (%)', 'Weather'])\ndf_combined\n\n\nHomework\n\nComplete Understanding the Weather Dashboard Project: WeatherVista worksheet\nWrite fetch_data.py and test_fetch_data.py\nPractice reading and writing data to CSV files with different weather datasets\nExplore additional SQL queries to retrieve specific subsets of the weather data\n\n\n\nSummary\n\nmanage weather data using CSV files and SQL.\npractice reading, writing, and processing data with pandas and SQLite\ncombined both techniques to manage our weather data effectively.\n\n\n\nNext Session\n\nwe will focus on basic data visualisation with Matplotlib."
   },
   {
     "objectID": "slides/02_fetching_data.html",
     "href": "slides/02_fetching_data.html",
     "title": "Fetching Data Using OpenWeatherMap API",
     "section": "",
-    "text": "Today\n\nEmphasize the importance of understanding APIs and data fetching in Python.\nHighlight the skills that will be learned in this session:\n\nFetching data using the OpenWeatherMap API.\nParsing JSON data.\nHandling errors.\n\n\n\n\nReview Homework\n\nReview the provided notebook on basics of Python\n\n\n\nIntroduction to OpenWeatherMap API\n\nThe OpenWeatherMap API provides weather data for various locations. You need to sign up and get an API key to access the data.\nSteps to Get API Key:\n\nGo to OpenWeatherMap and sign up for an account.\nAfter signing up, navigate to the API keys section and generate a new API key.\nKeep this API key safe, as you will need it to make API requests.\n\n\n\n\nFetching Data\n\nDemonstrate how to use the requests library to fetch data from the OpenWeatherMap API.\nIntroduce the concept of HTTP requests and responses.\nShow how to handle errors and exceptions in Python.\n\nimport requests\n\ndef fetch_weather_data(api_key, location):\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        return data\n    else:\n        print(f\"Failed to fetch data: {response.status_code}\")\n        return None\napi_key = 'your_api_key_here'\nlocation = 'London'\ndata = fetch_weather_data(api_key, location)\ndata\n\n\nParsing JSON Data\n\nIntroduce the concept of JSON data and how it is used to represent data.\nDemonstrate how to use the json library to parse JSON data in Python.\nHighlight the importance of data parsing and how it is used in the weather dashboard project.\n\ndef parse_weather_data(data):\n    if data:\n        weather = {\n            \"Location\": data[\"name\"],\n            \"Temperature (K)\": data[\"main\"][\"temp\"],\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather\n    else:\n        return None\n\nparsed_data = parse_weather_data(data)\nparsed_data\n\n\nSaving Data to a CSV File\n\nWe’ll save the fetched data to a CSV file using pandas.\n\nimport pandas as pd\n\ndef save_to_csv(data, filename):\n    df = pd.DataFrame([data])\n    df.to_csv(filename, index=False)\n\nsave_to_csv(parsed_data, 'data/raw/weather_data.csv')\ndf = pd.read_csv('data/raw/weather_data.csv')\ndf\n\n\nError Handling\n\nIntroduce the concept of error handling in Python and its importance.\nDemonstrate how to use try-except blocks to handle errors in Python.\nHighlight the importance of error handling in the weather dashboard project.\n\ninvalid_location = 'InvalidCity'\ninvalid_data = fetch_weather_data(api_key, invalid_location)\ninvalid_data\n\n\nBreakout Room Activity\n\nEmphasize the importance of teamwork and collaboration in the project.\nEncourage students to work together to fetch and parse data for different cities.\nEncourage students to share their findings and discuss challenges.\n\n\n\nQ&A and Wrap-Up\n\nIn this session, we learned how to fetch weather data from the OpenWeatherMap API, parse the JSON response, and save the data to a CSV file. We also covered basic error handling to manage failed API requests.\nAny questions”\nThe importance of practicing and experimenting with the concepts learned in the session.\nNext session, we will focus on managing data with CSV and SQL.\n\n\n\nHomework\n\nExperiment with fetching weather data for different cities.\nExplore the OpenWeatherMap API documentation to see what other data you can fetch."
+    "text": "Today\n\nEmphasize the importance of understanding APIs and data fetching in Python.\nHighlight the skills that will be learned in this session:\n\nFetching data using the OpenWeatherMap API.\nParsing JSON data.\nHandling errors.\n\n\n\n\nReview Homework\n\nReview the provided notebook on basics of Python\n\n\n\nIntroduction to OpenWeatherMap API\n\nThe OpenWeatherMap API provides weather data for various locations. You need to sign up and get an API key to access the data.\nSteps to Get API Key:\n\nGo to OpenWeatherMap and sign up for an account.\nAfter signing up, navigate to the API keys section and generate a new API key.\nKeep this API key safe, as you will need it to make API requests.\n\n\n\n\nFetching Data\n\nDemonstrate how to use the requests library to fetch data from the OpenWeatherMap API.\nIntroduce the concept of HTTP requests and responses.\nShow how to handle errors and exceptions in Python.\n\n\n\nExample - Create Function\nimport requests\n\ndef fetch_weather_data(api_key, location):\n    url = f\"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}\"\n    response = requests.get(url)\n    if response.status_code == 200:\n        data = response.json()\n        return data\n    else:\n        print(f\"Failed to fetch data: {response.status_code}\")\n        return None\n\n\nExample - Use function\napi_key = 'your_api_key_here'\nlocation = 'London'\ndata = fetch_weather_data(api_key, location)\ndata\n\n\nWhat is JSON\n\nJavaScript Object Notation,\nJSON is a text-based format\nJSON is easy to read and write\nJSON is widely used for data exchange\n\n\n\nParsing JSON Data\n\nJSON used to represent data.\nimport json to serialise list, dict etc to JSON\nresponse.json() convert JSON to Python dict.\nHighlight the importance of data parsing and how it is used in the weather dashboard project.\n\n\n\nExample - parse_weather_data\ndef parse_weather_data(data):\n    if data:\n        weather = {\n            \"Location\": data[\"name\"],\n            \"Temperature (K)\": data[\"main\"][\"temp\"],\n            \"Humidity (%)\": data[\"main\"][\"humidity\"],\n            \"Weather\": data[\"weather\"][0][\"description\"]\n        }\n        return weather\n    else:\n        return None\n\nparsed_data = parse_weather_data(data)\nparsed_data\n\n\nSaving Data to a CSV File\n\nCSV another format for sharing data\nWe’ll save the fetched data to a CSV file using pandas.\npandas open-source library for data manipulation and analysis\n\n\n\nExample\nimport pandas as pd\n\ndef save_to_csv(data, filename):\n    df = pd.DataFrame([data]). # convert dict to df\n    df.to_csv(filename, index=False)\n\nsave_to_csv(parsed_data, 'data/raw/weather_data.csv')\ndf = pd.read_csv('data/raw/weather_data.csv')\ndf\n\n\nError Handling\n\nIntroduce the concept of error handling in Python and its importance.\nDemonstrate how to use try-except blocks to handle errors in Python.\nHighlight the importance of error handling in the weather dashboard project.\n\n\n\nError Handling - Example\ninvalid_location = 'InvalidCity'\ninvalid_data = fetch_weather_data(api_key, invalid_location)\ninvalid_data\n\n\nBreakout Room Activity\n\nEmphasise the importance of teamwork and collaboration in the project.\nEncourage students to work together to fetch and parse data for different cities.\nEncourage students to share their findings and discuss challenges.\n\n\n\nQ&A and Wrap-Up\n\nIn this session, we learned how to fetch weather data from the OpenWeatherMap API, parse the JSON response, and save the data to a CSV file. We also covered basic error handling to manage failed API requests.\nAny questions”\nThe importance of practising and experimenting with the concepts learned in the session.\nNext session, we will focus on managing data with CSV and SQL.\n\n\n\nHomework\n\nExperiment with fetching weather data for different cities.\nExplore the OpenWeatherMap API documentation to see what other data you can fetch."
   },
   {
     "objectID": "about.html",
@@ -998,6 +1089,6 @@
     "href": "worksheets.html",
     "title": "Worksheets",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nPython Fundamentals Review Worksheet\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nPython Fundamentals Review Worksheet\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding the Weather Dashboard Project: WeatherVista\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
