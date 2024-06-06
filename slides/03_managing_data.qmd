@@ -1,5 +1,5 @@
 ---
-title: "Fetching Data Using OpenWeatherMap API"
+title: "Managing Data Using CSV and SQL"
 author: "Michael Borck"
 format:
     pptx:
