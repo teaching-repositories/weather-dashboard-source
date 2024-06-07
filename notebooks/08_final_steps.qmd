@@ -128,7 +128,7 @@ This project is licensed under the MIT License.
 Docstrings provide in-code documentation that describes what a function does, its parameters, and return values.
 
 ### Example: fetch_data.py with Docstrings
-```python
+```{python}
 def fetch_weather_data(api_key, location):
     """
     Fetch weather data from the OpenWeatherMap API.

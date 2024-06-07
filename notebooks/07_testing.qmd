@@ -13,7 +13,7 @@ execute:
 Testing is crucial for ensuring the reliability and correctness of your code. In this session, we will focus on writing tests using pytest and doctest.
 
 ### Import Required Libraries
-```python
+```{python}
 import pytest
 import requests
 import pandas as pd
@@ -23,7 +23,7 @@ import pandas as pd
 pytest is a popular testing framework for Python that makes it easy to write simple and scalable test cases.
 
 ### Installing pytest
-```python
+```{python}
 !pip install pytest
 ```
 
@@ -31,7 +31,7 @@ pytest is a popular testing framework for Python that makes it easy to write sim
 We'll create a test file `test_weather.py` to write our test cases.
 
 ### test_weather.py
-```python
+```{python}
 # test_weather.py
 import pytest
 from scripts.fetch_data import fetch_weather_data
@@ -55,7 +55,7 @@ def test_fetch_weather_data_failure():
 
 ### Running Tests with pytest
 To run the tests, navigate to the directory containing the test file and run:
-```python
+```{python}
 !pytest test_weather.py
 ```
 
@@ -66,7 +66,7 @@ doctest allows you to write tests within your docstrings, which can be run to ve
 We'll add doctests to the `fetch_weather_data` function in `fetch_data.py`.
 
 ### fetch_data.py
-```python
+```{python}
 def fetch_weather_data(api_key, location):
     """
     Fetch weather data from the OpenWeatherMap API.
@@ -99,7 +99,7 @@ def fetch_weather_data(api_key, location):
 
 ### Running doctests
 To run doctests, use the following command:
-```python
+```{python}
 !python -m doctest -v scripts/fetch_data.py
 ```
 
@@ -110,7 +110,7 @@ We should also test our data processing functions to ensure they work correctly.
 We'll add tests for data processing functions in a new test file `test_process_data.py`.
 
 ### test_process_data.py
-```python
+```{python}
 # test_process_data.py
 import pytest
 from scripts.process_data import convert_temp_kelvin_to_celsius
@@ -123,7 +123,7 @@ def test_convert_temp_kelvin_to_celsius():
 
 ### Running Tests
 To run the tests, navigate to the directory containing the test files and run:
-```python
+```{python}
 !pytest test_process_data.py
 ```
 
@@ -132,7 +132,7 @@ Ensure that all your tests are organized and can be run together.
 
 ### Running All Tests
 To run all tests in the project, use:
-```python
+```{python}
 !pytest
 ```
 

@@ -13,14 +13,15 @@ execute:
 CSV (Comma-Separated Values) is a simple and widely used format for storing tabular data.
 
 ### Import Required Libraries
-```python
+```{python}
 import pandas as pd
 ```
 
-### Reading Data from a CSV File
-We'll read the weather data we saved in the previous session.
 
-```python
+### Reading Data from a CSV File
+We will read the weather data we saved in the previous session.
+
+```{python}
 df = pd.read_csv('data/raw/weather_data.csv')
 df
 ```
@@ -28,7 +29,7 @@ df
 ### Processing Data
 Let's process the data by converting the temperature from Kelvin to Celsius.
 
-```python
+```{python}
 def convert_temp_kelvin_to_celsius(temp_k):
     return temp_k - 273.15
 
@@ -40,7 +41,7 @@ df
 ### Writing Data to a CSV File
 We'll save the processed data to a new CSV file.
 
-```python
+```{python}
 df.to_csv('data/processed/processed_weather_data.csv', index=False)
 ```
 
@@ -48,14 +49,14 @@ df.to_csv('data/processed/processed_weather_data.csv', index=False)
 SQL (Structured Query Language) is a powerful tool for managing and querying data stored in relational databases.
 
 ### Import Required Libraries
-```python
+```{python}
 import sqlite3
 ```
 
 ### Creating a SQLite Database and Table
 We'll create a SQLite database and a table to store the weather data.
 
-```python
+```{python}
 conn = sqlite3.connect('data/weather_data.db')
 cursor = conn.cursor()
 
@@ -73,7 +74,7 @@ conn.commit()
 ### Inserting Data into the Table
 We'll insert the processed weather data into the SQLite table.
 
-```python
+```{python}
 for index, row in df.iterrows():
     cursor.execute('''
         INSERT INTO weather (location, temperature_c, humidity, weather_description)
@@ -85,7 +86,7 @@ conn.commit()
 ### Querying Data from the Table
 We'll query the data we just inserted into the SQLite table.
 
-```python
+```{python}
 cursor.execute('SELECT * FROM weather')
 rows = cursor.fetchall()
 for row in rows:
@@ -95,7 +96,7 @@ for row in rows:
 ### Converting SQL Query Results to DataFrame
 We'll convert the query results to a pandas DataFrame for easier manipulation and visualization.
 
-```python
+```{python}
 df_sql = pd.DataFrame(rows, columns=['Location', 'Temperature (C)', 'Humidity (%)', 'Weather'])
 df_sql
 ```
@@ -106,7 +107,7 @@ We'll demonstrate how to combine CSV and SQL data management techniques.
 ### Reading Data from CSV and Inserting into SQL
 We'll read additional weather data from a CSV file and insert it into the SQLite table.
 
-```python
+```{python}
 additional_data = pd.read_csv('data/raw/additional_weather_data.csv')
 for index, row in additional_data.iterrows():
     cursor.execute('''
@@ -119,7 +120,7 @@ conn.commit()
 ### Querying Combined Data
 We'll query the combined data from the SQLite table.
 
-```python
+```{python}
 cursor.execute('SELECT * FROM weather')
 combined_rows = cursor.fetchall()
 df_combined = pd.DataFrame(combined_rows, columns=['Location', 'Temperature (C)', 'Humidity (%)', 'Weather'])

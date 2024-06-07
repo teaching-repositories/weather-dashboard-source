@@ -13,7 +13,7 @@ execute:
 Web scraping involves extracting data from websites. It is important to adhere to ethical guidelines and terms of service of websites.
 
 ### Import Required Libraries
-```python
+```{python}
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -23,14 +23,14 @@ import pandas as pd
 We'll scrape weather-related data from a sample website.
 
 ### Fetching the HTML Content
-```python
+```{python}
 url = 'https://www.example.com/weather'
 response = requests.get(url)
 html_content = response.content
 ```
 
 ### Parsing the HTML Content
-```python
+```{python}
 soup = BeautifulSoup(html_content, 'html.parser')
 print(soup.prettify())  # Print the formatted HTML content
 ```
@@ -38,7 +38,7 @@ print(soup.prettify())  # Print the formatted HTML content
 ### Extracting Specific Data
 Assuming the website has a table with weather data, we'll extract the table content.
 
-```python
+```{python}
 table = soup.find('table', {'class': 'weather_table'})
 rows = table.find_all('tr')
 
@@ -64,13 +64,13 @@ We'll explore additional APIs to fetch more weather-related data, such as air qu
 We'll use the AirNow API to fetch air quality data.
 
 ### Import Required Libraries
-```python
+```{python}
 import requests
 import pandas as pd
 ```
 
 ### Fetching Air Quality Data
-```python
+```{python}
 api_key = 'your_airnow_api_key'
 url = f"http://www.airnowapi.org/aq/observation/zipCode/current?format=application/json&zipCode=90210&distance=25&API_KEY={api_key}"
 
@@ -85,7 +85,7 @@ else:
 ### Parsing Air Quality Data
 We'll parse the JSON response and create a DataFrame.
 
-```python
+```{python}
 air_quality_df = pd.DataFrame(air_quality_data)
 air_quality_df
 ```
@@ -94,7 +94,7 @@ air_quality_df
 We'll combine the scraped weather data and the data fetched from additional APIs.
 
 ### Merging DataFrames
-```python
+```{python}
 combined_df = pd.merge(weather_df, air_quality_df, left_on='Date', right_on='Date', how='inner')
 combined_df
 ```
