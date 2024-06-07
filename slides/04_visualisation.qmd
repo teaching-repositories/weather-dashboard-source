@@ -116,7 +116,7 @@ plt.show()`
 ```
 
 # Customising Plots
-![](../images/anatomy.webp)
+![](../images/anatomy.png)
 
 # Adding annotations
 ```python
