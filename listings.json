@@ -37,6 +37,7 @@
     "listing": "/notebooks.html",
     "items": [
       "/notebooks/02a_data_review.html",
+      "/notebooks/03a_vis_review.html",
       "/notebooks/01_fetch_data.html",
       "/notebooks/02_data_management.html",
       "/notebooks/03_visualisation.html",
@@ -44,8 +45,7 @@
       "/notebooks/05_webscraping.html",
       "/notebooks/06_dashboard_gui.html",
       "/notebooks/07_testing.html",
-      "/notebooks/08_final_steps.html",
-      "/notebooks/03a_vis_review.html"
+      "/notebooks/08_final_steps.html"
     ]
   },
   {

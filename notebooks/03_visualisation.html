@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Basic visualizations help in understanding data by providing a graphical representation.</p>
 <section id="import-required-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-libraries">Import Required Libraries</h3>
-<div id="e2b59824" class="cell">
+<div id="fed07910" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reading-data" class="level2">
 <h2 class="anchored" data-anchor-id="reading-data">2. Reading Data</h2>
 <p>We’ll start by reading the processed weather data from the CSV file.</p>
-<div id="ae6c536e" class="cell">
+<div id="26c49a24" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'processed_weather_data.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Datetime'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'Datetime'</span>])</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-basic-plots">3. Creating Basic Plots</h2>
 <section id="line-plot-for-temperature-over-time" class="level3">
 <h3 class="anchored" data-anchor-id="line-plot-for-temperature-over-time">Line Plot for Temperature Over Time</h3>
-<div id="c33ffd8e" class="cell">
+<div id="adeabf55" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select every 6th datetime value for x-ticks</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x_ticks <span class="op">=</span> df[<span class="st">'Datetime'</span>][::<span class="dv">6</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="bar-plot-for-humidity-over-time" class="level3">
 <h3 class="anchored" data-anchor-id="bar-plot-for-humidity-over-time">Bar Plot for Humidity Over Time</h3>
-<div id="7cac5516" class="cell">
+<div id="3202f6c1" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.bar(df[<span class="st">'Datetime'</span>], df[<span class="st">'Humidity (%)'</span>], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Humidity over Time'</span>)</span>
@@ -251,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pie-chart-for-weather-description-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="pie-chart-for-weather-description-distribution">Pie Chart for Weather Description Distribution</h3>
-<div id="bb249077" class="cell">
+<div id="adec13ab" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>weather_counts <span class="op">=</span> df[<span class="st">'Weather'</span>].value_counts()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
@@ -263,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="scatter-plot-for-temperature-vs.-wind-speed" class="level3">
 <h3 class="anchored" data-anchor-id="scatter-plot-for-temperature-vs.-wind-speed">Scatter Plot for Temperature vs.&nbsp;Wind Speed</h3>
-<div id="ead26303" class="cell">
+<div id="bdd9a3d5" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'Temperature (C)'</span>], df[<span class="st">'Wind Speed (m/s)'</span>], c<span class="op">=</span><span class="st">'g'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature vs. Wind Speed'</span>)</span>
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Customizing plots can make them more informative and visually appealing.</p>
 <section id="adding-annotations" class="level3">
 <h3 class="anchored" data-anchor-id="adding-annotations">Adding Annotations</h3>
-<div id="0dd62f14" class="cell">
+<div id="4c5bacdf" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">'Datetime'</span>], df[<span class="st">'Temperature (C)'</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature over Time'</span>)</span>
@@ -300,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="customizing-colors-and-styles" class="level3">
 <h3 class="anchored" data-anchor-id="customizing-colors-and-styles">Customizing Colors and Styles</h3>
-<div id="8b790908" class="cell">
+<div id="da32d25b" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">'Datetime'</span>], df[<span class="st">'Temperature (C)'</span>], marker<span class="op">=</span><span class="st">'o'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature over Time'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
