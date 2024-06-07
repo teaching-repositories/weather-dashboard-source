@@ -2,8 +2,10 @@
   {
     "listing": "/slides.html",
     "items": [
+      "/slides/04_visualisation.html",
       "/slides/03_managing_data.html",
       "/slides/01_welcome.html",
+      "/slides/05_advanced_vis.html",
       "/slides/02_fetching_data.html"
     ]
   },
@@ -11,6 +13,7 @@
     "listing": "/quick-reference-guides.html",
     "items": [
       "/quick-reference-guides/openweathermap.html",
+      "/quick-reference-guides/api_key_security.html",
       "/quick-reference-guides/exception-handling.html",
       "/quick-reference-guides/git-basics.html",
       "/quick-reference-guides/json-quick-reference.html",
@@ -33,14 +36,16 @@
   {
     "listing": "/notebooks.html",
     "items": [
+      "/notebooks/02a_data_review.html",
       "/notebooks/01_fetch_data.html",
       "/notebooks/02_data_management.html",
-      "/notebooks/03_visualiation.html",
-      "/notebooks/04_advanced_vix.html",
+      "/notebooks/03_visualisation.html",
+      "/notebooks/04_advanced_vis.html",
       "/notebooks/05_webscraping.html",
       "/notebooks/06_dashboard_gui.html",
       "/notebooks/07_testing.html",
-      "/notebooks/08_final_steps.html"
+      "/notebooks/08_final_steps.html",
+      "/notebooks/03a_vis_review.html"
     ]
   },
   {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān) - WeatherVista Project - Session 5: Web Scraping and Using Additional APIs</title>
+<title>Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān) - WeatherVista Project - Session 3: Basic Data Visualisation with Matplotlib and Pandas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,26 +147,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#introduction-to-web-scraping" id="toc-introduction-to-web-scraping" class="nav-link" data-scroll-target="#introduction-to-web-scraping">1. Introduction to Web Scraping</a>
+  <li><a href="#introduction-to-basic-visualization" id="toc-introduction-to-basic-visualization" class="nav-link" data-scroll-target="#introduction-to-basic-visualization">1. Introduction to Basic Visualization</a>
   <ul class="collapse">
   <li><a href="#import-required-libraries" id="toc-import-required-libraries" class="nav-link" data-scroll-target="#import-required-libraries">Import Required Libraries</a></li>
   </ul></li>
-  <li><a href="#basic-web-scraping-with-beautifulsoup" id="toc-basic-web-scraping-with-beautifulsoup" class="nav-link" data-scroll-target="#basic-web-scraping-with-beautifulsoup">2. Basic Web Scraping with BeautifulSoup</a>
+  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data">2. Reading Data</a></li>
+  <li><a href="#creating-basic-plots" id="toc-creating-basic-plots" class="nav-link" data-scroll-target="#creating-basic-plots">3. Creating Basic Plots</a>
   <ul class="collapse">
-  <li><a href="#fetching-the-html-content" id="toc-fetching-the-html-content" class="nav-link" data-scroll-target="#fetching-the-html-content">Fetching the HTML Content</a></li>
-  <li><a href="#parsing-the-html-content" id="toc-parsing-the-html-content" class="nav-link" data-scroll-target="#parsing-the-html-content">Parsing the HTML Content</a></li>
-  <li><a href="#extracting-specific-data" id="toc-extracting-specific-data" class="nav-link" data-scroll-target="#extracting-specific-data">Extracting Specific Data</a></li>
+  <li><a href="#line-plot-for-temperature-over-time" id="toc-line-plot-for-temperature-over-time" class="nav-link" data-scroll-target="#line-plot-for-temperature-over-time">Line Plot for Temperature Over Time</a></li>
+  <li><a href="#bar-plot-for-humidity-over-time" id="toc-bar-plot-for-humidity-over-time" class="nav-link" data-scroll-target="#bar-plot-for-humidity-over-time">Bar Plot for Humidity Over Time</a></li>
+  <li><a href="#pie-chart-for-weather-description-distribution" id="toc-pie-chart-for-weather-description-distribution" class="nav-link" data-scroll-target="#pie-chart-for-weather-description-distribution">Pie Chart for Weather Description Distribution</a></li>
+  <li><a href="#scatter-plot-for-temperature-vs.-wind-speed" id="toc-scatter-plot-for-temperature-vs.-wind-speed" class="nav-link" data-scroll-target="#scatter-plot-for-temperature-vs.-wind-speed">Scatter Plot for Temperature vs.&nbsp;Wind Speed</a></li>
   </ul></li>
-  <li><a href="#using-additional-apis" id="toc-using-additional-apis" class="nav-link" data-scroll-target="#using-additional-apis">3. Using Additional APIs</a>
+  <li><a href="#customizing-plots" id="toc-customizing-plots" class="nav-link" data-scroll-target="#customizing-plots">4. Customizing Plots</a>
   <ul class="collapse">
-  <li><a href="#air-quality-api-example" id="toc-air-quality-api-example" class="nav-link" data-scroll-target="#air-quality-api-example">Air Quality API Example</a></li>
-  <li><a href="#import-required-libraries-1" id="toc-import-required-libraries-1" class="nav-link" data-scroll-target="#import-required-libraries-1">Import Required Libraries</a></li>
-  <li><a href="#fetching-air-quality-data" id="toc-fetching-air-quality-data" class="nav-link" data-scroll-target="#fetching-air-quality-data">Fetching Air Quality Data</a></li>
-  <li><a href="#parsing-air-quality-data" id="toc-parsing-air-quality-data" class="nav-link" data-scroll-target="#parsing-air-quality-data">Parsing Air Quality Data</a></li>
-  </ul></li>
-  <li><a href="#combining-web-scraping-and-api-data" id="toc-combining-web-scraping-and-api-data" class="nav-link" data-scroll-target="#combining-web-scraping-and-api-data">4. Combining Web Scraping and API Data</a>
-  <ul class="collapse">
-  <li><a href="#merging-dataframes" id="toc-merging-dataframes" class="nav-link" data-scroll-target="#merging-dataframes">Merging DataFrames</a></li>
+  <li><a href="#adding-annotations" id="toc-adding-annotations" class="nav-link" data-scroll-target="#adding-annotations">Adding Annotations</a></li>
+  <li><a href="#customizing-colors-and-styles" id="toc-customizing-colors-and-styles" class="nav-link" data-scroll-target="#customizing-colors-and-styles">Customizing Colors and Styles</a></li>
   </ul></li>
   <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -178,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WeatherVista Project - Session 5: Web Scraping and Using Additional APIs</h1>
+<h1 class="title">WeatherVista Project - Session 3: Basic Data Visualisation with Matplotlib and Pandas</h1>
 </div>
 
 
@@ -198,123 +194,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <ul>
-<li>Learn the basics of web scraping using BeautifulSoup.</li>
-<li>Understand ethical considerations and legal aspects of web scraping.</li>
-<li>Explore and use additional APIs to gather more weather-related data.</li>
+<li>Learn how to visualise weather data using Matplotlib.</li>
+<li>Understand how to create basic plots to represent weather data.</li>
+<li>Customise plots to enhance readability and presentation.</li>
 </ul>
 </section>
-<section id="introduction-to-web-scraping" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-web-scraping">1. Introduction to Web Scraping</h2>
-<p>Web scraping involves extracting data from websites. It is important to adhere to ethical guidelines and terms of service of websites.</p>
+<section id="introduction-to-basic-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-basic-visualization">1. Introduction to Basic Visualization</h2>
+<p>Basic visualizations help in understanding data by providing a graphical representation.</p>
 <section id="import-required-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-libraries">Import Required Libraries</h3>
-<div id="bd7b5a86" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e2b59824" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="basic-web-scraping-with-beautifulsoup" class="level2">
-<h2 class="anchored" data-anchor-id="basic-web-scraping-with-beautifulsoup">2. Basic Web Scraping with BeautifulSoup</h2>
-<p>We’ll scrape weather-related data from a sample website.</p>
-<section id="fetching-the-html-content" class="level3">
-<h3 class="anchored" data-anchor-id="fetching-the-html-content">Fetching the HTML Content</h3>
-<div id="7254b4ba" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'https://www.example.com/weather'</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>html_content <span class="op">=</span> response.content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="reading-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-data">2. Reading Data</h2>
+<p>We’ll start by reading the processed weather data from the CSV file.</p>
+<div id="ae6c536e" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'processed_weather_data.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Datetime'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'Datetime'</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="parsing-the-html-content" class="level3">
-<h3 class="anchored" data-anchor-id="parsing-the-html-content">Parsing the HTML Content</h3>
-<div id="45f22658" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html_content, <span class="st">'html.parser'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(soup.prettify())  <span class="co"># Print the formatted HTML content</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="creating-basic-plots" class="level2">
+<h2 class="anchored" data-anchor-id="creating-basic-plots">3. Creating Basic Plots</h2>
+<section id="line-plot-for-temperature-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="line-plot-for-temperature-over-time">Line Plot for Temperature Over Time</h3>
+<div id="c33ffd8e" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select every 6th datetime value for x-ticks</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x_ticks <span class="op">=</span> df[<span class="st">'Datetime'</span>][::<span class="dv">6</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">'Datetime'</span>], df[<span class="st">'Temperature (C)'</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature over Time'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Datetime'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature (°C)'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks<span class="op">=</span>x_ticks, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="extracting-specific-data" class="level3">
-<h3 class="anchored" data-anchor-id="extracting-specific-data">Extracting Specific Data</h3>
-<p>Assuming the website has a table with weather data, we’ll extract the table content.</p>
-<div id="597b6aa6" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> soup.find(<span class="st">'table'</span>, {<span class="st">'class'</span>: <span class="st">'weather_table'</span>})</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> table.find_all(<span class="st">'tr'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>weather_data <span class="op">=</span> []</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> rows[<span class="dv">1</span>:]:  <span class="co"># Skip the header row</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    cols <span class="op">=</span> row.find_all(<span class="st">'td'</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> {</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Date'</span>: cols[<span class="dv">0</span>].text,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Temperature'</span>: cols[<span class="dv">1</span>].text,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Humidity'</span>: cols[<span class="dv">2</span>].text,</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Condition'</span>: cols[<span class="dv">3</span>].text</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    weather_data.append(data)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>weather_df <span class="op">=</span> pd.DataFrame(weather_data)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>weather_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="bar-plot-for-humidity-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="bar-plot-for-humidity-over-time">Bar Plot for Humidity Over Time</h3>
+<div id="7cac5516" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.bar(df[<span class="st">'Datetime'</span>], df[<span class="st">'Humidity (%)'</span>], color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Humidity over Time'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Datetime'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Humidity (%)'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks<span class="op">=</span>x_ticks, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-</section>
-<section id="using-additional-apis" class="level2">
-<h2 class="anchored" data-anchor-id="using-additional-apis">3. Using Additional APIs</h2>
-<p>We’ll explore additional APIs to fetch more weather-related data, such as air quality or UV index.</p>
-<section id="air-quality-api-example" class="level3">
-<h3 class="anchored" data-anchor-id="air-quality-api-example">Air Quality API Example</h3>
-<p>We’ll use the AirNow API to fetch air quality data.</p>
-</section>
-<section id="import-required-libraries-1" class="level3">
-<h3 class="anchored" data-anchor-id="import-required-libraries-1">Import Required Libraries</h3>
-<div id="afb071fc" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="pie-chart-for-weather-description-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="pie-chart-for-weather-description-distribution">Pie Chart for Weather Description Distribution</h3>
+<div id="bb249077" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>weather_counts <span class="op">=</span> df[<span class="st">'Weather'</span>].value_counts()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.pie(weather_counts, labels<span class="op">=</span>weather_counts.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">140</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Weather Description Distribution'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)  <span class="co"># Equal aspect ratio ensures that pie is drawn as a circle.</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="fetching-air-quality-data" class="level3">
-<h3 class="anchored" data-anchor-id="fetching-air-quality-data">Fetching Air Quality Data</h3>
-<div id="59e7a648" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> <span class="st">'your_airnow_api_key'</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="ss">f"http://www.airnowapi.org/aq/observation/zipCode/current?format=application/json&amp;zipCode=90210&amp;distance=25&amp;API_KEY=</span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    air_quality_data <span class="op">=</span> response.json()</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    air_quality_data</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Failed to fetch data: </span><span class="sc">{</span>response<span class="sc">.</span>status_code<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="parsing-air-quality-data" class="level3">
-<h3 class="anchored" data-anchor-id="parsing-air-quality-data">Parsing Air Quality Data</h3>
-<p>We’ll parse the JSON response and create a DataFrame.</p>
-<div id="d6723896" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>air_quality_df <span class="op">=</span> pd.DataFrame(air_quality_data)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>air_quality_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="scatter-plot-for-temperature-vs.-wind-speed" class="level3">
+<h3 class="anchored" data-anchor-id="scatter-plot-for-temperature-vs.-wind-speed">Scatter Plot for Temperature vs.&nbsp;Wind Speed</h3>
+<div id="ead26303" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'Temperature (C)'</span>], df[<span class="st">'Wind Speed (m/s)'</span>], c<span class="op">=</span><span class="st">'g'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature vs. Wind Speed'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Temperature (°C)'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Wind Speed (m/s)'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="combining-web-scraping-and-api-data" class="level2">
-<h2 class="anchored" data-anchor-id="combining-web-scraping-and-api-data">4. Combining Web Scraping and API Data</h2>
-<p>We’ll combine the scraped weather data and the data fetched from additional APIs.</p>
-<section id="merging-dataframes" class="level3">
-<h3 class="anchored" data-anchor-id="merging-dataframes">Merging DataFrames</h3>
-<div id="714e978e" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.merge(weather_df, air_quality_df, left_on<span class="op">=</span><span class="st">'Date'</span>, right_on<span class="op">=</span><span class="st">'Date'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>combined_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="customizing-plots" class="level2">
+<h2 class="anchored" data-anchor-id="customizing-plots">4. Customizing Plots</h2>
+<p>Customizing plots can make them more informative and visually appealing.</p>
+<section id="adding-annotations" class="level3">
+<h3 class="anchored" data-anchor-id="adding-annotations">Adding Annotations</h3>
+<div id="0dd62f14" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">'Datetime'</span>], df[<span class="st">'Temperature (C)'</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature over Time'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Datetime'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature (°C)'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks<span class="op">=</span>x_ticks, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Annotate the highest temperature</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>max_temp <span class="op">=</span> df[<span class="st">'Temperature (C)'</span>].<span class="bu">max</span>()</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>max_temp_time <span class="op">=</span> df.loc[df[<span class="st">'Temperature (C)'</span>] <span class="op">==</span> max_temp, <span class="st">'Datetime'</span>].iloc[<span class="dv">0</span>]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="ss">f'Max Temp: </span><span class="sc">{</span>max_temp<span class="sc">:.2f}</span><span class="ss">°C'</span>, xy<span class="op">=</span>(max_temp_time, max_temp), </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>             xytext<span class="op">=</span>(max_temp_time, max_temp<span class="op">+</span><span class="dv">2</span>), </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'black'</span>, shrink<span class="op">=</span><span class="fl">0.05</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="customizing-colors-and-styles" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-colors-and-styles">Customizing Colors and Styles</h3>
+<div id="8b790908" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">'Datetime'</span>], df[<span class="st">'Temperature (C)'</span>], marker<span class="op">=</span><span class="st">'o'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Temperature over Time'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Datetime'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature (°C)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks<span class="op">=</span>x_ticks, rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="homework" class="level2">
 <h2 class="anchored" data-anchor-id="homework">Homework</h2>
 <ul>
-<li>Explore other weather-related websites and practice web scraping to gather data.</li>
-<li>Experiment with additional APIs to fetch various types of weather data.</li>
+<li>Create additional plots to visualize other aspects of the weather data (e.g., wind speed, pressure).</li>
+<li>Experiment with different types of plots and customizations to enhance the visualizations.</li>
 </ul>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>In this session, we learned the basics of web scraping using BeautifulSoup and explored additional APIs to fetch more weather-related data. We also combined the data from web scraping and APIs to create a comprehensive dataset.</p>
-<p>Next session, we will focus on creating a GUI for the WeatherVista project using Tkinter or Jupyter Widgets.</p>
+<p>In this session, we learned how to visualize weather data using Matplotlib. We created basic plots such as line plots, bar plots, pie charts, and scatter plots, and we customized these plots to improve readability and presentation.</p>
+<p>Next session, we will focus on advanced data visualization techniques using subplots and grids.</p>
 
 
 </section>
