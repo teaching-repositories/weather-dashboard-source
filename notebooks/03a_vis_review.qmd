@@ -73,10 +73,10 @@ def create_forecast_card(ax, date, high_temp, low_temp, weather):
     ax.text(0.5, 0.8, date.strftime('%Y-%m-%d'), fontsize=12, ha='center', va='center')
 
     # Display high temperature
-    ax.text(0.5, 0.6, f'High: {high_temp:.2f}°C', fontsize=10, ha='center', va='center', color='red')
+    ax.text(0.5, 0.6, f'High: {high_temp}°C', fontsize=10, ha='center', va='center', color='red')
 
     # Display low temperature
-    ax.text(0.5, 0.4, f'Low: {low_temp:.2f}°C', fontsize=10, ha='center', va='center', color='blue')
+    ax.text(0.5, 0.4, f'Low: {low_temp}°C', fontsize=10, ha='center', va='center', color='blue')
 
     # Display weather condition
     ax.text(0.5, 0.2, weather, fontsize=10, ha='center', va='center')
