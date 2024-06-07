@@ -1,4 +1,8 @@
-### Worksheet: Understanding and Modifying Weather Forecast Card Code
+---
+title: "WeatherVista Project - REVIEW Session 3: Basic Data Visualisation with Matplotlib and Pandas"
+execute: 
+  enabled: false
+---
 
 #### Task
 Read and understand the provided Python code. Then, modify the code so that the minimum and maximum temperature values are displayed to two decimal places.
