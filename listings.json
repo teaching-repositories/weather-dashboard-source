@@ -6,7 +6,11 @@
       "/slides/03_managing_data.html",
       "/slides/01_welcome.html",
       "/slides/05_advanced_vis.html",
-      "/slides/02_fetching_data.html"
+      "/slides/02_fetching_data.html",
+      "/slides/07_dashboards.html",
+      "/slides/06_midpoint_review.html",
+      "/slides/junk.html",
+      "/slides/06_web_scraping.html"
     ]
   },
   {
@@ -20,8 +24,10 @@
       "/quick-reference-guides/python-basics.html",
       "/quick-reference-guides/input-validation.html",
       "/quick-reference-guides/python-project-starter-kit.html",
+      "/quick-reference-guides/tkinter.html",
       "/quick-reference-guides/weather-dashboard-setup-guide.html",
-      "/quick-reference-guides/weather-dashboard-project-overview.html"
+      "/quick-reference-guides/weather-dashboard-project-overview.html",
+      "/quick-reference-guides/ipywidgets.html"
     ]
   },
   {
@@ -43,9 +49,11 @@
       "/notebooks/03_visualisation.html",
       "/notebooks/04_advanced_vis.html",
       "/notebooks/05_webscraping.html",
-      "/notebooks/06_dashboard_gui.html",
+      "/notebooks/06a_dashboard_nb.html",
+      "/notebooks/06b_dashboard_gui.html",
       "/notebooks/07_testing.html",
-      "/notebooks/08_final_steps.html"
+      "/notebooks/08_final_steps.html",
+      "/notebooks/weather_dashboard.html"
     ]
   },
   {

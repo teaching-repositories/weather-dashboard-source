@@ -191,7 +191,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -346,15 +346,32 @@ Web scraping involves extracting data from websites. It is important to adhere t
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1717668583154" data-listing-reading-time-sort="6" data-listing-word-count-sort="1196">
-<a href="./notebooks/06_dashboard_gui.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1718169766284" data-listing-reading-time-sort="5" data-listing-word-count-sort="873">
+<a href="./notebooks/06a_dashboard_nb.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-WeatherVista Project - Session 6: Creating a GUI with Tkinter or Jupyter Widgets
+WeatherVista Project - Session 6: Creating a GUI with Jupyter Widgets
 </h5>
 <div class="listing-reading-time card-text text-muted">
-6 min
+5 min
+</div>
+<div class="card-text listing-description">
+Begin by installing the ipywidgets library and enabling the widgets extension in Jupyter Notebooks to ensure a seamless interactive experience. This step sets the foundation…
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1718169318178" data-listing-reading-time-sort="5" data-listing-word-count-sort="864">
+<a href="./notebooks/06b_dashboard_gui.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+WeatherVista Project - Session 6b: Creating a GUI with Tkinter
+</h5>
+<div class="listing-reading-time card-text text-muted">
+5 min
 </div>
 <div class="card-text listing-description">
 Tkinter is a standard Python library for creating desktop GUIs. It provides various widgets to build interactive applications.
@@ -363,7 +380,7 @@ Tkinter is a standard Python library for creating desktop GUIs. It provides vari
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1717668586866" data-listing-reading-time-sort="4" data-listing-word-count-sort="659">
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1717668586866" data-listing-reading-time-sort="4" data-listing-word-count-sort="659">
 <a href="./notebooks/07_testing.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -380,7 +397,7 @@ Testing is crucial for ensuring the reliability and correctness of your code. In
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1717668590866" data-listing-reading-time-sort="5" data-listing-word-count-sort="808">
+<div class="g-col-1" data-index="10" data-listing-file-modified-sort="1717668590866" data-listing-reading-time-sort="5" data-listing-word-count-sort="808">
 <a href="./notebooks/08_final_steps.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
@@ -392,6 +409,22 @@ WeatherVista Project - Session 8: Finalizing the Project, Adding Documentation, 
 </div>
 <div class="card-text listing-description">
 In this section, we’ll review the overall project structure and refine the code to ensure it’s clean and well-organized.
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1718167834269">
+<a href="./notebooks/weather_dashboard.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<div class="card-text listing-description">
+
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
+<span id="cb1-4"><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb1-5"><span class="im">import</span> weather_plots <span class="im">as</span> wp  <span class="co"># Assuming this contains…</span></span><span id="cb1-6"><span class="im"></span><span class="im"></span></span><span id="cb1-7"><span class="im"></span><span class="im"></span></span><span id="cb1-8"><span class="im"></span><span class="im"></span></span><span id="cb1-9"></span><span id="cb1-10"><span class="kw"></span></span><span id="cb1-11"><span class="cf"></span><span class="st"></span><span class="op"></span></span><span id="cb1-12"><span class="cf"></span><span class="st"></span></span><span id="cb1-13"><span class="cf"></span><span class="st"></span><span class="op"></span><span class="kw"></span><span class="st"></span><span class="op"></span></span><span id="cb1-14"><span class="cf"></span><span class="st"></span></span><span id="cb1-15"><span class="cf"></span></span><span id="cb1-16"><span class="cf"></span><span class="st"></span></span><span id="cb1-17"></span><span id="cb1-18"><span class="co"></span></span><span id="cb1-19"><span class="op"></span></span><span id="cb1-20"><span class="op"></span><span class="st"></span><span class="st"></span><span class="st"></span><span class="st"></span></span><span id="cb1-21"><span class="op"></span><span class="st"></span></span><span id="cb1-22"><span class="op"></span><span class="st"></span></span><span id="cb1-23"></span><span id="cb1-24"></span><span id="cb1-25"><span class="co"></span></span><span id="cb1-26"><span class="op"></span></span><span id="cb1-27"><span class="op"></span><span class="st"></span></span><span id="cb1-28"><span class="op"></span><span class="st"></span></span><span id="cb1-29"></span><span id="cb1-30"></span><span id="cb1-31"><span class="op"></span></span><span id="cb1-32"></span><span id="cb1-33"><span class="co"></span></span><span id="cb1-34"><span class="kw"></span></span><span id="cb1-35"><span class="op"></span></span><span id="cb1-36"><span class="op"></span><span class="st"></span><span class="co"></span></span><span id="cb1-37"><span class="op"></span></span><span id="cb1-38"><span class="op"></span></span><span id="cb1-39"><span class="st"></span><span class="op"></span><span class="bu"></span><span class="op"></span><span class="dv"></span><span class="op"></span><span class="dv"></span><span class="dv"></span><span class="dv"></span></span><span id="cb1-40"></span><span id="cb1-41"><span class="cf"></span></span><span id="cb1-42"></span><span id="cb1-43"><span class="op"></span><span class="dv"></span><span class="dv"></span><span class="op"></span><span class="dv"></span><span class="dv"></span></span><span id="cb1-44"><span class="op"></span><span class="fl"></span></span><span id="cb1-45"></span><span id="cb1-46"><span class="co"></span></span><span id="cb1-47"><span class="dv"></span><span class="dv"></span><span class="st"></span><span class="dv"></span><span class="st"></span><span class="dv"></span><span class="st"></span><span class="dv"></span><span class="st"></span></span><span id="cb1-48"><span class="st"></span><span class="st"></span><span class="dv"></span><span class="op"></span><span class="st"></span></span><span id="cb1-49"><span class="st"></span><span class="st"></span><span class="st"></span><span class="dv"></span><span class="op"></span><span class="st"></span></span><span id="cb1-50"></span><span id="cb1-51"></span><span id="cb1-52"></span><span id="cb1-53"></span><span id="cb1-54"></span><span id="cb1-55"><span class="va"></span></span></code></pre></div>
 </div>
 </div>
 </div>

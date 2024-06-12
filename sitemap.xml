@@ -17,20 +17,32 @@
     <lastmod>2024-06-06T10:09:50.866Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/03_visualisation.html</loc>
-    <lastmod>2024-06-06T19:17:46.636Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/02_data_management.html</loc>
+    <lastmod>2024-06-06T07:36:47.619Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/04_advanced_vis.html</loc>
-    <lastmod>2024-06-06T19:20:15.003Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/01_fetch_data.html</loc>
+    <lastmod>2024-06-06T03:47:26.410Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/06_dashboard_gui.html</loc>
-    <lastmod>2024-06-06T10:09:43.154Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/05_webscraping.html</loc>
+    <lastmod>2024-06-06T10:09:39.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/weather_dashboard.html</loc>
+    <lastmod>2024-06-12T04:50:34.269Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/about.html</loc>
     <lastmod>2024-06-06T01:00:32.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/slides/06_web_scraping.html</loc>
+    <lastmod>2024-06-11T00:39:11.874Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/slides/06_midpoint_review.html</loc>
+    <lastmod>2024-06-11T01:52:13.247Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/slides/02_fetching_data.html</loc>
@@ -65,16 +77,24 @@
     <lastmod>2024-06-06T01:00:32.885Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/weather-dashboard-project-overview.html</loc>
-    <lastmod>2024-06-06T05:12:17.609Z</lastmod>
-  </url>
-  <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/input-validation.html</loc>
     <lastmod>2024-06-06T01:00:32.885Z</lastmod>
   </url>
   <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/weather-dashboard-project-overview.html</loc>
+    <lastmod>2024-06-06T05:12:17.609Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/ipywidgets.html</loc>
+    <lastmod>2024-06-12T05:07:48.810Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/tkinter.html</loc>
+    <lastmod>2024-06-12T05:05:40.027Z</lastmod>
+  </url>
+  <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/api_key_security.html</loc>
-    <lastmod>2024-06-06T18:43:37.903Z</lastmod>
+    <lastmod>2024-06-12T05:47:46.511Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/quick-reference-guides/exception-handling.html</loc>
@@ -105,6 +125,14 @@
     <lastmod>2024-06-07T00:01:51.742Z</lastmod>
   </url>
   <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/slides/07_dashboards.html</loc>
+    <lastmod>2024-06-12T05:28:39.574Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/slides/junk.html</loc>
+    <lastmod>2024-06-12T04:38:57.930Z</lastmod>
+  </url>
+  <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/project-names.html</loc>
     <lastmod>2024-06-06T01:00:32.881Z</lastmod>
   </url>
@@ -113,16 +141,20 @@
     <lastmod>2024-06-06T01:00:32.881Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/05_webscraping.html</loc>
-    <lastmod>2024-06-06T10:09:39.634Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/06a_dashboard_nb.html</loc>
+    <lastmod>2024-06-12T05:22:46.284Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/01_fetch_data.html</loc>
-    <lastmod>2024-06-06T03:47:26.410Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/04_advanced_vis.html</loc>
+    <lastmod>2024-06-06T19:20:15.003Z</lastmod>
   </url>
   <url>
-    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/02_data_management.html</loc>
-    <lastmod>2024-06-06T07:36:47.619Z</lastmod>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/03_visualisation.html</loc>
+    <lastmod>2024-06-06T19:17:46.636Z</lastmod>
+  </url>
+  <url>
+    <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/06b_dashboard_gui.html</loc>
+    <lastmod>2024-06-12T05:15:18.178Z</lastmod>
   </url>
   <url>
     <loc>https://teaching-repositories.github.io/weather-dashboard-source/notebooks/03a_vis_review.html</loc>
