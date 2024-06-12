@@ -55,7 +55,7 @@ This guide provides a quick reference on how to handle API keys securely by usin
 
 Can we read the API key from the environment variable:
 
-```{python}
+```python
 import os
 
 # Read API key from environment variable
