@@ -1,5 +1,6 @@
 ---
-title: "Advanced Data Visualisation and Dashboard Layout"
+title: "Plotting Perfection: Mastering Matplotlib Dashboards"
+subtitle: "Create Engaging and Insightful Visual Stories"
 author: "Michael Borck"
 format:
     pptx:

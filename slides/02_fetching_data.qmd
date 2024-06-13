@@ -1,5 +1,6 @@
 ---
-title: "Fetching Data Using OpenWeatherMap API"
+title: "API Adventures: Conquering OpenWeatherMap"
+subtitle: "From API Requests to CSV Files in a Breeze"
 author: "Michael Borck"
 format:
     pptx:

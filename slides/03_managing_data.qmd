@@ -1,5 +1,6 @@
 ---
-title: "Managing Data Using CSV and SQL"
+title: "Data Handling Adventures: CSV and SQL Edition"
+subtitle: "Become a Data Hero with Python Tools"
 author: "Michael Borck"
 format:
     pptx:

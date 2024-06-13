@@ -1,5 +1,6 @@
 ---
-title: "Basic Data Visualisation with Matplotlib and Pandas"
+title: "Plotting Magic: Visualizing Weather Data with Matplotlib"
+subtitle: "Create Eye-Catching Visuals with Python"
 author: "Michael Borck"
 format:
     pptx:

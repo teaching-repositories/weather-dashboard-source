@@ -1,0 +1,173 @@
+Yes, separating testing and debugging into two distinct slide decks can be very beneficial. This approach allows you to focus more deeply on each topic without overwhelming your audience with too much information at once. Here’s a brief outline of what each slide deck could look like:
+
+### Slide Deck 1: Testing in Python
+
+#### Slide 1: Introduction to Testing
+- Importance of testing in software development
+- Types of testing (unit, integration, end-to-end, acceptance)
+
+#### Slide 2: Why Test?
+- Ensure code correctness
+- Improve software quality
+- Detect bugs early
+- Validate functionality
+- Facilitate maintenance
+
+#### Slide 3: Types of Tests
+| **Test Type**        | **Description**                                      |
+|----------------------|------------------------------------------------------|
+| **Unit**             | Test an individual isolated component                |
+| **Integration**      | Test multiple units work together                    |
+| **End-to-End**       | Act as user, test entire stack                       |
+| **Acceptance Test**  | Verify user story works as expected                  |
+
+
+#### Slide 7: Example: Using `doctest`
+```python
+def add(a, b):
+    """
+    Add two numbers and return the result.
+
+    Args:
+        a (int or float): The first number.
+        b (int or float): The second number.
+
+    Returns:
+        int or float: The sum of `a` and `b`.
+
+    Examples:
+    >>> add(2, 3)
+    5
+    >>> add(1.5, 2.5)
+    4.0
+    """
+    return a + b
+```
+
+#### Slide 8: Summary
+- Different types of tests and their importance
+- Tools for testing in Python
+- Examples of `unittest`, `pytest`, and `doctest`
+
+### Slide Deck 2: Debugging in Python
+
+#### Slide 1: Introduction to Debugging
+- Debugging: Fixing errors found during testing
+
+#### Slide 2: Testing vs. Debugging
+| **Aspect**      | **Testing**                                        | **Debugging**                                      |
+|-----------------|----------------------------------------------------|---------------------------------------------------|
+| **Purpose**     | Identify errors and issues in the code             | Fix errors and issues found during testing         |
+| **Process**     | Running the code with various inputs to check for correctness | Analyzing and modifying the code to fix errors     |
+| **Timing**      | Performed before debugging                         | Performed after testing detects issues             |
+| **Outcome**     | A report of failures, errors, or issues            | Corrected code without the detected issues         |
+| **Tools**       | Testing frameworks like `unittest`, `pytest`, `doctest` | Debuggers, print statements, IDE debugging tools   |
+
+#### Slide 3: Why Debugging is Important
+- Ensure code correctness
+- Improve software quality
+- Optimize performance
+- Enhance maintainability
+- Facilitate learning
+
+#### Slide 4: Methods of Debugging in Python
+1. **Step/Trace Through Code**
+2. **Inspect Objects**
+3. **Python Debugger (pdb)**
+
+#### Slide 5: Step/Trace Through Code
+- **print()**: Output variable values and program flow to the console.
+  ```python
+  x = 10
+  print(f"x: {x}")
+  ```
+- **logging()**: Use the logging module for more advanced logging capabilities.
+  ```python
+  import logging
+  logging.basicConfig(level=logging.INFO)
+  logging.info(f"x: {x}")
+  ```
+
+#### Slide 6: Inspect Objects
+- **type()**: Check the type of an object.
+  ```python
+  x = 10
+  print(type(x))
+  ```
+- **inspect module**: Provides several useful functions to help get information about live objects.
+  ```python
+  import inspect
+  print(inspect.getmembers(x))
+  ```
+
+#### Slide 7: Python Debugger (pdb)
+- **breakpoint()**: Built-in function to pause execution and enter debugging mode.
+  ```python
+  def example_function():
+      x = 10
+      breakpoint()
+      y = x + 5
+      return y
+
+  example_function()
+  ```
+- **traceback**: Useful for getting detailed error reports when other methods are not enough.
+  ```python
+  import traceback
+
+  try:
+      1 / 0
+  except ZeroDivisionError:
+      traceback.print_exc()
+  ```
+
+#### Slide 8: Example: Using print() for Debugging
+```python
+def add(a, b):
+    print(f"a: {a}, b: {b}")
+    return a + b
+
+result = add(5, 3)
+print(f"Result: {result}")
+```
+
+#### Slide 9: Example: Using logging for Debugging
+```python
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
+def add(a, b):
+    logging.debug(f"a: {a}, b: {b}")
+    return a + b
+
+result = add(5, 3)
+logging.debug(f"Result: {result}")
+```
+
+#### Slide 10: Example: Using pdb for Debugging
+```python
+def add(a, b):
+    x = a
+    y = b
+    breakpoint()
+    return x + y
+
+result = add(5, 3)
+```
+
+#### Slide 11: Best Practices for Debugging
+- **Start Small**: Debug small sections of code before moving to larger sections.
+- **Use Version Control**: Keep track of changes to easily revert to a working state.
+- **Write Tests**: Combine debugging with writing tests to catch errors early.
+- **Understand the Error**: Take time to understand the error message and stack trace.
+- **Stay Organized**: Keep debugging sessions focused and organized.
+
+#### Slide 12: Summary
+- Debugging is the process of fixing errors found during testing.
+- Various methods of debugging in Python:
+  - Step/Trace through code with `print()` and `logging()`
+  - Inspect objects with `type()` and `inspect`
+  - Use Python debugger `pdb` with `breakpoint()` and `traceback`
+
+Separating the slide decks allows for a more focused discussion on each topic, providing a deeper understanding and clearer examples for the audience.
