@@ -2,15 +2,20 @@
   {
     "listing": "/slides.html",
     "items": [
-      "/slides/04_visualisation.html",
+      "/slides/11_debugging.html",
+      "/slides/12_deploying.html",
       "/slides/03_managing_data.html",
+      "/slides/04_visualising_data.html",
+      "/slides/13_review_and_wrapup.html",
+      "/slides/10_testing.html",
       "/slides/01_welcome.html",
-      "/slides/05_advanced_vis.html",
       "/slides/02_fetching_data.html",
       "/slides/07_dashboards.html",
       "/slides/06_midpoint_review.html",
-      "/slides/junk.html",
-      "/slides/06_web_scraping.html"
+      "/slides/06_web_scraping.html",
+      "/slides/09_documenting.html",
+      "/slides/08_workflow.html",
+      "/slides/05_advanced_visualisations.html"
     ]
   },
   {
@@ -31,15 +36,6 @@
     ]
   },
   {
-    "listing": "/index.html",
-    "items": [
-      "/slides.html",
-      "/notebooks.html",
-      "/worksheets.html",
-      "/quick-reference-guides.html"
-    ]
-  },
-  {
     "listing": "/notebooks.html",
     "items": [
       "/notebooks/02a_data_review.html",
@@ -51,9 +47,19 @@
       "/notebooks/05_webscraping.html",
       "/notebooks/06a_dashboard_nb.html",
       "/notebooks/06b_dashboard_gui.html",
+      "/notebooks/06c_final_gui_dashboard.html",
       "/notebooks/07_testing.html",
       "/notebooks/08_final_steps.html",
       "/notebooks/weather_dashboard.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/slides.html",
+      "/notebooks.html",
+      "/worksheets.html",
+      "/quick-reference-guides.html"
     ]
   },
   {

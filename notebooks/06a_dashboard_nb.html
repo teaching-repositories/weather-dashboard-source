@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up-the-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-the-environment">Setting Up the Environment</h2>
 <p>Begin by installing the ipywidgets library and enabling the widgets extension in Jupyter Notebooks to ensure a seamless interactive experience. This step sets the foundation for integrating dynamic controls into your notebooks.</p>
-<div id="e15c9ddb" class="cell">
+<div id="0d6a9729" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fetching-weather-data" class="level2">
 <h2 class="anchored" data-anchor-id="fetching-weather-data">Fetching Weather Data</h2>
 <p>Utilize APIs such as OpenWeatherMap to fetch current weather data. This step involves making HTTP requests and processing the received JSON data to extract relevant weather information.</p>
-<div id="c323439f" class="cell">
+<div id="8a1b5ead" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> <span class="st">'d0de46031ad7410d0c72c6063690e1d0'</span>  <span class="co"># Replace with your OpenWeatherMap API key</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>city <span class="op">=</span> <span class="st">'Sydney'</span>  <span class="co"># Default city for demonstration</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>current_data, forecast_data <span class="op">=</span> fetch_weather_data(api_key, city)</span>
@@ -219,13 +219,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="determining-weather-conditions" class="level2">
 <h2 class="anchored" data-anchor-id="determining-weather-conditions">Determining Weather Conditions</h2>
 <p>Analyze the fetched data to determine specific weather conditions like temperature, humidity, and wind speed. This processing helps in displaying meaningful information and creating visualizations.</p>
-<div id="1aee309f" class="cell">
+<div id="37f0f3ff" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>daily_df[<span class="st">'Weather'</span>] <span class="op">=</span> daily_df.<span class="bu">apply</span>(determine_weather, axis<span class="op">=</span><span class="dv">1</span>, args<span class="op">=</span>(<span class="dv">25</span>, <span class="dv">15</span>, <span class="dv">80</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="creating-dropdown-widget" class="level3">
 <h3 class="anchored" data-anchor-id="creating-dropdown-widget">5. Creating Dropdown Widget</h3>
 <p>Create a dropdown widget using ipywidgets to allow users to select different cities or weather parameters. This widget will enable dynamic interaction and updates based on user input.</p>
-<div id="000a60d7" class="cell">
+<div id="9bc919af" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>city_dropdown <span class="op">=</span> widgets.Dropdown(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    options<span class="op">=</span>[<span class="st">'Sydney'</span>, <span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Beijing'</span>],</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    value<span class="op">=</span><span class="st">'Sydney'</span>,</span>
@@ -237,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-update-button" class="level3">
 <h3 class="anchored" data-anchor-id="creating-update-button">6. Creating Update Button</h3>
 <p>Add an update button to trigger the fetching and processing of weather data based on the selected dropdown options. This button will help refresh the displayed information without re-running the entire notebook.</p>
-<div id="ff95472d" class="cell">
+<div id="b4f1d652" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>update_button <span class="op">=</span> widgets.Button(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">'Update Weather'</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    button_style<span class="op">=</span><span class="st">'success'</span></span>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="output-area-for-plots" class="level3">
 <h3 class="anchored" data-anchor-id="output-area-for-plots">7. Output Area for Plots</h3>
 <p>Designate an output area using ipywidgets where the weather plots will be displayed. This area will dynamically update as the user interacts with the dropdown and update button.</p>
-<div id="a7055eec" class="cell">
+<div id="1df828d7" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> widgets.Output()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>display(output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -256,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="updating-weather-data-and-plots" class="level3">
 <h3 class="anchored" data-anchor-id="updating-weather-data-and-plots">8. Updating Weather Data and Plots</h3>
 <p>Implement functionality to update the weather data and corresponding plots when the user changes the dropdown selection or clicks the update button. This ensures the displayed data is always current and relevant.</p>
-<div id="c7d1949d" class="cell">
+<div id="e9964ac0" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_weather(b):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    city <span class="op">=</span> city_dropdown.value</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    current_data, forecast_data <span class="op">=</span> fetch_weather_data(api_key, city)</span>
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="add-events-and-display-initial-dashboard" class="level2">
 <h2 class="anchored" data-anchor-id="add-events-and-display-initial-dashboard">Add events and display initial dashboard</h2>
 <p>Bind the created widgets to events and display the initial dashboard layout. This setup will prepare the interface for user interactions, showing the initial state of the weather data and plots.</p>
-<div id="3c2f52ef" class="cell">
+<div id="6eb7fc72" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>update_button.on_click(update_weather)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>display(city_dropdown, update_button, output)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>update_weather(<span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="combining-everything" class="level2">
 <h2 class="anchored" data-anchor-id="combining-everything">Combining Everything</h2>
 <p>Integrate all components into a cohesive interactive dashboard that updates weather data and visualizations in real-time based on user input. This final step brings together the dropdown, update button, and output area to create a functional and dynamic weather dashboard.</p>
-<div id="337a7fed" class="cell">
+<div id="71c3aeda" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
