@@ -1,43 +1,35 @@
 ---
-
-title: "Creating Documentation with MkDocs"
+title: "WeatherVista Project - Session 8: Documentating project with mkdocs and doctest"
 execute: 
   enabled: false
 ---
+### Step-by-Step Guide:
 
-## Objectives
-- Learn how to install and set up MkDocs.
-- Use `mkdocstrings` to auto-generate documentation from docstrings.
-- Build and serve the documentation locally.
-
-## 1. Installing MkDocs and mkdocstrings
-
-First, you need to install MkDocs and `mkdocstrings`. You can do this using pip.
+1. **Install MkDocs and mkdocstrings:**
 
 ```{python}
-!pip install mkdocs mkdocstrings
+!pip install mkdocs mkdocstrings mkdocstrings-python
 ```
 
-## 2. Initializing an MkDocs Project
-
-Navigate to the parent directory (one level above the `notebook` and `scripts` folders) and initialize a new MkDocs project.
+2. **Initialize the MkDocs Project:**
 
 ```{python}
 import os
 
-# Change directory to one level above the current directory
+# Change directory to the root of your overall project
 os.chdir('..')
 
-# Initialize a new MkDocs project
-!mkdocs new my_project_docs
+# Initialize a new MkDocs project in the root directory
+!mkdocs new .
 
-# Navigate into the new MkDocs project directory
-os.chdir('my_project_docs')
+# Verify the current working directory (should be the root of your overall project)
+os.getcwd()
 ```
 
-## 3. Configuring MkDocs
 
-Edit the `mkdocs.yml` configuration file to include the `mkdocstrings` plugin and configure it to document your scripts.
+3. **Update the mkdocs.yml Configuration:**
+
+Create a new `mkdocs.yml` content to include the `mkdocstrings` plugin.
 
 ```{python}
 # Create a new mkdocs.yml content
@@ -46,13 +38,14 @@ site_name: My Project Documentation
 
 nav:
     - Home: index.md
-    - API Reference:
-        - fetch_data: scripts.fetch_data
-        - process_data: scripts.process_data
 
 plugins:
     - search
-    - mkdocstrings
+    - mkdocstrings:
+        handlers:
+            python:
+                setup_commands:
+                    - pip install mkdocstrings-python
 
 # Paths to the documentation files
 docs_dir: docs
@@ -64,11 +57,11 @@ with open('mkdocs.yml', 'w') as file:
     file.write(mkdocs_yml_content)
 ```
 
-## 4. Writing the `index.md` Page
+4. **Create the `index.md` Page:**
 
-Create the main documentation page (`index.md`) to include the module references.
+Include the module references directly in the `index.md`.
 
-### index.md
+### index.md:
 
 ```{python}
 index_md_content = """
@@ -92,26 +85,37 @@ with open('docs/index.md', 'w') as file:
     file.write(index_md_content)
 ```
 
-## 5. Building and Serving the Documentation
+5. **Ensure `PYTHONPATH` is Set Correctly:**
 
-Now, let's build the documentation and serve it locally.
+To make sure MkDocs can find your `scripts` directory, set the `PYTHONPATH` environment variable.
+
+You can set the `PYTHONPATH` in the terminal or include it in the build command.
+
+For example, in your terminal:
+
+```bash
+export PYTHONPATH=$(pwd)
+```
+
 
 ```{python}
-# Build the documentation
+# Build the documentation with PYTHONPATH set
 !mkdocs build
 
-# Serve the documentation locally
+# Serve the documentation with PYTHONPATH set
 !mkdocs serve
 ```
 
-You can now access the documentation locally at `http://127.0.0.1:8000`.
+You can now access the documentation locally at http://127.0.0.1:8000.
 
-## Summary
+
+### Summary
 
 In this notebook, we learned how to:
-- Install MkDocs and `mkdocstrings`.
-- Initialize an MkDocs project.
+- Install MkDocs, `mkdocstrings`, and `mkdocstrings-python`.
+- Initialize an MkDocs project in the root of your overall project.
 - Configure MkDocs to use `mkdocstrings` for auto-generating documentation.
-- Create a main documentation page (`index.md`) that includes references to your scripts.
+- Directly include module references in the `index.md` file.
+- Ensure the `PYTHONPATH` is set correctly so MkDocs can find your scripts.
 - Build and serve the documentation locally.
 
