@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān)</title>
+<title>Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān) - WeatherVista Project - Session 8: Documentating project with mkdocs and doctest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,14 +146,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installing-mkdocs-and-mkdocstrings" id="toc-installing-mkdocs-and-mkdocstrings" class="nav-link active" data-scroll-target="#installing-mkdocs-and-mkdocstrings">1. Installing MkDocs and mkdocstrings</a></li>
-  <li><a href="#initializing-an-mkdocs-project" id="toc-initializing-an-mkdocs-project" class="nav-link" data-scroll-target="#initializing-an-mkdocs-project">2. Initializing an MkDocs Project</a></li>
-  <li><a href="#configuring-mkdocs" id="toc-configuring-mkdocs" class="nav-link" data-scroll-target="#configuring-mkdocs">3. Configuring MkDocs</a></li>
-  <li><a href="#writing-the-index.md-page" id="toc-writing-the-index.md-page" class="nav-link" data-scroll-target="#writing-the-index.md-page">4. Writing the <code>index.md</code> Page</a>
-  <ul class="collapse">
-  <li><a href="#index.md" id="toc-index.md" class="nav-link" data-scroll-target="#index.md">index.md</a></li>
-  </ul></li>
-  <li><a href="#building-and-serving-the-documentation" id="toc-building-and-serving-the-documentation" class="nav-link" data-scroll-target="#building-and-serving-the-documentation">5. Building and Serving the Documentation</a></li>
+  <li><a href="#step-by-step-guide" id="toc-step-by-step-guide" class="nav-link active" data-scroll-target="#step-by-step-guide">Step-by-Step Guide:</a></li>
+  <li><a href="#index.md" id="toc-index.md" class="nav-link" data-scroll-target="#index.md">index.md:</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -163,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Objectives</h1>
+<h1 class="title">WeatherVista Project - Session 8: Documentating project with mkdocs and doctest</h1>
 </div>
 
 
@@ -180,265 +174,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<hr>
-<p>title: “Creating Documentation with MkDocs” execute: enabled: false</p>
-<hr>
-<ul>
-<li>Learn how to install and set up MkDocs.</li>
-<li>Use <code>mkdocstrings</code> to auto-generate documentation from docstrings.</li>
-<li>Build and serve the documentation locally.</li>
-</ul>
-<section id="installing-mkdocs-and-mkdocstrings" class="level2">
-<h2 class="anchored" data-anchor-id="installing-mkdocs-and-mkdocstrings">1. Installing MkDocs and mkdocstrings</h2>
-<p>First, you need to install MkDocs and <code>mkdocstrings</code>. You can do this using pip.</p>
-<div id="89e74b11" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install mkdocs mkdocstrings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Collecting mkdocs
-  Downloading mkdocs-1.6.0-py3-none-any.whl (3.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/3.9 MB ? eta -:--:--     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/3.9 MB 874.4 kB/s eta 0:00:05     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/3.9 MB 575.8 kB/s eta 0:00:07     ╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.1/3.9 MB 936.2 kB/s eta 0:00:05     ━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.2/3.9 MB 1.2 MB/s eta 0:00:04     ━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.3/3.9 MB 1.4 MB/s eta 0:00:03     ━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.5/3.9 MB 2.3 MB/s eta 0:00:02     ━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.7/3.9 MB 2.7 MB/s eta 0:00:02     ━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.9/3.9 MB 3.2 MB/s eta 0:00:01     ━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/3.9 MB 3.6 MB/s eta 0:00:01     ━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/3.9 MB 4.0 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ 1.7/3.9 MB 4.4 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━ 2.0/3.9 MB 4.7 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━ 2.0/3.9 MB 4.7 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━ 2.0/3.9 MB 4.7 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━ 2.2/3.9 MB 4.0 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━ 2.5/3.9 MB 4.3 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━ 2.8/3.9 MB 4.6 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ 3.1/3.9 MB 4.8 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━ 3.6/3.9 MB 5.3 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ 3.8/3.9 MB 5.4 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 5.3 MB/s eta 0:00:00
-Collecting mkdocstrings
-  Downloading mkdocstrings-0.25.1-py3-none-any.whl (29 kB)
-Requirement already satisfied: jinja2&gt;=2.11.1 in /home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages (from mkdocs) (3.1.4)
-Collecting pathspec&gt;=0.11.1
-  Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
-Requirement already satisfied: packaging&gt;=20.5 in /home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages (from mkdocs) (24.1)
-Collecting watchdog&gt;=2.0
-  Downloading watchdog-4.0.1-py3-none-manylinux2014_x86_64.whl (83 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/83.0 KB ? eta -:--:--     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.0/83.0 KB 6.4 MB/s eta 0:00:00
-Requirement already satisfied: pyyaml&gt;=5.1 in /home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages (from mkdocs) (6.0.1)
-Collecting ghp-import&gt;=1.0
-  Using cached ghp_import-2.1.0-py3-none-any.whl (11 kB)
-Requirement already satisfied: markupsafe&gt;=2.0.1 in /home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages (from mkdocs) (2.1.5)
-Collecting click&gt;=7.0
-  Using cached click-8.1.7-py3-none-any.whl (97 kB)
-Collecting pyyaml-env-tag&gt;=0.1
-  Using cached pyyaml_env_tag-0.1-py3-none-any.whl (3.9 kB)
-Collecting mkdocs-get-deps&gt;=0.2.0
-  Downloading mkdocs_get_deps-0.2.0-py3-none-any.whl (9.5 kB)
-Collecting markdown&gt;=3.3.6
-  Downloading Markdown-3.6-py3-none-any.whl (105 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/105.4 KB ? eta -:--:--     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 105.4/105.4 KB 7.8 MB/s eta 0:00:00
-Collecting mergedeep&gt;=1.3.4
-  Using cached mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
-Collecting mkdocs-autorefs&gt;=0.3.1
-  Downloading mkdocs_autorefs-1.0.1-py3-none-any.whl (13 kB)
-Collecting pymdown-extensions&gt;=6.3
-  Downloading pymdown_extensions-10.8.1-py3-none-any.whl (250 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/250.8 KB ? eta -:--:--     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.8/250.8 KB 7.6 MB/s eta 0:00:00
-Requirement already satisfied: platformdirs&gt;=2.2.0 in /home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages (from mkdocstrings) (4.2.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages (from ghp-import&gt;=1.0-&gt;mkdocs) (2.9.0.post0)
-Requirement already satisfied: six&gt;=1.5 in /home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.1-&gt;ghp-import&gt;=1.0-&gt;mkdocs) (1.16.0)
-Installing collected packages: watchdog, pyyaml-env-tag, pathspec, mergedeep, markdown, click, pymdown-extensions, mkdocs-get-deps, ghp-import, mkdocs, mkdocs-autorefs, mkdocstrings
-Successfully installed click-8.1.7 ghp-import-2.1.0 markdown-3.6 mergedeep-1.3.4 mkdocs-1.6.0 mkdocs-autorefs-1.0.1 mkdocs-get-deps-0.2.0 mkdocstrings-0.25.1 pathspec-0.12.1 pymdown-extensions-10.8.1 pyyaml-env-tag-0.1 watchdog-4.0.1</code></pre>
+<section id="step-by-step-guide" class="level3">
+<h3 class="anchored" data-anchor-id="step-by-step-guide">Step-by-Step Guide:</h3>
+<ol type="1">
+<li><strong>Install MkDocs and mkdocstrings:</strong></li>
+</ol>
+<p>First install the mkdocs program and support for Pytohn</p>
+<div id="2deb4d7e" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install mkdocs mkdocstrings mkdocstrings<span class="op">-</span>python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ol start="2" type="1">
+<li><strong>Initialize the MkDocs Project:</strong></li>
+</ol>
+<div id="62cc65ff" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Change directory to the root of your overall project</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="st">'..'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a new MkDocs project in the root directory</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mkdocs new .</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify the current working directory (should be the root of your overall project)</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>os.getcwd()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ol start="3" type="1">
+<li><strong>Update the mkdocs.yml Configuration:</strong></li>
+</ol>
+<p>Create a new <code>mkdocs.yml</code> content to include the <code>mkdocstrings</code> plugin.</p>
+<div id="f840e594" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new mkdocs.yml content</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mkdocs_yml_content <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">site_name: My Project Documentation</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">nav:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">    - Home: index.md</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">plugins:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">    - search</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">    - mkdocstrings:</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">        handlers:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">            python:</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">                setup_commands:</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">                    - pip install mkdocstrings-python</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st"># Paths to the documentation files</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">docs_dir: docs</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">site_dir: site</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the content to mkdocs.yml</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'mkdocs.yml'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(mkdocs_yml_content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li><strong>Create the <code>index.md</code> Page:</strong></li>
+</ol>
+<p>Include the module references directly in the <code>index.md</code>.</p>
 </section>
-<section id="initializing-an-mkdocs-project" class="level2">
-<h2 class="anchored" data-anchor-id="initializing-an-mkdocs-project">2. Initializing an MkDocs Project</h2>
-<p>Navigate to the parent directory (one level above the <code>notebook</code> and <code>scripts</code> folders) and initialize a new MkDocs project.</p>
-<div id="c7e57bb5" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Change directory to one level above the current directory</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="st">'..'</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a new MkDocs project</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mkdocs new my_project_docs</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate into the new MkDocs project directory</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="st">'my_project_docs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>INFO    -  Creating project directory: my_project_docs
-INFO    -  Writing config file: my_project_docs/mkdocs.yml
-INFO    -  Writing initial docs: my_project_docs/docs/index.md</code></pre>
-</div>
-</div>
-</section>
-<section id="configuring-mkdocs" class="level2">
-<h2 class="anchored" data-anchor-id="configuring-mkdocs">3. Configuring MkDocs</h2>
-<p>Edit the <code>mkdocs.yml</code> configuration file to include the <code>mkdocstrings</code> plugin and configure it to document your scripts.</p>
-<div id="79158412" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new mkdocs.yml content</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mkdocs_yml_content <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">site_name: My Project Documentation</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">nav:</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">    - Home: index.md</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">    - API Reference:</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">        - fetch_data: scripts.fetch_data</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">        - process_data: scripts.process_data</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">plugins:</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="st">    - search</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="st">    - mkdocstrings</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="st"># Paths to the documentation files</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="st">docs_dir: docs</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="st">site_dir: site</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the content to mkdocs.yml</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'mkdocs.yml'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(mkdocs_yml_content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="writing-the-index.md-page" class="level2">
-<h2 class="anchored" data-anchor-id="writing-the-index.md-page">4. Writing the <code>index.md</code> Page</h2>
-<p>Create the main documentation page (<code>index.md</code>) to include the module references.</p>
 <section id="index.md" class="level3">
-<h3 class="anchored" data-anchor-id="index.md">index.md</h3>
-<div id="98acc34e" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>index_md_content <span class="op">=</span> <span class="st">"""</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st"># Welcome to My Project Documentation</span></span>
+<h3 class="anchored" data-anchor-id="index.md">index.md:</h3>
+<div id="d09b8295" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>index_md_content <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st"># Welcome to My Project Documentation</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">This documentation covers the scripts used in the project.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">## API Reference</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">### fetch_data</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">::: scripts.fetch_data</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="st">### process_data</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="st">::: scripts.process_data</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the content to index.md</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'docs/index.md'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(index_md_content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li><strong>Ensure <code>PYTHONPATH</code> is Set Correctly:</strong></li>
+</ol>
+<p>To make sure MkDocs can find your <code>scripts</code> directory, set the <code>PYTHONPATH</code> environment variable.</p>
+<p>You can set the <code>PYTHONPATH</code> in the terminal or include it in the build command.</p>
+<p>For example, in your terminal:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PYTHONPATH</span><span class="op">=</span><span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f54d65ee" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the documentation with PYTHONPATH set</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mkdocs build</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">This documentation covers the scripts used in the project.</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">## API Reference</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="st">### fetch_data</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">::: scripts.fetch_data</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st">### process_data</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">::: scripts.process_data</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the content to index.md</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'docs/index.md'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(index_md_content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Serve the documentation with PYTHONPATH set</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mkdocs serve</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>You can now access the documentation locally at http://127.0.0.1:8000.</p>
 </section>
-</section>
-<section id="building-and-serving-the-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="building-and-serving-the-documentation">5. Building and Serving the Documentation</h2>
-<p>Now, let’s build the documentation and serve it locally.</p>
-<div id="7206932a" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the documentation</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mkdocs build</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Serve the documentation locally</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mkdocs serve</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>INFO    -  Cleaning site directory
-INFO    -  Building documentation to directory:
-           /home/michael/Projects/teaching/weather-dashboard-source/my_project_docs/site
-WARNING -  A reference to 'scripts.fetch_data' is included in the 'nav'
-           configuration, which is not found in the documentation files.
-WARNING -  A reference to 'scripts.process_data' is included in the 'nav'
-           configuration, which is not found in the documentation files.
-ERROR   -  Error reading page 'index.md': No module named
-           'mkdocstrings_handlers'
-Traceback (most recent call last):
-  File "/home/michael/Projects/teaching/weathervista/.env/bin/mkdocs", line 8, in &lt;module&gt;
-    sys.exit(cli())
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
-    return self.main(*args, **kwargs)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1078, in main
-    rv = self.invoke(ctx)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
-    return __callback(*args, **kwargs)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/__main__.py", line 284, in build_command
-    build.build(cfg, dirty=not clean)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/commands/build.py", line 310, in build
-    _populate_page(file.page, config, files, dirty)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/commands/build.py", line 167, in _populate_page
-    page.render(config, files)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/structure/pages.py", line 285, in render
-    self.content = md.convert(self.markdown)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/core.py", line 357, in convert
-    root = self.parser.parseDocument(self.lines).getroot()
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/blockparser.py", line 117, in parseDocument
-    self.parseChunk(self.root, '\n'.join(lines))
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/blockparser.py", line 136, in parseChunk
-    self.parseBlocks(parent, text.split('\n\n'))
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/blockparser.py", line 158, in parseBlocks
-    if processor.run(parent, blocks) is not False:
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocstrings/extension.py", line 128, in run
-    html, handler, data = self._process_block(identifier, block, heading_level)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocstrings/extension.py", line 199, in _process_block
-    handler = self._handlers.get_handler(handler_name, handler_config)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocstrings/handlers/base.py", line 460, in get_handler
-    module = importlib.import_module(f"mkdocstrings_handlers.{name}")
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "&lt;frozen importlib._bootstrap&gt;", line 1050, in _gcd_import
-  File "&lt;frozen importlib._bootstrap&gt;", line 1027, in _find_and_load
-  File "&lt;frozen importlib._bootstrap&gt;", line 992, in _find_and_load_unlocked
-  File "&lt;frozen importlib._bootstrap&gt;", line 241, in _call_with_frames_removed
-  File "&lt;frozen importlib._bootstrap&gt;", line 1050, in _gcd_import
-  File "&lt;frozen importlib._bootstrap&gt;", line 1027, in _find_and_load
-  File "&lt;frozen importlib._bootstrap&gt;", line 1004, in _find_and_load_unlocked
-ModuleNotFoundError: No module named 'mkdocstrings_handlers'
-INFO    -  Building documentation...
-INFO    -  Cleaning site directory
-WARNING -  A reference to 'scripts.fetch_data' is included in the 'nav'
-           configuration, which is not found in the documentation files.
-WARNING -  A reference to 'scripts.process_data' is included in the 'nav'
-           configuration, which is not found in the documentation files.
-ERROR   -  Error reading page 'index.md': No module named
-           'mkdocstrings_handlers'
-Traceback (most recent call last):
-  File "/home/michael/Projects/teaching/weathervista/.env/bin/mkdocs", line 8, in &lt;module&gt;
-    sys.exit(cli())
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1157, in __call__
-    return self.main(*args, **kwargs)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1078, in main
-    rv = self.invoke(ctx)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1688, in invoke
-    return _process_result(sub_ctx.command.invoke(sub_ctx))
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 1434, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/click/core.py", line 783, in invoke
-    return __callback(*args, **kwargs)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/__main__.py", line 268, in serve_command
-    serve.serve(**kwargs)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/commands/serve.py", line 85, in serve
-    builder(config)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/commands/serve.py", line 67, in builder
-    build(config, serve_url=None if is_clean else serve_url, dirty=is_dirty)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/commands/build.py", line 310, in build
-    _populate_page(file.page, config, files, dirty)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/commands/build.py", line 167, in _populate_page
-    page.render(config, files)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocs/structure/pages.py", line 285, in render
-    self.content = md.convert(self.markdown)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/core.py", line 357, in convert
-    root = self.parser.parseDocument(self.lines).getroot()
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/blockparser.py", line 117, in parseDocument
-    self.parseChunk(self.root, '\n'.join(lines))
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/blockparser.py", line 136, in parseChunk
-    self.parseBlocks(parent, text.split('\n\n'))
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/markdown/blockparser.py", line 158, in parseBlocks
-    if processor.run(parent, blocks) is not False:
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocstrings/extension.py", line 128, in run
-    html, handler, data = self._process_block(identifier, block, heading_level)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocstrings/extension.py", line 199, in _process_block
-    handler = self._handlers.get_handler(handler_name, handler_config)
-  File "/home/michael/Projects/teaching/weathervista/.env/lib/python3.10/site-packages/mkdocstrings/handlers/base.py", line 460, in get_handler
-    module = importlib.import_module(f"mkdocstrings_handlers.{name}")
-  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "&lt;frozen importlib._bootstrap&gt;", line 1050, in _gcd_import
-  File "&lt;frozen importlib._bootstrap&gt;", line 1027, in _find_and_load
-  File "&lt;frozen importlib._bootstrap&gt;", line 992, in _find_and_load_unlocked
-  File "&lt;frozen importlib._bootstrap&gt;", line 241, in _call_with_frames_removed
-  File "&lt;frozen importlib._bootstrap&gt;", line 1050, in _gcd_import
-  File "&lt;frozen importlib._bootstrap&gt;", line 1027, in _find_and_load
-  File "&lt;frozen importlib._bootstrap&gt;", line 1004, in _find_and_load_unlocked
-ModuleNotFoundError: No module named 'mkdocstrings_handlers'</code></pre>
-</div>
-</div>
-<p>You can now access the documentation locally at <code>http://127.0.0.1:8000</code>.</p>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>In this notebook, we learned how to: - Install MkDocs and <code>mkdocstrings</code>. - Initialize an MkDocs project. - Configure MkDocs to use <code>mkdocstrings</code> for auto-generating documentation. - Create a main documentation page (<code>index.md</code>) that includes references to your scripts. - Build and serve the documentation locally.</p>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<p>In this notebook, we learned how to: - Install MkDocs, <code>mkdocstrings</code>, and <code>mkdocstrings-python</code>. - Initialize an MkDocs project in the root of your overall project. - Configure MkDocs to use <code>mkdocstrings</code> for auto-generating documentation. - Directly include module references in the <code>index.md</code> file. - Ensure the <code>PYTHONPATH</code> is set correctly so MkDocs can find your scripts. - Build and serve the documentation locally.</p>
 
 
 </section>

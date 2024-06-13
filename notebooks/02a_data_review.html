@@ -180,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this session, we will fetch weather forecast data from the OpenWeatherMap API and process it for analysis.</p>
 <section id="import-required-libraries" class="level5">
 <h5 class="anchored" data-anchor-id="import-required-libraries">Import Required Libraries</h5>
-<div id="074c00e6" class="cell">
+<div id="66bab39e" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -188,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="set-up-api-key-and-city" class="level5">
 <h5 class="anchored" data-anchor-id="set-up-api-key-and-city">Set Up API Key and City</h5>
 <p>Replace the placeholder with your own OpenWeatherMap API key.</p>
-<div id="86814458" class="cell">
+<div id="a95f07f7" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace with your OpenWeatherMap API key</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>API_KEY <span class="op">=</span> <span class="st">'YOUR_API_KEY'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>city <span class="op">=</span> <span class="st">'London'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will define a function to fetch the 5-day weather forecast data for a specified city.</p>
 <section id="define-function-to-fetch-data" class="level5">
 <h5 class="anchored" data-anchor-id="define-function-to-fetch-data">Define Function to Fetch Data</h5>
-<div id="d7ec57ec" class="cell">
+<div id="c4c791c7" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to fetch data from the given URL and return JSON</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_data(url):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(url)</span>
@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="fetch-data" class="level5">
 <h5 class="anchored" data-anchor-id="fetch-data">Fetch Data</h5>
-<div id="9436e1cb" class="cell">
+<div id="f014e477" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch current weather data</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>current_url <span class="op">=</span> <span class="ss">f'http://api.openweathermap.org/data/2.5/weather?q=</span><span class="sc">{</span>city<span class="sc">}</span><span class="ss">&amp;appid=</span><span class="sc">{</span>API_KEY<span class="sc">}</span><span class="ss">'</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>current_data <span class="op">=</span> fetch_data(current_url)</span>
@@ -229,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will process the fetched data to extract relevant information and save it in CSV format.</p>
 <section id="parse-weather-data" class="level5">
 <h5 class="anchored" data-anchor-id="parse-weather-data">Parse Weather Data</h5>
-<div id="52a6c688" class="cell">
+<div id="2b5e653e" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to parse a single weather entry into a dictionary</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse_weather(entry):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> entry <span class="kw">is</span> <span class="va">None</span>:</span>
@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="extract-and-process-data" class="level5">
 <h5 class="anchored" data-anchor-id="extract-and-process-data">Extract and Process Data</h5>
-<div id="03ba5e71" class="cell">
+<div id="d41fc5e8" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Process current weather data</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>current_weather <span class="op">=</span> parse_weather(current_data)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="save-data-to-csv" class="level5">
 <h5 class="anchored" data-anchor-id="save-data-to-csv">Save Data to CSV</h5>
-<div id="4d1859cf" class="cell">
+<div id="ba26281b" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to save a list of dictionaries to a CSV file</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> save_to_csv(data, filename):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> data <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> <span class="kw">not</span> data:</span>
@@ -274,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="calculate-daily-statistics" class="level5">
 <h5 class="anchored" data-anchor-id="calculate-daily-statistics">Calculate Daily Statistics</h5>
-<div id="26a5805a" class="cell">
+<div id="78208517" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate daily min and max stats from forecast data</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_daily_stats(forecast_data):</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> forecast_data <span class="kw">is</span> <span class="va">None</span> <span class="kw">or</span> <span class="kw">not</span> forecast_data:</span>
@@ -314,14 +314,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will review the structure and content of the raw and processed data to ensure it is correctly fetched and processed.</p>
 <section id="display-the-first-few-rows-of-raw-data" class="level5">
 <h5 class="anchored" data-anchor-id="display-the-first-few-rows-of-raw-data">Display the First Few Rows of Raw Data</h5>
-<div id="967254c4" class="cell">
+<div id="8eb1fbbe" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_raw <span class="op">=</span> pd.read_csv(<span class="st">'../data/processed/hourly_weather_data.csv'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df_raw.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="display-the-first-few-rows-of-processed-data" class="level5">
 <h5 class="anchored" data-anchor-id="display-the-first-few-rows-of-processed-data">Display the First Few Rows of Processed Data</h5>
-<div id="da975556" class="cell">
+<div id="fc4c82b8" class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_processed <span class="op">=</span> pd.read_csv(<span class="st">'../data/processed/daily_weather_stats.csv'</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_processed.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
