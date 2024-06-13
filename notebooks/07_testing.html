@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān) - WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest</title>
+<title>Weather Dashboard Project: WeatherVista (天气景观 - Tiānqì jǐngguān) - WeatherVista Project - Session 7: Writing and Running Tests with doctest</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,32 +147,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#introduction-to-testing" id="toc-introduction-to-testing" class="nav-link" data-scroll-target="#introduction-to-testing">1. Introduction to Testing</a>
+  <li><a href="#introduction-to-testing" id="toc-introduction-to-testing" class="nav-link" data-scroll-target="#introduction-to-testing">1. Introduction to Testing</a></li>
+  <li><a href="#using-doctest-for-inline-testing" id="toc-using-doctest-for-inline-testing" class="nav-link" data-scroll-target="#using-doctest-for-inline-testing">2. Using <code>doctest</code> for Inline Testing</a>
   <ul class="collapse">
-  <li><a href="#import-required-libraries" id="toc-import-required-libraries" class="nav-link" data-scroll-target="#import-required-libraries">Import Required Libraries</a></li>
-  </ul></li>
-  <li><a href="#writing-tests-with-pytest" id="toc-writing-tests-with-pytest" class="nav-link" data-scroll-target="#writing-tests-with-pytest">2. Writing Tests with pytest</a>
-  <ul class="collapse">
-  <li><a href="#installing-pytest" id="toc-installing-pytest" class="nav-link" data-scroll-target="#installing-pytest">Installing pytest</a></li>
-  <li><a href="#creating-a-test-file" id="toc-creating-a-test-file" class="nav-link" data-scroll-target="#creating-a-test-file">Creating a Test File</a></li>
-  <li><a href="#test_weather.py" id="toc-test_weather.py" class="nav-link" data-scroll-target="#test_weather.py">test_weather.py</a></li>
-  <li><a href="#running-tests-with-pytest" id="toc-running-tests-with-pytest" class="nav-link" data-scroll-target="#running-tests-with-pytest">Running Tests with pytest</a></li>
-  </ul></li>
-  <li><a href="#using-doctest-for-inline-testing" id="toc-using-doctest-for-inline-testing" class="nav-link" data-scroll-target="#using-doctest-for-inline-testing">3. Using doctest for Inline Testing</a>
-  <ul class="collapse">
-  <li><a href="#adding-doctests-to-functions" id="toc-adding-doctests-to-functions" class="nav-link" data-scroll-target="#adding-doctests-to-functions">Adding doctests to Functions</a></li>
-  <li><a href="#fetch_data.py" id="toc-fetch_data.py" class="nav-link" data-scroll-target="#fetch_data.py">fetch_data.py</a></li>
-  <li><a href="#running-doctests" id="toc-running-doctests" class="nav-link" data-scroll-target="#running-doctests">Running doctests</a></li>
-  </ul></li>
-  <li><a href="#testing-data-processing-functions" id="toc-testing-data-processing-functions" class="nav-link" data-scroll-target="#testing-data-processing-functions">4. Testing Data Processing Functions</a>
-  <ul class="collapse">
-  <li><a href="#adding-tests-for-data-processing" id="toc-adding-tests-for-data-processing" class="nav-link" data-scroll-target="#adding-tests-for-data-processing">Adding Tests for Data Processing</a></li>
-  <li><a href="#test_process_data.py" id="toc-test_process_data.py" class="nav-link" data-scroll-target="#test_process_data.py">test_process_data.py</a></li>
-  <li><a href="#running-tests" id="toc-running-tests" class="nav-link" data-scroll-target="#running-tests">Running Tests</a></li>
-  </ul></li>
-  <li><a href="#integrating-tests-into-the-project" id="toc-integrating-tests-into-the-project" class="nav-link" data-scroll-target="#integrating-tests-into-the-project">5. Integrating Tests into the Project</a>
-  <ul class="collapse">
-  <li><a href="#running-all-tests" id="toc-running-all-tests" class="nav-link" data-scroll-target="#running-all-tests">Running All Tests</a></li>
+  <li><a href="#example-function-convert_temp_kelvin_to_celsius" id="toc-example-function-convert_temp_kelvin_to_celsius" class="nav-link" data-scroll-target="#example-function-convert_temp_kelvin_to_celsius">Example Function: <code>convert_temp_kelvin_to_celsius</code></a></li>
+  <li><a href="#running-doctest-for-convert_temp_kelvin_to_celsius" id="toc-running-doctest-for-convert_temp_kelvin_to_celsius" class="nav-link" data-scroll-target="#running-doctest-for-convert_temp_kelvin_to_celsius">Running <code>doctest</code> for <code>convert_temp_kelvin_to_celsius</code></a></li>
+  <li><a href="#more-complex-function-fetch_weather_data" id="toc-more-complex-function-fetch_weather_data" class="nav-link" data-scroll-target="#more-complex-function-fetch_weather_data">More Complex Function: <code>fetch_weather_data</code></a></li>
+  <li><a href="#running-doctest-for-fetch_weather_data" id="toc-running-doctest-for-fetch_weather_data" class="nav-link" data-scroll-target="#running-doctest-for-fetch_weather_data">Running <code>doctest</code> for <code>fetch_weather_data</code></a></li>
+  <li><a href="#adding-doctests-to-weathervista-functions" id="toc-adding-doctests-to-weathervista-functions" class="nav-link" data-scroll-target="#adding-doctests-to-weathervista-functions">3. Adding doctests to WeatherVista Functions</a></li>
+  <li><a href="#scriptsfetch_data.py" id="toc-scriptsfetch_data.py" class="nav-link" data-scroll-target="#scriptsfetch_data.py">scripts/fetch_data.py</a></li>
+  <li><a href="#running-doctest-for-weathervista" id="toc-running-doctest-for-weathervista" class="nav-link" data-scroll-target="#running-doctest-for-weathervista">Running <code>doctest</code> for WeatherVista</a></li>
+  <li><a href="#scriptsprocess_data.py" id="toc-scriptsprocess_data.py" class="nav-link" data-scroll-target="#scriptsprocess_data.py">scripts/process_data.py</a></li>
+  <li><a href="#running-doctest-for-data-processing-functions" id="toc-running-doctest-for-data-processing-functions" class="nav-link" data-scroll-target="#running-doctest-for-data-processing-functions">Running <code>doctest</code> for Data Processing Functions</a></li>
+  <li><a href="#integrating-tests-into-the-project" id="toc-integrating-tests-into-the-project" class="nav-link" data-scroll-target="#integrating-tests-into-the-project">4. Integrating Tests into the Project</a></li>
+  <li><a href="#run_doctests.py" id="toc-run_doctests.py" class="nav-link" data-scroll-target="#run_doctests.py">run_doctests.py</a></li>
+  <li><a href="#running-all-doctests" id="toc-running-all-doctests" class="nav-link" data-scroll-target="#running-all-doctests">Running All doctests</a></li>
   </ul></li>
   <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
@@ -184,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WeatherVista Project - Session 7: Writing and Running Tests with pytest and doctest</h1>
+<h1 class="title">WeatherVista Project - Session 7: Writing and Running Tests with doctest</h1>
 </div>
 
 
@@ -205,88 +194,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <ul>
 <li>Learn the importance of testing in software development.</li>
-<li>Understand how to write and run tests using pytest.</li>
-<li>Explore using doctest for inline testing within docstrings.</li>
+<li>Explore using <code>doctest</code> for inline testing within docstrings.</li>
 </ul>
 </section>
 <section id="introduction-to-testing" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-testing">1. Introduction to Testing</h2>
-<p>Testing is crucial for ensuring the reliability and correctness of your code. In this session, we will focus on writing tests using pytest and doctest.</p>
-<section id="import-required-libraries" class="level3">
-<h3 class="anchored" data-anchor-id="import-required-libraries">Import Required Libraries</h3>
-<div id="229c507b" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="writing-tests-with-pytest" class="level2">
-<h2 class="anchored" data-anchor-id="writing-tests-with-pytest">2. Writing Tests with pytest</h2>
-<p>pytest is a popular testing framework for Python that makes it easy to write simple and scalable test cases.</p>
-<section id="installing-pytest" class="level3">
-<h3 class="anchored" data-anchor-id="installing-pytest">Installing pytest</h3>
-<div id="df0b4a1d" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install pytest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="creating-a-test-file" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-test-file">Creating a Test File</h3>
-<p>We’ll create a test file <code>test_weather.py</code> to write our test cases.</p>
-</section>
-<section id="test_weather.py" class="level3">
-<h3 class="anchored" data-anchor-id="test_weather.py">test_weather.py</h3>
-<div id="114f3942" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test_weather.py</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scripts.fetch_data <span class="im">import</span> fetch_weather_data</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fetch_weather_data_success():</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    api_key <span class="op">=</span> <span class="st">'your_api_key_here'</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    location <span class="op">=</span> <span class="st">'London'</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> fetch_weather_data(api_key, location)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> data <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'Location'</span> <span class="kw">in</span> data</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'Temperature (C)'</span> <span class="kw">in</span> data</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'Humidity (%)'</span> <span class="kw">in</span> data</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="st">'Weather'</span> <span class="kw">in</span> data</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fetch_weather_data_failure():</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    api_key <span class="op">=</span> <span class="st">'your_api_key_here'</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    location <span class="op">=</span> <span class="st">'InvalidCity'</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> fetch_weather_data(api_key, location)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> data <span class="kw">is</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="running-tests-with-pytest" class="level3">
-<h3 class="anchored" data-anchor-id="running-tests-with-pytest">Running Tests with pytest</h3>
-<p>To run the tests, navigate to the directory containing the test file and run:</p>
-<div id="9b293195" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pytest test_weather.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+<p>Testing is crucial for ensuring the reliability and correctness of your code. In this session, we will focus on writing tests using <code>doctest</code>.</p>
 </section>
 <section id="using-doctest-for-inline-testing" class="level2">
-<h2 class="anchored" data-anchor-id="using-doctest-for-inline-testing">3. Using doctest for Inline Testing</h2>
-<p>doctest allows you to write tests within your docstrings, which can be run to verify that your code works as expected.</p>
-<section id="adding-doctests-to-functions" class="level3">
-<h3 class="anchored" data-anchor-id="adding-doctests-to-functions">Adding doctests to Functions</h3>
-<p>We’ll add doctests to the <code>fetch_weather_data</code> function in <code>fetch_data.py</code>.</p>
+<h2 class="anchored" data-anchor-id="using-doctest-for-inline-testing">2. Using <code>doctest</code> for Inline Testing</h2>
+<section id="example-function-convert_temp_kelvin_to_celsius" class="level3">
+<h3 class="anchored" data-anchor-id="example-function-convert_temp_kelvin_to_celsius">Example Function: <code>convert_temp_kelvin_to_celsius</code></h3>
+<p>Let’s start with a simple weather-related function and add a <code>doctest</code> to it.</p>
+<div id="3e508533" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_temp_kelvin_to_celsius(kelvin):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert temperature from Kelvin to Celsius.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - kelvin (float): Temperature in Kelvin.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - float: Temperature in Celsius.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; convert_temp_kelvin_to_celsius(273.15)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    0.0</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; convert_temp_kelvin_to_celsius(0)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    -273.15</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; convert_temp_kelvin_to_celsius(373.15)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">    100.0</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="fetch_data.py" class="level3">
-<h3 class="anchored" data-anchor-id="fetch_data.py">fetch_data.py</h3>
-<div id="00bd3b48" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(api_key, location):</span>
+<section id="running-doctest-for-convert_temp_kelvin_to_celsius" class="level3">
+<h3 class="anchored" data-anchor-id="running-doctest-for-convert_temp_kelvin_to_celsius">Running <code>doctest</code> for <code>convert_temp_kelvin_to_celsius</code></h3>
+<p>To run <code>doctest</code> within the Jupyter notebook, you can use the <code>doctest</code> module directly.</p>
+<p><strong>Note</strong>: The <code>doctest.testmod()</code> function will only test the functions that have been defined in cells that have already been executed. It does not scan the entire notebook; it only tests the functions and classes that are available in the current Python environment at the time it is called.</p>
+<div id="5bc302f4" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> doctest</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>doctest.testmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="more-complex-function-fetch_weather_data" class="level3">
+<h3 class="anchored" data-anchor-id="more-complex-function-fetch_weather_data">More Complex Function: <code>fetch_weather_data</code></h3>
+<p>Now let’s add another function that fetches weather data and includes a <code>doctest</code>.</p>
+<div id="8ae3baf5" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(api_key, location):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Fetch weather data from the OpenWeatherMap API.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">    - api_key (str): The API key for authentication.</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - location (str): The location for which to fetch weather data.</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    - dict: A dictionary containing weather data.</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples:</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fetch_weather_data('invalid_api_key', 'London') is None</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">    True</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; data = fetch_weather_data('your_api_key_here', 'London')</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; data['Location'] == 'London'</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">    True</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="ss">f"http://api.openweathermap.org/data/2.5/weather?q=</span><span class="sc">{</span>location<span class="sc">}</span><span class="ss">&amp;appid=</span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(url)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        data <span class="op">=</span> response.json()</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        weather_info <span class="op">=</span> {</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Location"</span>: data[<span class="st">"name"</span>],</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Temperature (C)"</span>: data[<span class="st">"main"</span>][<span class="st">"temp"</span>] <span class="op">-</span> <span class="fl">273.15</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Humidity (%)"</span>: data[<span class="st">"main"</span>][<span class="st">"humidity"</span>],</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Weather"</span>: data[<span class="st">"weather"</span>][<span class="dv">0</span>][<span class="st">"description"</span>]</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> weather_info</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="running-doctest-for-fetch_weather_data" class="level3">
+<h3 class="anchored" data-anchor-id="running-doctest-for-fetch_weather_data">Running <code>doctest</code> for <code>fetch_weather_data</code></h3>
+<p>Again, ensure the function is defined in a previously executed cell before running <code>doctest.testmod()</code>.</p>
+<div id="3e0f7369" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> doctest</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>doctest.testmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="adding-doctests-to-weathervista-functions" class="level3">
+<h3 class="anchored" data-anchor-id="adding-doctests-to-weathervista-functions">3. Adding doctests to WeatherVista Functions</h3>
+<p>Add <code>doctest</code> to our functions in the <code>scripts</code> directory.</p>
+</section>
+<section id="scriptsfetch_data.py" class="level3">
+<h3 class="anchored" data-anchor-id="scriptsfetch_data.py">scripts/fetch_data.py</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(api_key, location):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Fetch weather data from the OpenWeatherMap API.</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - api_key (str): The API key for authentication.</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - location (str): The location for which to fetch weather data.</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    - dict: A dictionary containing weather data.</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples:</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; fetch_weather_data('invalid_api_key', 'London') is None</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">    True</span></span>
@@ -304,66 +320,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> weather_info</span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="running-doctests" class="level3">
-<h3 class="anchored" data-anchor-id="running-doctests">Running doctests</h3>
-<p>To run doctests, use the following command:</p>
-<div id="a9ce478e" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python <span class="op">-</span>m doctest <span class="op">-</span>v scripts<span class="op">/</span>fetch_data.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="running-doctest-for-weathervista" class="level3">
+<h3 class="anchored" data-anchor-id="running-doctest-for-weathervista">Running <code>doctest</code> for WeatherVista</h3>
+<p>To run <code>doctest</code> for this function, at the command line:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m doctest <span class="op">-</span>v scripts<span class="op">/</span>fetch_data.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="testing-data-processing-functions" class="level2">
-<h2 class="anchored" data-anchor-id="testing-data-processing-functions">4. Testing Data Processing Functions</h2>
-<p>We should also test our data processing functions to ensure they work correctly.</p>
-<section id="adding-tests-for-data-processing" class="level3">
-<h3 class="anchored" data-anchor-id="adding-tests-for-data-processing">Adding Tests for Data Processing</h3>
-<p>We’ll add tests for data processing functions in a new test file <code>test_process_data.py</code>.</p>
-</section>
-<section id="test_process_data.py" class="level3">
-<h3 class="anchored" data-anchor-id="test_process_data.py">test_process_data.py</h3>
-<div id="b922041e" class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test_process_data.py</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scripts.process_data <span class="im">import</span> convert_temp_kelvin_to_celsius</span>
+<section id="scriptsprocess_data.py" class="level3">
+<h3 class="anchored" data-anchor-id="scriptsprocess_data.py">scripts/process_data.py</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_temp_kelvin_to_celsius(kelvin):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert temperature from Kelvin to Celsius.</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_convert_temp_kelvin_to_celsius():</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> convert_temp_kelvin_to_celsius(<span class="fl">273.15</span>) <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> convert_temp_kelvin_to_celsius(<span class="dv">0</span>) <span class="op">==</span> <span class="op">-</span><span class="fl">273.15</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> convert_temp_kelvin_to_celsius(<span class="fl">373.15</span>) <span class="op">==</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - kelvin (float): Temperature in Kelvin.</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">    - float: Temperature in Celsius.</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples:</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; convert_temp_kelvin_to_celsius(273.15)</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">    0.0</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; convert_temp_kelvin_to_celsius(0)</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">    -273.15</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; convert_temp_kelvin_to_celsius(373.15)</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">    100.0</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="running-tests" class="level3">
-<h3 class="anchored" data-anchor-id="running-tests">Running Tests</h3>
-<p>To run the tests, navigate to the directory containing the test files and run:</p>
-<div id="a3a0d567" class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pytest test_process_data.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="running-doctest-for-data-processing-functions" class="level3">
+<h3 class="anchored" data-anchor-id="running-doctest-for-data-processing-functions">Running <code>doctest</code> for Data Processing Functions</h3>
+<p>To run <code>doctest</code> for this function:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m doctest <span class="op">-</span>v scripts<span class="op">/</span>process_data.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="integrating-tests-into-the-project" class="level3">
+<h3 class="anchored" data-anchor-id="integrating-tests-into-the-project">4. Integrating Tests into the Project</h3>
+<p>Create a script to run all <code>doctests</code> in the project.</p>
 </section>
-<section id="integrating-tests-into-the-project" class="level2">
-<h2 class="anchored" data-anchor-id="integrating-tests-into-the-project">5. Integrating Tests into the Project</h2>
-<p>Ensure that all your tests are organized and can be run together.</p>
-<section id="running-all-tests" class="level3">
-<h3 class="anchored" data-anchor-id="running-all-tests">Running All Tests</h3>
-<p>To run all tests in the project, use:</p>
-<div id="2c304ee7" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pytest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="run_doctests.py" class="level3">
+<h3 class="anchored" data-anchor-id="run_doctests.py">run_doctests.py</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> doctest</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scripts.fetch_data</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scripts.process_data</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_all_doctests():</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    doctest.testmod(scripts.fetch_data)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    doctest.testmod(scripts.process_data)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    run_all_doctests()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="running-all-doctests" class="level3">
+<h3 class="anchored" data-anchor-id="running-all-doctests">Running All doctests</h3>
+<p>To run all doctests in the project:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>python run_doctests.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="homework" class="level2">
 <h2 class="anchored" data-anchor-id="homework">Homework</h2>
 <ul>
-<li>Add more test cases to cover edge cases and different scenarios.</li>
+<li>Add more <code>doctest</code> cases to cover edge cases and different scenarios.</li>
 <li>Explore using other testing frameworks and tools to enhance your testing strategy.</li>
 </ul>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>In this session, we learned the importance of testing and how to write and run tests using pytest and doctest. We added tests for our weather fetching and data processing functions to ensure their correctness and reliability.</p>
-<p>Next session, we will focus on finalizing the project, adding documentation, and discussing distribution methods.</p>
+<p>In this session, we learned the importance of testing and how to write and run tests using <code>doctest</code>. We added tests for our weather fetching and data processing functions to ensure their correctness and reliability.</p>
+<p>Next session, we will focus on finalising the project, adding documentation, and discussing distribution methods.</p>
 
 
 </section>

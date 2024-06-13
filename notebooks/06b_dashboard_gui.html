@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Tkinter is a standard Python library for creating desktop GUIs. It provides various widgets to build interactive applications.</p>
 <section id="import-required-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-libraries">Import Required Libraries</h3>
-<div id="b42907fa" class="cell">
+<div id="a8ab397b" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tkinter <span class="im">as</span> tk</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tkinter <span class="im">import</span> ttk</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-a-basic-tkinter-window" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-basic-tkinter-window">2. Creating a Basic Tkinter Window</h2>
 <p>We’ll start by creating a basic Tkinter window.</p>
-<div id="c6d0be9d" class="cell">
+<div id="2e6bf358" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_window():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    window <span class="op">=</span> tk.Tk()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    window.title(<span class="st">"WeatherVista Dashboard"</span>)</span>
@@ -230,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’ll add various widgets such as labels, buttons, and entry fields to the Tkinter window.</p>
 <section id="adding-entry-fields-and-buttons" class="level3">
 <h3 class="anchored" data-anchor-id="adding-entry-fields-and-buttons">Adding Entry Fields and Buttons</h3>
-<div id="6c033dd2" class="cell">
+<div id="888edde5" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_window():</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> fetch_weather():</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        location <span class="op">=</span> location_entry.get()</span>
@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We’ll fetch and display weather data in the Tkinter window.</p>
 <section id="fetching-and-displaying-weather-data" class="level3">
 <h3 class="anchored" data-anchor-id="fetching-and-displaying-weather-data">Fetching and Displaying Weather Data</h3>
-<div id="6834cac6" class="cell">
+<div id="64d518e6" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(api_key, location):</span>

@@ -36,6 +36,15 @@
     ]
   },
   {
+    "listing": "/index.html",
+    "items": [
+      "/slides.html",
+      "/notebooks.html",
+      "/worksheets.html",
+      "/quick-reference-guides.html"
+    ]
+  },
+  {
     "listing": "/notebooks.html",
     "items": [
       "/notebooks/02a_data_review.html",
@@ -49,17 +58,7 @@
       "/notebooks/06b_dashboard_gui.html",
       "/notebooks/06c_final_gui_dashboard.html",
       "/notebooks/07_testing.html",
-      "/notebooks/08_final_steps.html",
-      "/notebooks/weather_dashboard.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/slides.html",
-      "/notebooks.html",
-      "/worksheets.html",
-      "/quick-reference-guides.html"
+      "/notebooks/08_documentation.html"
     ]
   },
   {
