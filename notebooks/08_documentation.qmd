@@ -1,0 +1,117 @@
+---
+
+title: "Creating Documentation with MkDocs"
+execute: 
+  enabled: false
+---
+
+## Objectives
+- Learn how to install and set up MkDocs.
+- Use `mkdocstrings` to auto-generate documentation from docstrings.
+- Build and serve the documentation locally.
+
+## 1. Installing MkDocs and mkdocstrings
+
+First, you need to install MkDocs and `mkdocstrings`. You can do this using pip.
+
+```{python}
+!pip install mkdocs mkdocstrings
+```
+
+## 2. Initializing an MkDocs Project
+
+Navigate to the parent directory (one level above the `notebook` and `scripts` folders) and initialize a new MkDocs project.
+
+```{python}
+import os
+
+# Change directory to one level above the current directory
+os.chdir('..')
+
+# Initialize a new MkDocs project
+!mkdocs new my_project_docs
+
+# Navigate into the new MkDocs project directory
+os.chdir('my_project_docs')
+```
+
+## 3. Configuring MkDocs
+
+Edit the `mkdocs.yml` configuration file to include the `mkdocstrings` plugin and configure it to document your scripts.
+
+```{python}
+# Create a new mkdocs.yml content
+mkdocs_yml_content = """
+site_name: My Project Documentation
+
+nav:
+    - Home: index.md
+    - API Reference:
+        - fetch_data: scripts.fetch_data
+        - process_data: scripts.process_data
+
+plugins:
+    - search
+    - mkdocstrings
+
+# Paths to the documentation files
+docs_dir: docs
+site_dir: site
+"""
+
+# Write the content to mkdocs.yml
+with open('mkdocs.yml', 'w') as file:
+    file.write(mkdocs_yml_content)
+```
+
+## 4. Writing the `index.md` Page
+
+Create the main documentation page (`index.md`) to include the module references.
+
+### index.md
+
+```{python}
+index_md_content = """
+# Welcome to My Project Documentation
+
+This documentation covers the scripts used in the project.
+
+## API Reference
+
+### fetch_data
+
+::: scripts.fetch_data
+
+### process_data
+
+::: scripts.process_data
+"""
+
+# Write the content to index.md
+with open('docs/index.md', 'w') as file:
+    file.write(index_md_content)
+```
+
+## 5. Building and Serving the Documentation
+
+Now, let's build the documentation and serve it locally.
+
+```{python}
+# Build the documentation
+!mkdocs build
+
+# Serve the documentation locally
+!mkdocs serve
+```
+
+You can now access the documentation locally at `http://127.0.0.1:8000`.
+
+## Summary
+
+In this notebook, we learned how to:
+- Install MkDocs and `mkdocstrings`.
+- Initialize an MkDocs project.
+- Configure MkDocs to use `mkdocstrings` for auto-generating documentation.
+- Create a main documentation page (`index.md`) that includes references to your scripts.
+- Build and serve the documentation locally.
+
