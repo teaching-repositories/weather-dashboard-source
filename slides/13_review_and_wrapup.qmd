@@ -131,7 +131,7 @@ print(f"Today's temperature is {temperature}")
 temperature = input("Enter tomorrows's temperature in Celsius: ")
 ```
 
-# Conversion to number
+# Converting Input
 - All keyboard input is a string
 - Convert to number
 
@@ -218,7 +218,7 @@ Here, the code inside the loop is executed as long as the `condition` is true.
 # `while` Loop Example:
 ```python
 i = 0
-while i < 5:
+while i < 3:
     print(i)
     i += 1
 ```
@@ -227,8 +227,6 @@ Output:
 0
 1
 2
-3
-4
 ```
 #  List/Dictionary Comprehension
 
@@ -247,10 +245,6 @@ print(squared_numbers)  # [1, 4, 9, 16, 25]
 ```
 
 # Nested Loops
-
-Nested loops are loops that are contained within another loop. This allows you to iterate over multiple iterables simultaneously.
-
-Example:
 ```python
 for i in range(3):
     for j in range(2):
@@ -267,7 +261,6 @@ i: 2, j: 1
 ```
 
 # Recursion
-
 Recursion is a programming technique where a function calls itself repeatedly until a base case is reached. The basic syntax is:
 ```python
 def function(arg):
@@ -326,7 +319,7 @@ greet("John") # Output: Hello, John!
 - Sets: Storing unique values
 
 
-## Tuples: Storing Immutable Values**
+# Tuples: Storing Immutable Values
 
 ```python
 my_tuple = (1, 2, 3, 4, 5)
@@ -335,7 +328,7 @@ print(my_tuple)  # Output: (1, 2, 3, 4, 5)
 # Trying to modify the tuple will raise a TypeError
 my_tuple[0] = 10  # Raises TypeError: 'tuple' object does not support item assignment
 ```
-# Lists: Storing Sequences of Values**
+# Lists: Storing Sequences of Values
 
 ```python
 my_list = [1, 2, 3, 4, 5]
@@ -346,7 +339,7 @@ my_list.append(6)
 print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
 ```
 
-# *Dictionaries: Key-Value Pairs for Data Organisation**
+# Dictionaries: Key-Value Pairs for Data Organisation
 
 ```python
 my_dict = {"name": "John", "age": 30, "city": "New York"}
@@ -361,7 +354,7 @@ my_dict["age"] = 31
 print(my_dict)  # Output: {'name': 'John', 'age': 31, 'city': 'New York'}
 ```
 
-# Sets: Storing Unique Values**
+# Sets: Storing Unique Values
 
 ```python
 my_set = {1, 2, 3, 4, 5}
@@ -377,12 +370,9 @@ print(my_set)  # Output: {1, 2, 4, 5}
 ```
 
 
-
-**Lists: Storing Sequences of Values**
+# Common List operations
 
 A List in Python is a collection of items that can be of any data type, including strings, integers, floats, and other lists. Lists are denoted by square brackets `[]` and are ordered, meaning that the order of items matters.
-
-# Common List operations
 
 * **Indexing**: Allows accessing specific elements using their position in the data structure. Only lists support indexing.
 * **Slicing**: Allows extracting a subset of elements from a list. Only lists support slicing.
@@ -399,16 +389,11 @@ A List in Python is a collection of items that can be of any data type, includin
 
 `Note that tuples, dictionaries, and sets do not support these operations. Tuples are immutable, dictionaries are key-value pairs, and sets are unordered collections of unique elements.`
 
-# Classes and Objects
-- Introduction to Classes and Objects
-- Encapsulation and Abstraction
-
 # Modules and Packages
 - Functions: Group of statement
 - Class: Group of functions and data
 - Modules: Grouping Functions (or classes)
 - Packages: Collections of Modules
-
 
 # Problem Solving Framework
 - Understand the problem
@@ -418,43 +403,46 @@ A List in Python is a collection of items that can be of any data type, includin
 - Test with variety of data
 
 # **Understand the Problem**
-	* Read and re-read the problem statement to ensure you understand what is being asked.
-	* Identify the key elements of the problem, including:
-		+ Inputs: What data will the program need to solve the problem?
-		+ Outputs: What results should the program produce?
-		+ Constraints: Are there any limitations or rules that the program must follow?
+- Read and re-read the problem statement to ensure you understand what is being asked.
+- Identify the key elements of the problem, including:
+    - Inputs: What data will the program need to solve the problem?
+    - Outputs: What results should the program produce?
+    - Constraints: Are there any limitations or rules that the program must follow?
+
 #  **Identify Input/Output**
-	* Determine the types and formats of the input data.
-	* Identify the expected output format and any specific requirements (e.g., precision, formatting).
+- Determine the types and formats of the input data.
+- Identify the expected output format and any specific requirements (e.g., precision, formatting).
+
 #  **Work the Problem by Hand (Early Test Cases)**
-	* Choose a few simple test cases to work through by hand.
-	* Verify that your manual calculations produce the expected output.
-	* This step helps you understand the problem better and identify any potential issues.
+- Choose a few simple test cases to work through by hand.
+- Verify that your manual calculations produce the expected output.
+  - This step helps you understand the problem better and identify any potential issues.
+
 #  **Write Pseudo Code and Convert to Python**
-	* Write pseudo code to describe the steps your program will take to solve the problem.
-	* Convert the pseudo code to Python, using a top-down approach to structure your code.
-	* Focus on one component at a time, and make sure each part is working correctly before moving on to the next.
+- Write pseudo code to describe the steps your program will take to solve the problem.
+- Convert the pseudo code to Python, using a top-down approach to structure your code.
+- Focus on one component at a time, and make sure each part is working correctly before moving on to the next.
+
 # **Test with Variety of Data**
-	* Write test cases to verify that your program produces the expected output for a variety of input data.
-	* Use a range of inputs, including edge cases and unusual data, to ensure your program is robust and reliable.
-	* Test your program in different environments and configurations to ensure it works as expected.
+- Write test cases to verify that your program produces the expected output for a variety of input data.
+- Use a range of inputs, including edge cases and unusual data, to ensure your program is robust and reliable.
+- Test your program in different environments and configurations to ensure it works as expected.
 
 
 # **Step 1 - Understand the Problem**
+
 Let's go through each step to develop a simple program to convert temperature from Kelvin to Celsius.
 
-* Define the Problem: Kelvin to Celsius Conversion
+- Define the Problem: Kelvin to Celsius Conversion
 
-The problem is to write a program that takes a temperature in Kelvin as input and returns the equivalent temperature in Celsius.  This is simple, but in real life probably interview the client, do some independent research, caht to experts, read research papers, study existing programs etc.
+The problem is to write a program that takes a temperature in Kelvin as input and returns the equivalent temperature in Celsius.  This is simple, but in real life probably interview the client, do some independent research, chat to experts, read research papers, study existing programs etc.
 
 # **Step 2 - Define Inputs and Outputs**
 
-* Input: Kelvin Temperature (a single number, e.g., 273.15)
-* Output: Celsius Temperature (a single number, e.g., 0.15)
+- Input: Kelvin Temperature (a single number, e.g., 273.15)
+- Output: Celsius Temperature (a single number, e.g., 0.15)
 
 # **Step 3 - Work the Problem by Hand**
-
-* Manual Calculation Example:
 
 > Let's convert 273.15 Kelvin to Celsius. We know that the conversion formula is:
 >
@@ -485,22 +473,16 @@ print(celsius)
 
 # **Step 5 - Test with Data**
 
-* Test Cases: Valid and Invalid Inputs
-
-Valid Inputs:
-
-* 273.15 Kelvin -> 0.15 Celsius
-* 0 Kelvin -> -273.15 Celsius
-* 500 Kelvin -> 226.85 Celsius
-
-Invalid Inputs:
-
-* Negative Kelvin (e.g., -273.15) -> Error handling needed
-* Non-numeric input (e.g., "abc") -> Error handling needed
-
-Handling Edge Cases (Negative Kelvin):
-
-* We'll add error handling to handle negative Kelvin inputs. For example, we could print an error message and return an error code.
+- Test Cases: Valid and Invalid Inputs
+- Valid Inputs:
+    - 273.15 Kelvin -> 0.15 Celsius
+    - 0 Kelvin -> -273.15 Celsius
+  - 500 Kelvin -> 226.85 Celsius
+- Invalid Inputs:
+    - Negative Kelvin (e.g., -273.15) -> Error handling needed
+    - Non-numeric input (e.g., "abc") -> Error handling needed
+- Handling Edge Cases (Negative Kelvin):
+  - We'll add error handling to handle negative Kelvin inputs. For example, we could print an error message and return an error code.
 
 
 # Final Python program:
@@ -588,11 +570,11 @@ Overall, Jupyter Notebooks provide an excellent interactive development environm
 
 Some popular tools and frameworks for packaging and deployment include:
 
-* Setuptools: A Python package manager that helps you create and distribute packages.
-* PyInstaller: A tool that converts Python scripts into standalone executables.
-* pip: A package installer for Python that makes it easy to install and manage dependencies.
-* Docker: A containerisation platform that allows you to package and deploy applications in a consistent and portable way.
-* Kubernetes: A container orchestration platform that helps you deploy and manage applications in a scalable and fault-tolerant way.
+- Setuptools: A Python package manager that helps you create and distribute packages.
+- PyInstaller: A tool that converts Python scripts into standalone executables.
+- pip: A package installer for Python that makes it easy to install and manage dependencies.
+- Docker: A containerisation platform that allows you to package and deploy applications in a consistent and portable way.
+- Kubernetes: A container orchestration platform that helps you deploy and manage applications in a scalable and fault-tolerant way.
 
 By following these steps, you can transition from Jupyter Notebooks to Python scripts for final program development, packaging, and deployment. This helps you create a robust, maintainable, and scalable program that can be used by others.
 
@@ -639,9 +621,9 @@ A database is a collection of organised data that can be easily accessed, manage
 
 Python has several libraries for working with databases, including:
 
-* `sqlite3` for SQLite databases
-* `psycopg2` for PostgreSQL databases
-* `mysql-connector-python` for MySQL databases
+- `sqlite3` for SQLite databases
+- `psycopg2` for PostgreSQL databases
+- `mysql-connector-python` for MySQL databases
 
 # Database Example
 ```python
@@ -742,18 +724,16 @@ for link in links:
 
 APIs are a set of defined rules that enables different applications, services, or systems to communicate with each other. It allows data to be shared, processed, and used by different systems, making it a crucial part of modern software development.
 
-**Basics of APIs**
+# Basics of APIs**
 
-Here are some key concepts to understand about APIs:
-
-* **API Type**: There are several types of APIs, including:
-	+ **Web API**: A web API is an API that is accessed over the web, typically using HTTP requests and responses.
-	+ **RESTful API**: A RESTful API is a type of web API that follows the REST (Representational State of Resource) architecture.
-	+ **SOAP API**: A SOAP API is a type of web API that uses the SOAP (Simple Object Access Protocol) protocol.
-* **API Endpoint**: An API endpoint is a specific URL that is used to access a particular resource or functionality.
-* **API Request**: An API request is a request sent to an API endpoint to retrieve or modify data.
-* **API Response**: An API response is the data returned by the API in response to an API request.
-* **API Key**: An API key is a unique string of characters that is used to authenticate and authorise API requests.
+- **API Type**: There are several types of APIs, including:
+    - **Web API**: A web API is an API that is accessed over the web, typically using HTTP requests and responses.
+    - **RESTful API**: A RESTful API is a type of web API that follows the REST (Representational State of Resource) architecture.
+    - **SOAP API**: A SOAP API is a type of web API that uses the SOAP (Simple Object Access Protocol) protocol.
+- **API Endpoint**: An API endpoint is a specific URL that is used to access a particular resource or functionality.
+- **API Request**: An API request is a request sent to an API endpoint to retrieve or modify data.
+- **API Response**: An API response is the data returned by the API in response to an API request.
+- **API Key**: An API key is a unique string of characters that is used to authenticate and authorise API requests.
 
 # Web API Example
 
@@ -787,27 +767,23 @@ else:
 
 # API Tips
 
-* Always check the API documentation to understand the available endpoints, request methods, and response formats.
-* Use the correct API key or authentication method to access the API.
-* Handle errors and exceptions properly.
-* Use a library like `requests` to simplify API requests and responses.
+- Always check the API documentation to understand the available endpoints, request methods, and response formats.
+- Use the correct API key or authentication method to access the API.
+- Handle errors and exceptions properly.
+- Use a library like `requests` to simplify API requests and responses.
 
 
-Here's an introduction to GUIs with Tkinter, including the basics and a simple GUI example:
-
-**Introduction to GUIs with Tkinter**
-
-Tkinter is a Python binding to the Tk GUI toolkit. It is the standard Python interface to Tk and is bundled with most standard Python distributions.
-
-**Basics of Graphical User Interfaces**
+# GUIs with Tkinter**
 
 A Graphical User Interface (GUI) is a type of user interface that allows users to interact with a computer program using visual elements such as windows, buttons, and menus. GUIs are designed to be more intuitive and user-friendly than command-line interfaces.
 
-Here are some key concepts to understand about GUIs:
+Tkinter is a Python binding to the Tk GUI toolkit. It is the standard Python interface to Tk and is bundled with most standard Python distributions.
 
-* **Widgets**: A widget is a basic building block of a GUI. Examples of widgets include buttons, labels, text boxes, and menus.
-* **Layout**: The layout of a GUI refers to the arrangement of widgets on the screen. This can be done using various layout managers such as grid, pack, and place.
-* **Events**: Events are actions that occur when a user interacts with a GUI, such as clicking a button or typing in a text box. GUIs use event handlers to respond to these events.
+# Basics of Graphical User Interfaces**
+
+- **Widgets**: A widget is a basic building block of a GUI. Examples of widgets include buttons, labels, text boxes, and menus.
+- **Layout**: The layout of a GUI refers to the arrangement of widgets on the screen. This can be done using various layout managers such as grid, pack, and place.
+- **Events**: Events are actions that occur when a user interacts with a GUI, such as clicking a button or typing in a text box. GUIs use event handlers to respond to these events.
 
 # GUI Example**
 
@@ -837,13 +813,15 @@ root.mainloop()
 ```
 
 # GUI Tips
-* Always use a consistent layout and design for your GUI.
-* Use meaningful and descriptive names for your widgets and variables.
-* Handle events and errors properly.
-* Use a GUI builder or IDE to simplify the process of building GUIs.
+
+- Always use a consistent layout and design for your GUI.
+- Use meaningful and descriptive names for your widgets and variables.
+- Handle events and errors properly.
+- Use a GUI builder or IDE to simplify the process of building GUIs.
 
 
 # Conclusion - Recap of Learning Points
+
 - **Data Representation and Types** Computers store and interpret data as binary sequences (0s and 1s), with data types defining how these sequences are understood and manipulated (e.g., as numbers, text, or multimedia).
 - **Six Fundamental Operations:** Mastering these operations provides the foundation for all programming tasks, enabling you to gather, process, and present data effectively.
 - **Problem-Solving Framework:** This structured approach helps break down complex problems into manageable steps, ensuring a systematic and thorough solution.
@@ -851,11 +829,6 @@ root.mainloop()
 Understanding data representation and types is fundamental to all aspects of programming. It underpins how input is processed, calculations are performed, decisions are made, and output is generated. Mastery of data types ensures that solutions are robust, efficient, and correct, seamlessly integrating with the six fundamental operations and the structured problem-solving framework.
 
 ::: {.notes}
-
-
-#### 0. Data Representation and Types
-
-
 
 #### 1. Summary of Six Fundamental Operations
 
