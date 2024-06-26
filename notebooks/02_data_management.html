@@ -207,14 +207,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>CSV (Comma-Separated Values) is a simple and widely used format for storing tabular data.</p>
 <section id="import-required-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-libraries">Import Required Libraries</h3>
-<div id="2a547b72" class="cell">
+<div id="0394b26b" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="reading-data-from-a-csv-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-data-from-a-csv-file">Reading Data from a CSV File</h3>
 <p>We will read the weather data we saved in the previous session.</p>
-<div id="80ee63c4" class="cell">
+<div id="8ddd3d41" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/weather_data.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="processing-data" class="level3">
 <h3 class="anchored" data-anchor-id="processing-data">Processing Data</h3>
 <p>Let’s process the data by converting the temperature from Kelvin to Celsius.</p>
-<div id="be89deb6" class="cell">
+<div id="ef110255" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_temp_kelvin_to_celsius(temp_k):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> temp_k <span class="op">-</span> <span class="fl">273.15</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="writing-data-to-a-csv-file" class="level3">
 <h3 class="anchored" data-anchor-id="writing-data-to-a-csv-file">Writing Data to a CSV File</h3>
 <p>We’ll save the processed data to a new CSV file.</p>
-<div id="952668a4" class="cell">
+<div id="0f8de7e0" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/processed/processed_weather_data.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -244,14 +244,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>SQL (Structured Query Language) is a powerful tool for managing and querying data stored in relational databases.</p>
 <section id="import-required-libraries-1" class="level3">
 <h3 class="anchored" data-anchor-id="import-required-libraries-1">Import Required Libraries</h3>
-<div id="fd92dac5" class="cell">
+<div id="65d068e2" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-a-sqlite-database-and-table" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-sqlite-database-and-table">Creating a SQLite Database and Table</h3>
 <p>We’ll create a SQLite database and a table to store the weather data.</p>
-<div id="c454a59a" class="cell">
+<div id="35b3cd37" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">'data/weather_data.db'</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="inserting-data-into-the-table" class="level3">
 <h3 class="anchored" data-anchor-id="inserting-data-into-the-table">Inserting Data into the Table</h3>
 <p>We’ll insert the processed weather data into the SQLite table.</p>
-<div id="a0113da6" class="cell">
+<div id="744c5b6c" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> df.iterrows():</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">'''</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">        INSERT INTO weather (location, temperature_c, humidity, weather_description)</span></span>
@@ -281,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="querying-data-from-the-table" class="level3">
 <h3 class="anchored" data-anchor-id="querying-data-from-the-table">Querying Data from the Table</h3>
 <p>We’ll query the data we just inserted into the SQLite table.</p>
-<div id="9e5591a7" class="cell">
+<div id="73b97a7a" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">'SELECT * FROM weather'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> cursor.fetchall()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> rows:</span>
@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="converting-sql-query-results-to-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="converting-sql-query-results-to-dataframe">Converting SQL Query Results to DataFrame</h3>
 <p>We’ll convert the query results to a pandas DataFrame for easier manipulation and visualization.</p>
-<div id="351a2dd4" class="cell">
+<div id="891c9401" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_sql <span class="op">=</span> pd.DataFrame(rows, columns<span class="op">=</span>[<span class="st">'Location'</span>, <span class="st">'Temperature (C)'</span>, <span class="st">'Humidity (%)'</span>, <span class="st">'Weather'</span>])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df_sql</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -303,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reading-data-from-csv-and-inserting-into-sql" class="level3">
 <h3 class="anchored" data-anchor-id="reading-data-from-csv-and-inserting-into-sql">Reading Data from CSV and Inserting into SQL</h3>
 <p>We’ll read additional weather data from a CSV file and insert it into the SQLite table.</p>
-<div id="2dacc05e" class="cell">
+<div id="4b595530" class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>additional_data <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/additional_weather_data.csv'</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, row <span class="kw">in</span> additional_data.iterrows():</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">'''</span></span>
@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="querying-combined-data" class="level3">
 <h3 class="anchored" data-anchor-id="querying-combined-data">Querying Combined Data</h3>
 <p>We’ll query the combined data from the SQLite table.</p>
-<div id="f695449a" class="cell">
+<div id="006a273e" class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">'SELECT * FROM weather'</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>combined_rows <span class="op">=</span> cursor.fetchall()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df_combined <span class="op">=</span> pd.DataFrame(combined_rows, columns<span class="op">=</span>[<span class="st">'Location'</span>, <span class="st">'Temperature (C)'</span>, <span class="st">'Humidity (%)'</span>, <span class="st">'Weather'</span>])</span>

@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-function-convert_temp_kelvin_to_celsius" class="level3">
 <h3 class="anchored" data-anchor-id="example-function-convert_temp_kelvin_to_celsius">Example Function: <code>convert_temp_kelvin_to_celsius</code></h3>
 <p>Let’s start with a simple weather-related function and add a <code>doctest</code> to it.</p>
-<div id="d4fb7b1e" class="cell">
+<div id="5dadd69c" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_temp_kelvin_to_celsius(kelvin):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Convert temperature from Kelvin to Celsius.</span></span>
@@ -232,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="running-doctest-for-convert_temp_kelvin_to_celsius">Running <code>doctest</code> for <code>convert_temp_kelvin_to_celsius</code></h3>
 <p>To run <code>doctest</code> within the Jupyter notebook, you can use the <code>doctest</code> module directly.</p>
 <p><strong>Note</strong>: The <code>doctest.testmod()</code> function will only test the functions that have been defined in cells that have already been executed. It does not scan the entire notebook; it only tests the functions and classes that are available in the current Python environment at the time it is called.</p>
-<div id="f2c62ff5" class="cell">
+<div id="8b0e2123" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> doctest</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>doctest.testmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="more-complex-function-fetch_weather_data" class="level3">
 <h3 class="anchored" data-anchor-id="more-complex-function-fetch_weather_data">More Complex Function: <code>fetch_weather_data</code></h3>
 <p>Now let’s add another function that fetches weather data and includes a <code>doctest</code>.</p>
-<div id="2116b494" class="cell">
+<div id="b3d559b1" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_weather_data(api_key, location):</span>
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="running-doctest-for-fetch_weather_data" class="level3">
 <h3 class="anchored" data-anchor-id="running-doctest-for-fetch_weather_data">Running <code>doctest</code> for <code>fetch_weather_data</code></h3>
 <p>Again, ensure the function is defined in a previously executed cell before running <code>doctest.testmod()</code>.</p>
-<div id="09a4cb04" class="cell">
+<div id="b312e3bf" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> doctest</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>doctest.testmod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

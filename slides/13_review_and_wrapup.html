@@ -4744,7 +4744,7 @@ vertical-align: -.125em;
   <li><a href="#data-representation-and-types" id="toc-data-representation-and-types" class="nav-link" data-scroll-target="#data-representation-and-types">Data Representation and Types</a></li>
   <li><a href="#calculation-operations" id="toc-calculation-operations" class="nav-link" data-scroll-target="#calculation-operations">Calculation Operations</a></li>
   <li><a href="#storeassignment" id="toc-storeassignment" class="nav-link" data-scroll-target="#storeassignment">Store/Assignment</a></li>
-  <li><a href="#conversion-to-number" id="toc-conversion-to-number" class="nav-link" data-scroll-target="#conversion-to-number">Conversion to number</a></li>
+  <li><a href="#converting-input" id="toc-converting-input" class="nav-link" data-scroll-target="#converting-input">Converting Input</a></li>
   <li><a href="#validate-input" id="toc-validate-input" class="nav-link" data-scroll-target="#validate-input">Validate input</a></li>
   <li><a href="#decision-making-ifthen-structures" id="toc-decision-making-ifthen-structures" class="nav-link" data-scroll-target="#decision-making-ifthen-structures">Decision Making (If/Then Structures)</a></li>
   <li><a href="#decision-example" id="toc-decision-example" class="nav-link" data-scroll-target="#decision-example">Decision Example</a></li>
@@ -4762,16 +4762,13 @@ vertical-align: -.125em;
   <li><a href="#function-components-and-syntax" id="toc-function-components-and-syntax" class="nav-link" data-scroll-target="#function-components-and-syntax">Function Components and Syntax</a></li>
   <li><a href="#function-example" id="toc-function-example" class="nav-link" data-scroll-target="#function-example">Function example</a></li>
   <li><a href="#best-practices-for-writing-functions" id="toc-best-practices-for-writing-functions" class="nav-link" data-scroll-target="#best-practices-for-writing-functions">Best Practices for Writing Functions</a></li>
-  <li><a href="#data-structures-tuples-lists-dictionaries-and-sets" id="toc-data-structures-tuples-lists-dictionaries-and-sets" class="nav-link" data-scroll-target="#data-structures-tuples-lists-dictionaries-and-sets">Data Structures: Tuples, Lists, Dictionaries and Sets</a>
-  <ul class="collapse">
-  <li><a href="#tuples-storing-immutable-values" id="toc-tuples-storing-immutable-values" class="nav-link" data-scroll-target="#tuples-storing-immutable-values">Tuples: Storing Immutable Values**</a></li>
-  </ul></li>
-  <li><a href="#lists-storing-sequences-of-values" id="toc-lists-storing-sequences-of-values" class="nav-link" data-scroll-target="#lists-storing-sequences-of-values">Lists: Storing Sequences of Values**</a></li>
-  <li><a href="#dictionaries-key-value-pairs-for-data-organisation" id="toc-dictionaries-key-value-pairs-for-data-organisation" class="nav-link" data-scroll-target="#dictionaries-key-value-pairs-for-data-organisation">*Dictionaries: Key-Value Pairs for Data Organisation**</a></li>
-  <li><a href="#sets-storing-unique-values" id="toc-sets-storing-unique-values" class="nav-link" data-scroll-target="#sets-storing-unique-values">Sets: Storing Unique Values**</a></li>
+  <li><a href="#data-structures-tuples-lists-dictionaries-and-sets" id="toc-data-structures-tuples-lists-dictionaries-and-sets" class="nav-link" data-scroll-target="#data-structures-tuples-lists-dictionaries-and-sets">Data Structures: Tuples, Lists, Dictionaries and Sets</a></li>
+  <li><a href="#tuples-storing-immutable-values" id="toc-tuples-storing-immutable-values" class="nav-link" data-scroll-target="#tuples-storing-immutable-values">Tuples: Storing Immutable Values</a></li>
+  <li><a href="#lists-storing-sequences-of-values" id="toc-lists-storing-sequences-of-values" class="nav-link" data-scroll-target="#lists-storing-sequences-of-values">Lists: Storing Sequences of Values</a></li>
+  <li><a href="#dictionaries-key-value-pairs-for-data-organisation" id="toc-dictionaries-key-value-pairs-for-data-organisation" class="nav-link" data-scroll-target="#dictionaries-key-value-pairs-for-data-organisation">Dictionaries: Key-Value Pairs for Data Organisation</a></li>
+  <li><a href="#sets-storing-unique-values" id="toc-sets-storing-unique-values" class="nav-link" data-scroll-target="#sets-storing-unique-values">Sets: Storing Unique Values</a></li>
   <li><a href="#common-list-operations" id="toc-common-list-operations" class="nav-link" data-scroll-target="#common-list-operations">Common List operations</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
-  <li><a href="#classes-and-objects" id="toc-classes-and-objects" class="nav-link" data-scroll-target="#classes-and-objects">Classes and Objects</a></li>
   <li><a href="#modules-and-packages" id="toc-modules-and-packages" class="nav-link" data-scroll-target="#modules-and-packages">Modules and Packages</a></li>
   <li><a href="#problem-solving-framework" id="toc-problem-solving-framework" class="nav-link" data-scroll-target="#problem-solving-framework">Problem Solving Framework</a></li>
   <li><a href="#understand-the-problem" id="toc-understand-the-problem" class="nav-link" data-scroll-target="#understand-the-problem"><strong>Understand the Problem</strong></a></li>
@@ -4798,9 +4795,12 @@ vertical-align: -.125em;
   <li><a href="#simple-web-scrape-example" id="toc-simple-web-scrape-example" class="nav-link" data-scroll-target="#simple-web-scrape-example">Simple Web Scrape Example</a></li>
   <li><a href="#web-scraping-tips" id="toc-web-scraping-tips" class="nav-link" data-scroll-target="#web-scraping-tips">Web Scraping Tips</a></li>
   <li><a href="#api---application-programming-interface" id="toc-api---application-programming-interface" class="nav-link" data-scroll-target="#api---application-programming-interface">API - Application Programming Interface</a></li>
+  <li><a href="#basics-of-apis" id="toc-basics-of-apis" class="nav-link" data-scroll-target="#basics-of-apis">Basics of APIs**</a></li>
   <li><a href="#web-api-example" id="toc-web-api-example" class="nav-link" data-scroll-target="#web-api-example">Web API Example</a></li>
   <li><a href="#web-api-python-code" id="toc-web-api-python-code" class="nav-link" data-scroll-target="#web-api-python-code">Web API Python Code</a></li>
   <li><a href="#api-tips" id="toc-api-tips" class="nav-link" data-scroll-target="#api-tips">API Tips</a></li>
+  <li><a href="#guis-with-tkinter" id="toc-guis-with-tkinter" class="nav-link" data-scroll-target="#guis-with-tkinter">GUIs with Tkinter**</a></li>
+  <li><a href="#basics-of-graphical-user-interfaces" id="toc-basics-of-graphical-user-interfaces" class="nav-link" data-scroll-target="#basics-of-graphical-user-interfaces">Basics of Graphical User Interfaces**</a></li>
   <li><a href="#gui-example" id="toc-gui-example" class="nav-link" data-scroll-target="#gui-example">GUI Example**</a></li>
   <li><a href="#gui-tips" id="toc-gui-tips" class="nav-link" data-scroll-target="#gui-tips">GUI Tips</a></li>
   <li><a href="#conclusion---recap-of-learning-points" id="toc-conclusion---recap-of-learning-points" class="nav-link" data-scroll-target="#conclusion---recap-of-learning-points">Conclusion - Recap of Learning Points</a></li>
@@ -4977,8 +4977,8 @@ vertical-align: -.125em;
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Today&#39;s temperature is </span><span class="sc">{</span>temperature<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter tomorrows&#39;s temperature in Celsius: &quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="conversion-to-number" class="level1">
-<h1>Conversion to number</h1>
+<section id="converting-input" class="level1">
+<h1>Converting Input</h1>
 <ul>
 <li>All keyboard input is a string</li>
 <li>Convert to number</li>
@@ -5057,15 +5057,13 @@ cherry</code></pre>
 <section id="while-loop-example" class="level1">
 <h1><code>while</code> Loop Example:</h1>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Output:</p>
 <pre><code>0
 1
-2
-3
-4</code></pre>
+2</code></pre>
 </section>
 <section id="listdictionary-comprehension" class="level1">
 <h1>List/Dictionary Comprehension</h1>
@@ -5082,8 +5080,6 @@ cherry</code></pre>
 </section>
 <section id="nested-loops" class="level1">
 <h1>Nested Loops</h1>
-<p>Nested loops are loops that are contained within another loop. This allows you to iterate over multiple iterables simultaneously.</p>
-<p>Example:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;i: </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, j: </span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5157,17 +5153,17 @@ i: 2, j: 1</code></pre>
 <li>Dictionaries: Key-Value Pairs for Data Organisation</li>
 <li>Sets: Storing unique values</li>
 </ul>
-<section id="tuples-storing-immutable-values" class="level2">
-<h2 class="anchored" data-anchor-id="tuples-storing-immutable-values">Tuples: Storing Immutable Values**</h2>
+</section>
+<section id="tuples-storing-immutable-values" class="level1">
+<h1>Tuples: Storing Immutable Values</h1>
 <div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_tuple)  <span class="co"># Output: (1, 2, 3, 4, 5)</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Trying to modify the tuple will raise a TypeError</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>my_tuple[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Raises TypeError: &#39;tuple&#39; object does not support item assignment</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
 <section id="lists-storing-sequences-of-values" class="level1">
-<h1>Lists: Storing Sequences of Values**</h1>
+<h1>Lists: Storing Sequences of Values</h1>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)  <span class="co"># Output: [1, 2, 3, 4, 5]</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5176,7 +5172,7 @@ i: 2, j: 1</code></pre>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)  <span class="co"># Output: [1, 2, 3, 4, 5, 6]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dictionaries-key-value-pairs-for-data-organisation" class="level1">
-<h1>*Dictionaries: Key-Value Pairs for Data Organisation**</h1>
+<h1>Dictionaries: Key-Value Pairs for Data Organisation</h1>
 <div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;John&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">30</span>, <span class="st">&quot;city&quot;</span>: <span class="st">&quot;New York&quot;</span>}</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dict)  <span class="co"># Output: {&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 30, &#39;city&#39;: &#39;New York&#39;}</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5189,7 +5185,7 @@ i: 2, j: 1</code></pre>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dict)  <span class="co"># Output: {&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 31, &#39;city&#39;: &#39;New York&#39;}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="sets-storing-unique-values" class="level1">
-<h1>Sets: Storing Unique Values**</h1>
+<h1>Sets: Storing Unique Values</h1>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>my_set <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_set)  <span class="co"># Output: {1, 2, 3, 4, 5}</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5200,11 +5196,10 @@ i: 2, j: 1</code></pre>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing a value is allowed</span></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>my_set.remove(<span class="dv">3</span>)</span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_set)  <span class="co"># Output: {1, 2, 4, 5}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Lists: Storing Sequences of Values</strong></p>
-<p>A List in Python is a collection of items that can be of any data type, including strings, integers, floats, and other lists. Lists are denoted by square brackets <code>[]</code> and are ordered, meaning that the order of items matters.</p>
 </section>
 <section id="common-list-operations" class="level1">
 <h1>Common List operations</h1>
+<p>A List in Python is a collection of items that can be of any data type, including strings, integers, floats, and other lists. Lists are denoted by square brackets <code>[]</code> and are ordered, meaning that the order of items matters.</p>
 <ul>
 <li><strong>Indexing</strong>: Allows accessing specific elements using their position in the data structure. Only lists support indexing.</li>
 <li><strong>Slicing</strong>: Allows extracting a subset of elements from a list. Only lists support slicing.</li>
@@ -5223,13 +5218,6 @@ i: 2, j: 1</code></pre>
 <li>Remove: <code>my_list.remove(&quot;old element&quot;)</code> removes the first occurrence of the element “old element” from the list.</li>
 </ul>
 <p><code>Note that tuples, dictionaries, and sets do not support these operations. Tuples are immutable, dictionaries are key-value pairs, and sets are unordered collections of unique elements.</code></p>
-</section>
-<section id="classes-and-objects" class="level1">
-<h1>Classes and Objects</h1>
-<ul>
-<li>Introduction to Classes and Objects</li>
-<li>Encapsulation and Abstraction</li>
-</ul>
 </section>
 <section id="modules-and-packages" class="level1">
 <h1>Modules and Packages</h1>
@@ -5252,34 +5240,48 @@ i: 2, j: 1</code></pre>
 </section>
 <section id="understand-the-problem" class="level1">
 <h1><strong>Understand the Problem</strong></h1>
-<pre><code>* Read and re-read the problem statement to ensure you understand what is being asked.
-* Identify the key elements of the problem, including:
-    + Inputs: What data will the program need to solve the problem?
-    + Outputs: What results should the program produce?
-    + Constraints: Are there any limitations or rules that the program must follow?</code></pre>
+<ul>
+<li>Read and re-read the problem statement to ensure you understand what is being asked.</li>
+<li>Identify the key elements of the problem, including:
+<ul>
+<li>Inputs: What data will the program need to solve the problem?</li>
+<li>Outputs: What results should the program produce?</li>
+<li>Constraints: Are there any limitations or rules that the program must follow?</li>
+</ul></li>
+</ul>
 </section>
 <section id="identify-inputoutput" class="level1">
 <h1><strong>Identify Input/Output</strong></h1>
-<pre><code>* Determine the types and formats of the input data.
-* Identify the expected output format and any specific requirements (e.g., precision, formatting).</code></pre>
+<ul>
+<li>Determine the types and formats of the input data.</li>
+<li>Identify the expected output format and any specific requirements (e.g., precision, formatting).</li>
+</ul>
 </section>
 <section id="work-the-problem-by-hand-early-test-cases" class="level1">
 <h1><strong>Work the Problem by Hand (Early Test Cases)</strong></h1>
-<pre><code>* Choose a few simple test cases to work through by hand.
-* Verify that your manual calculations produce the expected output.
-* This step helps you understand the problem better and identify any potential issues.</code></pre>
+<ul>
+<li>Choose a few simple test cases to work through by hand.</li>
+<li>Verify that your manual calculations produce the expected output.
+<ul>
+<li>This step helps you understand the problem better and identify any potential issues.</li>
+</ul></li>
+</ul>
 </section>
 <section id="write-pseudo-code-and-convert-to-python" class="level1">
 <h1><strong>Write Pseudo Code and Convert to Python</strong></h1>
-<pre><code>* Write pseudo code to describe the steps your program will take to solve the problem.
-* Convert the pseudo code to Python, using a top-down approach to structure your code.
-* Focus on one component at a time, and make sure each part is working correctly before moving on to the next.</code></pre>
+<ul>
+<li>Write pseudo code to describe the steps your program will take to solve the problem.</li>
+<li>Convert the pseudo code to Python, using a top-down approach to structure your code.</li>
+<li>Focus on one component at a time, and make sure each part is working correctly before moving on to the next.</li>
+</ul>
 </section>
 <section id="test-with-variety-of-data" class="level1">
 <h1><strong>Test with Variety of Data</strong></h1>
-<pre><code>* Write test cases to verify that your program produces the expected output for a variety of input data.
-* Use a range of inputs, including edge cases and unusual data, to ensure your program is robust and reliable.
-* Test your program in different environments and configurations to ensure it works as expected.</code></pre>
+<ul>
+<li>Write test cases to verify that your program produces the expected output for a variety of input data.</li>
+<li>Use a range of inputs, including edge cases and unusual data, to ensure your program is robust and reliable.</li>
+<li>Test your program in different environments and configurations to ensure it works as expected.</li>
+</ul>
 </section>
 <section id="step-1---understand-the-problem" class="level1">
 <h1><strong>Step 1 - Understand the Problem</strong></h1>
@@ -5287,7 +5289,7 @@ i: 2, j: 1</code></pre>
 <ul>
 <li>Define the Problem: Kelvin to Celsius Conversion</li>
 </ul>
-<p>The problem is to write a program that takes a temperature in Kelvin as input and returns the equivalent temperature in Celsius. This is simple, but in real life probably interview the client, do some independent research, caht to experts, read research papers, study existing programs etc.</p>
+<p>The problem is to write a program that takes a temperature in Kelvin as input and returns the equivalent temperature in Celsius. This is simple, but in real life probably interview the client, do some independent research, chat to experts, read research papers, study existing programs etc.</p>
 </section>
 <section id="step-2---define-inputs-and-outputs" class="level1">
 <h1><strong>Step 2 - Define Inputs and Outputs</strong></h1>
@@ -5298,9 +5300,6 @@ i: 2, j: 1</code></pre>
 </section>
 <section id="step-3---work-the-problem-by-hand" class="level1">
 <h1><strong>Step 3 - Work the Problem by Hand</strong></h1>
-<ul>
-<li>Manual Calculation Example:</li>
-</ul>
 <blockquote class="blockquote">
 <p>Let’s convert 273.15 Kelvin to Celsius. We know that the conversion formula is:</p>
 <p>Celsius = Kelvin - 273.15</p>
@@ -5315,48 +5314,48 @@ i: 2, j: 1</code></pre>
 <pre><code>input_kelvin = get kelvin temperature
 celsius = input_kelvin - 273.15
 print celsius</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>input_kelvin <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Please input temperature in Kelvin&quot;</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>celsius <span class="op">=</span> input_kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(celsius)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>input_kelvin <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Please input temperature in Kelvin&quot;</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>celsius <span class="op">=</span> input_kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(celsius)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="step-5---test-with-data" class="level1">
 <h1><strong>Step 5 - Test with Data</strong></h1>
 <ul>
 <li>Test Cases: Valid and Invalid Inputs</li>
-</ul>
-<p>Valid Inputs:</p>
+<li>Valid Inputs:
 <ul>
 <li>273.15 Kelvin -&gt; 0.15 Celsius</li>
 <li>0 Kelvin -&gt; -273.15 Celsius</li>
 <li>500 Kelvin -&gt; 226.85 Celsius</li>
-</ul>
-<p>Invalid Inputs:</p>
+</ul></li>
+<li>Invalid Inputs:
 <ul>
 <li>Negative Kelvin (e.g., -273.15) -&gt; Error handling needed</li>
 <li>Non-numeric input (e.g., “abc”) -&gt; Error handling needed</li>
-</ul>
-<p>Handling Edge Cases (Negative Kelvin):</p>
+</ul></li>
+<li>Handling Edge Cases (Negative Kelvin):
 <ul>
 <li>We’ll add error handling to handle negative Kelvin inputs. For example, we could print an error message and return an error code.</li>
+</ul></li>
 </ul>
 </section>
 <section id="final-python-program" class="level1">
 <h1>Final Python program:</h1>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> kelvin_to_celsius(kelvin):</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kelvin <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Error: Negative Kelvin temperature&quot;</span>)</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    celsius <span class="op">=</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> celsius</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Test cases</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="fl">273.15</span>))  <span class="co"># 0.15</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="dv">0</span>))  <span class="co"># -273.15</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="dv">500</span>))  <span class="co"># 226.85</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Invalid inputs</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="op">-</span><span class="fl">273.15</span>))  <span class="co"># Error: Negative Kelvin temperature</span></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="st">&quot;abc&quot;</span>))  <span class="co"># Error: Non-numeric input</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> kelvin_to_celsius(kelvin):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> kelvin <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Error: Negative Kelvin temperature&quot;</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    celsius <span class="op">=</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> celsius</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Test cases</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="fl">273.15</span>))  <span class="co"># 0.15</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="dv">0</span>))  <span class="co"># -273.15</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="dv">500</span>))  <span class="co"># 226.85</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Invalid inputs</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="op">-</span><span class="fl">273.15</span>))  <span class="co"># Error: Negative Kelvin temperature</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(kelvin_to_celsius(<span class="st">&quot;abc&quot;</span>))  <span class="co"># Error: Non-numeric input</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="using-jupyter-notebooks-for-prototyping" class="level1">
 <h1>Using Jupyter Notebooks for Prototyping</h1>
@@ -5463,11 +5462,11 @@ print celsius</code></pre>
 </section>
 <section id="file-io-example" class="level1">
 <h1>File I/O Example</h1>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;example.txt&quot;</span>, <span class="st">&quot;w&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">&quot;Hello, world!&quot;</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;example.txt&quot;</span>, <span class="st">&quot;r&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.read())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;example.txt&quot;</span>, <span class="st">&quot;w&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">&quot;Hello, world!&quot;</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;example.txt&quot;</span>, <span class="st">&quot;r&quot;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.read())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note: The <code>with</code> statement is used to ensure that the file is properly closed, even if an exception is thrown.</p>
 </section>
 <section id="introduction-to-databases" class="level1">
@@ -5482,31 +5481,31 @@ print celsius</code></pre>
 </section>
 <section id="database-example" class="level1">
 <h1>Database Example</h1>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a connection to the database</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;example.db&quot;</span>)</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a cursor object</span></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a table</span></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="st">    CREATE TABLE users (</span></span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="st">        id INTEGER PRIMARY KEY,</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="st">        name TEXT,</span></span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="st">        email TEXT</span></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="st">    );</span></span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert some data</span></span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&quot;INSERT INTO users (name, email) VALUES (&#39;John Doe&#39;, &#39;johndoe@example.com&#39;)&quot;</span>)</span>
-<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit the changes</span></span>
-<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>conn.commit()</span>
-<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the connection</span></span>
-<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>conn.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a connection to the database</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">&quot;example.db&quot;</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a cursor object</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a table</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&quot;&quot;&quot;</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="st">    CREATE TABLE users (</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="st">        id INTEGER PRIMARY KEY,</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="st">        name TEXT,</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="st">        email TEXT</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="st">    );</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert some data</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&quot;INSERT INTO users (name, email) VALUES (&#39;John Doe&#39;, &#39;johndoe@example.com&#39;)&quot;</span>)</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit the changes</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>conn.commit()</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the connection</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>conn.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="data-visualisation" class="level1">
 <h1>Data Visualisation**</h1>
@@ -5520,25 +5519,25 @@ print celsius</code></pre>
 </section>
 <section id="matplotlib" class="level1">
 <h1>Matplotlib</h1>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the figure and axis</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data</span></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y)</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the title and labels</span></span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Simple Line Chart&#39;</span>)</span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;X Axis&#39;</span>)</span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;Y Axis&#39;</span>)</span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
-<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the figure and axis</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the title and labels</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Simple Line Chart&#39;</span>)</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;X Axis&#39;</span>)</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;Y Axis&#39;</span>)</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="web-scraping" class="level1">
 <h1>Web Scraping</h1>
@@ -5546,20 +5545,20 @@ print celsius</code></pre>
 </section>
 <section id="simple-web-scrape-example" class="level1">
 <h1>Simple Web Scrape Example</h1>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Send an HTTP request to the website</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://www.example.com&quot;</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Parse the HTML response using BeautifulSoup</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.content, <span class="st">&quot;html.parser&quot;</span>)</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Find all the links on the webpage</span></span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> soup.find_all(<span class="st">&quot;a&quot;</span>)</span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> link <span class="kw">in</span> links:</span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(link.get(<span class="st">&quot;href&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Send an HTTP request to the website</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://www.example.com&quot;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Parse the HTML response using BeautifulSoup</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(response.content, <span class="st">&quot;html.parser&quot;</span>)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Find all the links on the webpage</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>links <span class="op">=</span> soup.find_all(<span class="st">&quot;a&quot;</span>)</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> link <span class="kw">in</span> links:</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(link.get(<span class="st">&quot;href&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="web-scraping-tips" class="level1">
 <h1>Web Scraping Tips</h1>
@@ -5574,8 +5573,9 @@ print celsius</code></pre>
 <section id="api---application-programming-interface" class="level1">
 <h1>API - Application Programming Interface</h1>
 <p>APIs are a set of defined rules that enables different applications, services, or systems to communicate with each other. It allows data to be shared, processed, and used by different systems, making it a crucial part of modern software development.</p>
-<p><strong>Basics of APIs</strong></p>
-<p>Here are some key concepts to understand about APIs:</p>
+</section>
+<section id="basics-of-apis" class="level1">
+<h1>Basics of APIs**</h1>
 <ul>
 <li><strong>API Type</strong>: There are several types of APIs, including:
 <ul>
@@ -5592,27 +5592,27 @@ print celsius</code></pre>
 <section id="web-api-example" class="level1">
 <h1>Web API Example</h1>
 <p><strong>API Endpoint</strong>: <code>https://jsonplaceholder.typicode.com/todos/1</code> <strong>API Request</strong>: <code>GET https://jsonplaceholder.typicode.com/todos/1</code> <strong>API Response</strong>:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;userId&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;delectus aut autem&quot;</span><span class="fu">,</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;completed&quot;</span><span class="fu">:</span> <span class="kw">false</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;userId&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;delectus aut autem&quot;</span><span class="fu">,</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;completed&quot;</span><span class="fu">:</span> <span class="kw">false</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="web-api-python-code" class="level1">
 <h1>Web API Python Code</h1>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Send a GET request to the API endpoint</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span>)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the response was successful</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parse the JSON response</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> response.json()</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(data)</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Error:&quot;</span>, response.status_code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Send a GET request to the API endpoint</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">&quot;https://jsonplaceholder.typicode.com/todos/1&quot;</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the response was successful</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parse the JSON response</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> response.json()</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(data)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Error:&quot;</span>, response.status_code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="api-tips" class="level1">
 <h1>API Tips</h1>
@@ -5622,12 +5622,14 @@ print celsius</code></pre>
 <li>Handle errors and exceptions properly.</li>
 <li>Use a library like <code>requests</code> to simplify API requests and responses.</li>
 </ul>
-<p>Here’s an introduction to GUIs with Tkinter, including the basics and a simple GUI example:</p>
-<p><strong>Introduction to GUIs with Tkinter</strong></p>
-<p>Tkinter is a Python binding to the Tk GUI toolkit. It is the standard Python interface to Tk and is bundled with most standard Python distributions.</p>
-<p><strong>Basics of Graphical User Interfaces</strong></p>
+</section>
+<section id="guis-with-tkinter" class="level1">
+<h1>GUIs with Tkinter**</h1>
 <p>A Graphical User Interface (GUI) is a type of user interface that allows users to interact with a computer program using visual elements such as windows, buttons, and menus. GUIs are designed to be more intuitive and user-friendly than command-line interfaces.</p>
-<p>Here are some key concepts to understand about GUIs:</p>
+<p>Tkinter is a Python binding to the Tk GUI toolkit. It is the standard Python interface to Tk and is bundled with most standard Python distributions.</p>
+</section>
+<section id="basics-of-graphical-user-interfaces" class="level1">
+<h1>Basics of Graphical User Interfaces**</h1>
 <ul>
 <li><strong>Widgets</strong>: A widget is a basic building block of a GUI. Examples of widgets include buttons, labels, text boxes, and menus.</li>
 <li><strong>Layout</strong>: The layout of a GUI refers to the arrangement of widgets on the screen. This can be done using various layout managers such as grid, pack, and place.</li>
@@ -5636,28 +5638,28 @@ print celsius</code></pre>
 </section>
 <section id="gui-example" class="level1">
 <h1>GUI Example**</h1>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tkinter <span class="im">as</span> tk</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_widgets(master):</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Button to display &quot;Hello World&quot; and print a message on click</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    hi_there <span class="op">=</span> tk.Button(master, text<span class="op">=</span><span class="st">&quot;Hello World</span><span class="ch">\n</span><span class="st">(click me)&quot;</span>, command<span class="op">=</span>say_hi)</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    hi_there.pack(side<span class="op">=</span><span class="st">&quot;top&quot;</span>)</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Button to quit the application</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    quit_button <span class="op">=</span> tk.Button(master, text<span class="op">=</span><span class="st">&quot;QUIT&quot;</span>, fg<span class="op">=</span><span class="st">&quot;red&quot;</span>, command<span class="op">=</span>master.destroy)</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    quit_button.pack(side<span class="op">=</span><span class="st">&quot;bottom&quot;</span>)</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hi():</span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;hi there, everyone!&quot;</span>)</span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the main window</span></span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> tk.Tk()</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the function to create widgets</span></span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>create_widgets(root)</span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Start the main event loop</span></span>
-<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>root.mainloop()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tkinter <span class="im">as</span> tk</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_widgets(master):</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Button to display &quot;Hello World&quot; and print a message on click</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    hi_there <span class="op">=</span> tk.Button(master, text<span class="op">=</span><span class="st">&quot;Hello World</span><span class="ch">\n</span><span class="st">(click me)&quot;</span>, command<span class="op">=</span>say_hi)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    hi_there.pack(side<span class="op">=</span><span class="st">&quot;top&quot;</span>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Button to quit the application</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    quit_button <span class="op">=</span> tk.Button(master, text<span class="op">=</span><span class="st">&quot;QUIT&quot;</span>, fg<span class="op">=</span><span class="st">&quot;red&quot;</span>, command<span class="op">=</span>master.destroy)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    quit_button.pack(side<span class="op">=</span><span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hi():</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;hi there, everyone!&quot;</span>)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the main window</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> tk.Tk()</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the function to create widgets</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>create_widgets(root)</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Start the main event loop</span></span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>root.mainloop()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="gui-tips" class="level1">
 <h1>GUI Tips</h1>
@@ -5677,9 +5679,6 @@ print celsius</code></pre>
 </ul>
 <p>Understanding data representation and types is fundamental to all aspects of programming. It underpins how input is processed, calculations are performed, decisions are made, and output is generated. Mastery of data types ensures that solutions are robust, efficient, and correct, seamlessly integrating with the six fundamental operations and the structured problem-solving framework.</p>
 <div class="notes">
-<section id="data-representation-and-types-1" class="level4">
-<h4 class="anchored" data-anchor-id="data-representation-and-types-1">0. Data Representation and Types</h4>
-</section>
 <section id="summary-of-six-fundamental-operations" class="level4">
 <h4 class="anchored" data-anchor-id="summary-of-six-fundamental-operations">1. Summary of Six Fundamental Operations</h4>
 <ul>
@@ -5750,8 +5749,8 @@ print celsius</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="data-representation-and-types-2" class="level3">
-<h3 class="anchored" data-anchor-id="data-representation-and-types-2">Data Representation and Types</h3>
+<section id="data-representation-and-types-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-representation-and-types-1">Data Representation and Types</h3>
 <p><strong>Elaboration:</strong></p>
 <p>Computers fundamentally store and process data as sequences of binary digits (0s and 1s). These binary sequences form the basis for all types of data a computer can handle. The concept of data types is crucial because it tells the computer how to interpret these binary sequences, whether as numbers, text, images, sound, or more complex structures like documents and videos. Here’s a deeper look at how data representation and types are foundational and their relationship to the six fundamental operations and the problem-solving framework:</p>
 <section id="how-data-representation-and-types-relate-to-the-six-fundamental-operations" class="level4">
