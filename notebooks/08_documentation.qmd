@@ -3,9 +3,13 @@ title: "WeatherVista Project - Session 8: Documentating project with mkdocs and 
 execute: 
   enabled: false
 ---
+
 ### Step-by-Step Guide:
 
+
 1. **Install MkDocs and mkdocstrings:**
+
+First install the mkdocs program and support for Pytohn
 
 ```{python}
 !pip install mkdocs mkdocstrings mkdocstrings-python
